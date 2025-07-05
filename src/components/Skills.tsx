@@ -87,10 +87,10 @@ const Skills = () => {
         <div className="text-center mt-16">
           <Link
             to="/projects"
-            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 transition-colors"
+            className="inline-flex items-center px-4 py-1.5 border border-gray-600 text-sm font-medium rounded-lg text-white bg-black hover:bg-gray-900 transition-colors"
           >
-            <FileText className="h-5 w-5 mr-2" />
-            Ver Mis Proyectos
+            <FileText className="h-6 w-5 mr-2" />
+            {t('hero.viewProjects')}
           </Link>
         </div>
       </div>
