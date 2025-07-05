@@ -122,15 +122,27 @@ const Projects = () => {
                   )}
 
                   {project.live && (
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
-                    >
-                      <ExternalLink className="h-5 w-5 mr-1" />
-                      Ver Web
-                    </a>
+                    <>
+                      {project.live === "/" ? (
+                        <Link
+                          to="/"
+                          className="flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
+                        >
+                          <ExternalLink className="h-5 w-5 mr-1" />
+                          Ir al Home
+                        </Link>
+                      ) : (
+                        <a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
+                        >
+                          <ExternalLink className="h-5 w-5 mr-1" />
+                          Ver Web
+                        </a>
+                      )}
+                    </>
                   )}
 
                   {project.images && project.images.length > 0 && (
