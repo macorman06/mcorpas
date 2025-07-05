@@ -73,7 +73,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300"
+              className="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-2xl hover:shadow-2xl transition-shadow duration-300"
             >
               <img
                 src={project.cover}
@@ -179,7 +179,7 @@ const Projects = () => {
           <img
             src={activeProject.images[currentIndex]}
             alt="Gallery"
-            className="max-h-[80vh] w-auto rounded-lg shadow-lg"
+            className="max-h-[80vh] w-auto rounded-lg shadow-xl"
           />
           <button
             onClick={nextSlide}
