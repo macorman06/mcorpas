@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Code, Layers, Smartphone, Database, Settings, Palette, FileText } from 'lucide-react';
 
-const Skills = () => {
+const Experience = () => {
   const { t } = useTranslation();
 
   const skillsData = [
@@ -98,4 +98,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default Experience;
