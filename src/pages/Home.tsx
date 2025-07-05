@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import Hero from '../components/Hero';
 import Skills from '../components/Skills';
+import Experience from '../components/Experience'
 
 const Home = () => {
   return (
@@ -17,6 +18,8 @@ const Home = () => {
       </Helmet>
       <Hero />
       <Skills />
+      <Experience />
+
     </>
   );
 };
