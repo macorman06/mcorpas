@@ -38,6 +38,7 @@ const Projects = () => {
       cover: "/projects/tfg/tfg_opti.png",
       images: [], // Sin galería
       tags: ["Aerolíneas", "Optimización", "Sostenibilidad", "Python"],
+      live: "https://tfg-9db.pages.dev/"
     },
   ];
 
