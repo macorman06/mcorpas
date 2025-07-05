@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ExternalLink, Instagram, X, Github } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Projects = () => {
   const [isOpen, setIsOpen] = useState(false);
