@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, Instagram, X } from 'lucide-react';
+import { ExternalLink, Instagram, X, Github } from 'lucide-react';
 
 const Projects = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -59,9 +59,6 @@ const Projects = () => {
   return (
     <section className="py-20 bg-white dark:bg-gray-900 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-
-
         <div className="text-left mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">
             Mis proyectos
@@ -99,23 +96,52 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
-                <div className="flex space-x-4">
-                  <a
-                    href={project.instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center text-pink-600 dark:text-pink-400 hover:text-pink-800 dark:hover:text-pink-300 transition-colors"
-                  >
-                    <Instagram className="h-5 w-5 mr-1" />
-                    Instagram
-                  </a>
-                  <button
-                    onClick={() => openGallery(project)}
-                    className="flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
-                  >
-                    <ExternalLink className="h-5 w-5 mr-1" />
-                    Ver Galería
-                  </button>
+                <div className="flex flex-wrap gap-4">
+                  {project.instagram && (
+                    <a
+                      href={project.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-pink-600 dark:text-pink-400 hover:text-pink-800 dark:hover:text-pink-300 transition-colors"
+                    >
+                      <Instagram className="h-5 w-5 mr-1" />
+                      Instagram
+                    </a>
+                  )}
+
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                    >
+                      <Github className="h-5 w-5 mr-1" />
+                      Código
+                    </a>
+                  )}
+
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
+                    >
+                      <ExternalLink className="h-5 w-5 mr-1" />
+                      Ver Web
+                    </a>
+                  )}
+
+                  {project.images && project.images.length > 0 && (
+                    <button
+                      onClick={() => openGallery(project)}
+                      className="flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
+                    >
+                      <ExternalLink className="h-5 w-5 mr-1" />
+                      Ver Galería
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
