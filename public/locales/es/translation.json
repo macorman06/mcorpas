@@ -14,12 +14,9 @@
   "skills": {
     "title": "Sobre mi",
     "subtitle": "Desde pequeño disfruto creando y compartiendo. Mis proyectos combinan ideas creativas con resultados prácticos para el día a día, desde diseños hechos a mano hasta desarrollo de aplicaciones y software.",
+    
     "whatICanDo": "Qué puedo hacer",
     "whatICanDoDesc": "Puedo ayudar a desarrollar soluciones que harán crecer tu negocio:",
-    "toolsIUse": "Herramientas que uso",
-    "toolsIUseDesc": "Uso las últimas herramientas y tecnologías para construir productos funcionales y escalables:",
-    "uiuxDesign": "Diseño UI/UX",
-    "uiuxDesignDesc": "Soy diseñador primero, desarrollador segundo. Puedo ayudar a diseñar interfaces limpias y modernas:",
     "services": {
       "uiux": "Diseño UI/UX",
       "fullstack": "Desarrollo Full Stack",
@@ -27,14 +24,20 @@
       "database": "Diseño de Base de Datos",
       "api": "Integración de APIs"
     },
+    
+    "toolsIUse": "Mis herramientas",
+    "toolsIUseDesc": "Uso las últimas herramientas y tecnologías para construir productos funcionales y escalables:",
     "tools": {
       "frontend": "Frontend:",
       "backend": "Backend:",
       "design": "Diseño:",
       "frontendList": "Tailwind CSS, React, TypeScript",
-      "backendList": "Node.js, Fastify, MongoDB, PostgreSQL",
-      "designList": "Figma, Framer, Photoshop"
+      "backendList": "Python, PostgreSQL, Postman, ApiDog",
+      "designList": "Figma, Fusion360, Adobe Illustrator"
     },
+    
+    "uiuxDesign": "Diseño UI/UX",
+    "uiuxDesignDesc": "Soy diseñador primero, desarrollador segundo. Puedo ayudar a diseñar interfaces limpias y modernas:",
     "designSkills": {
       "userCentered": "Diseño Centrado en el Usuario",
       "modern": "UI Moderno y Limpio",
