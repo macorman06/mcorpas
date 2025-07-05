@@ -65,7 +65,7 @@ const Projects = () => {
             Mis proyectos
           </h2>
           <p className="text-base text-gray-600 dark:text-gray-300 text-left">
-            Aquí muestro una colección de los proyectos, tanto de software como creativos, más recientes y exitosos. 
+            Aquí muestro una colección de los proyectos, tanto de software como creativos, más recientes y exitosos.
           </p>
         </div>
 
@@ -73,7 +73,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
+              className="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
             >
               <img
                 src={project.cover}
