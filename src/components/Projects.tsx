@@ -31,6 +31,14 @@ const Projects = () => {
       github: "https://github.com/macorman06/mcorpas.git",
       live: "/",
     },
+    {
+      title: "TFG - Optimización de Rotaciones",
+      description:
+        "Trabajo de Fin de Grado en Ingeniería Aeroespacial: herramienta para optimizar rotaciones de aeronaves de forma sostenible.",
+      cover: "/projects/tfg/tfg_opti.png",
+      images: [], // Sin galería
+      tags: ["Aerolíneas", "Optimización", "Sostenibilidad", "Python"],
+    },
   ];
 
   const openGallery = (project: any) => {
