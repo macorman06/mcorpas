@@ -1,0 +1,65 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hey, I'm Marcos ✨",
+    "title": "A Full Stack Developer",
+    "description": "A fullstack developer with solid foundations in design, passionate about crafting seamless user experiences. I thrive at the intersection of creativity and functionality.",
+    "contactMe": "Contact Me",
+    "viewProjects": "View Projects"
+  },
+  "skills": {
+    "title": "Building Digital Experiences",
+    "subtitle": "I specialize in creating stunning user interfaces and developing high-quality applications that stand out.",
+    "whatICanDo": "What I can do",
+    "whatICanDoDesc": "I can help develop solutions that will help you grow your business:",
+    "toolsIUse": "Tools I Use",
+    "toolsIUseDesc": "I use the latest tools and technologies to build functional and scalable products:",
+    "uiuxDesign": "UI/UX Design",
+    "uiuxDesignDesc": "I am a designer first, developer second. I can help design clean and modern interfaces:",
+    "services": {
+      "uiux": "UI/UX Design",
+      "fullstack": "Full Stack Development",
+      "mobile": "Mobile App Development",
+      "database": "Database Design",
+      "api": "API Integration"
+    },
+    "tools": {
+      "frontend": "Frontend:",
+      "backend": "Backend:",
+      "design": "Design:",
+      "frontendList": "Tailwind CSS, React, TypeScript",
+      "backendList": "Node.js, Fastify, MongoDB, PostgreSQL",
+      "designList": "Figma, Framer, Photoshop"
+    },
+    "designSkills": {
+      "userCentered": "User-Centered Design",
+      "modern": "Modern & Clean UI",
+      "responsive": "Responsive Layouts",
+      "wireframes": "Wireframes & Prototypes"
+    }
+  },
+  "contact": {
+    "title": "Bringing your ideas to life.",
+    "subtitle": "Let's turn your vision into reality",
+    "description": "Have a project in mind or just want to chat? Let's connect!",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send",
+      "namePlaceholder": "Your Name",
+      "emailPlaceholder": "contact@example.com",
+      "messagePlaceholder": "Your message here..."
+    }
+  },
+  "footer": {
+    "name": "Marcos Corpas",
+    "location": "Based in Spain",
+    "rights": "All rights reserved.",
+    "designedWith": "Website designed in Figma. Built with Next.js, TypeScript and Tailwind CSS."
+  }
+}

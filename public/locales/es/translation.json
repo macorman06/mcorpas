@@ -1,0 +1,65 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Hola, soy Marcos ✨",
+    "title": "Desarrollador Full Stack",
+    "description": "Soy Ingeniero Aeroespacial especializado en el desarrollo de APIs backend con Python y en análisis de datos. Me apasiona crear soluciones intuitivas y eficientes, combinando tecnología y diseño UX/UI. Actualmente amplío mis habilidades hacia el desarrollo fullstack con React. ",
+    "contactMe": "Contáctame",
+    "viewProjects": "Ver Proyectos"
+  },
+  "skills": {
+    "title": "Sobre mi",
+    "subtitle": "Me especializo en crear interfaces impresionantes y desarrollar aplicaciones de alta calidad que destacan.",
+    "whatICanDo": "Qué puedo hacer",
+    "whatICanDoDesc": "Puedo ayudar a desarrollar soluciones que harán crecer tu negocio:",
+    "toolsIUse": "Herramientas que uso",
+    "toolsIUseDesc": "Uso las últimas herramientas y tecnologías para construir productos funcionales y escalables:",
+    "uiuxDesign": "Diseño UI/UX",
+    "uiuxDesignDesc": "Soy diseñador primero, desarrollador segundo. Puedo ayudar a diseñar interfaces limpias y modernas:",
+    "services": {
+      "uiux": "Diseño UI/UX",
+      "fullstack": "Desarrollo Full Stack",
+      "mobile": "Desarrollo de Apps Móviles",
+      "database": "Diseño de Base de Datos",
+      "api": "Integración de APIs"
+    },
+    "tools": {
+      "frontend": "Frontend:",
+      "backend": "Backend:",
+      "design": "Diseño:",
+      "frontendList": "Tailwind CSS, React, TypeScript",
+      "backendList": "Node.js, Fastify, MongoDB, PostgreSQL",
+      "designList": "Figma, Framer, Photoshop"
+    },
+    "designSkills": {
+      "userCentered": "Diseño Centrado en el Usuario",
+      "modern": "UI Moderno y Limpio",
+      "responsive": "Layouts Responsivos",
+      "wireframes": "Wireframes y Prototipos"
+    }
+  },
+  "contact": {
+    "title": "Hagamos realidad tus ideas.",
+    "subtitle": "Convirtamos tu visión en realidad",
+    "description": "¿Tienes un proyecto en mente o simplemente quieres charlar? ¡Conectemos!",
+    "form": {
+      "name": "Nombre",
+      "email": "Email",
+      "message": "Mensaje",
+      "send": "Enviar",
+      "namePlaceholder": "Tu nombre",
+      "emailPlaceholder": "contacto@ejemplo.com",
+      "messagePlaceholder": "Tu mensaje aquí..."
+    }
+  },
+  "footer": {
+    "name": "Marcos Corpas",
+    "location": "Basado en España",
+    "rights": "Todos los derechos reservados.",
+    "designedWith": "Sitio web diseñado en Figma. Construido con Next.js, TypeScript y Tailwind CSS."
+  }
+}
