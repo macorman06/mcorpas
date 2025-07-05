@@ -37,13 +37,14 @@
     },
     
     "uiuxDesign": "Aficiones",
-    "uiuxDesignDesc": "Disfruto del deporte, la naturaleza y la montaña, de la simulación y los videojuegos, de todo lo relacionado con aviones y carreras, y de explorar la impresión 3D y la programación.",
+    "uiuxDesignDesc": "Me encanta el deporte, la montaña, la simulación, los videojuegos, los aviones, las carreras, la impresión 3D y la programación.",
     "designSkills": {
-      "userCentered": "Diseño Centrado en el Usuario",
-      "modern": "UI Moderno y Limpio",
-      "responsive": "Layouts Responsivos",
-      "wireframes": "Wireframes y Prototipos"
+      "userCentered": "Formula 1",
+      "modern": "Montaña y Naturaleza",
+      "responsive": "Simulación y Videojuegos",
+      "wireframes": "Aviones, Carreras, Impresión 3D, Programación"
     }
+
   },
   "contact": {
     "title": "Hagamos realidad tus ideas.",
