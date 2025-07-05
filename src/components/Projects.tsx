@@ -28,7 +28,7 @@ const Projects = () => {
       images: [], // Sin galería
       tags: ["React", "Tailwind CSS", "TypeScript", "Vite"],
       github: "https://github.com/macorman06/mcorpas.git",
-      live: "https://mcorpas.dev/",
+      live: "/",
     },
   ];
 
