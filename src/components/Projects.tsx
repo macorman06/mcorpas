@@ -27,7 +27,7 @@ const Projects = () => {
       cover: "/projects/portfolio/portfolio.png",
       images: [], // Sin galería
       tags: ["React", "Tailwind CSS", "TypeScript", "Vite"],
-      github: "https://github.com/marcoscorpas/portfolio",
+      github: "https://github.com/macorman06/mcorpas.git",
       live: "https://mcorpas.dev/",
     },
   ];
@@ -64,7 +64,7 @@ const Projects = () => {
             Mis proyectos
           </h2>
           <p className="text-base text-gray-600 dark:text-gray-300 text-left">
-            Una muestra de mis proyectos, tanto de desarrollo como creativos.
+            Aquí muestro una colección de los proyectos, tanto de software como creativos, más recientes y exitosos. 
           </p>
         </div>
 
