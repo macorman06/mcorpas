@@ -20,7 +20,16 @@ const Projects = () => {
       tags: ["3D Printing", "Design", "Handmade", "Jesper3DMakes"],
       instagram: "https://www.instagram.com/jesper3d.makes/",
     },
-    // Puedes añadir más proyectos aquí
+    {
+      title: "Portfolio Website",
+      description:
+        "Mi sitio web personal hecho con React, Tailwind y Vite. Responsive, multiidioma, SEO optimizado y con contacto funcional.",
+      cover: "/projects/portfolio/portfolio.png",
+      images: [], // Sin galería
+      tags: ["React", "Tailwind CSS", "TypeScript", "Vite"],
+      github: "https://github.com/marcoscorpas/portfolio",
+      live: "https://mcorpas.dev/",
+    },
   ];
 
   const openGallery = (project: any) => {
