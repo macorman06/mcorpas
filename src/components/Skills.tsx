@@ -58,7 +58,7 @@ const Skills = () => {
           {skillsData.map((skill, index) => (
             <div
               key={index}
-              className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 hover:shadow-lg transition-shadow duration-300"
+              className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 shadow-2xl hover:shadow-lg transition-shadow duration-300"
             >
               <div className="flex items-center mb-6">
                 <skill.icon className="h-8 w-8 text-blue-600 dark:text-blue-400 mr-3" />
