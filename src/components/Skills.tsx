@@ -102,7 +102,7 @@ const Skills = () => {
               </p>
 
               {skill.title === t('skills.toolsIUse') ? (
-                <div className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {skill.items.map((group, groupIndex) => (
                     <div key={groupIndex}>
                       <h4 className="text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
