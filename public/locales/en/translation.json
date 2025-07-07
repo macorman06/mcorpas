@@ -5,53 +5,56 @@
     "contact": "Contact"
   },
   "hero": {
-    "greeting": "Hey, I'm Marcos ✨",
-    "title": "A Full Stack Developer",
-    "description": "A fullstack developer with solid foundations in design, passionate about crafting seamless user experiences. I thrive at the intersection of creativity and functionality.",
+    "greeting": "Hi, I'm Marcos ✨",
+    "title": "Aerospace Engineer & Creative Developer",
+    "description": "Passionate about building and bringing ideas to life, from backend development with Python to fullstack projects and 3D design.",
     "contactMe": "Contact Me",
     "viewProjects": "View Projects"
   },
   "skills": {
-    "title": "Building Digital Experiences",
-    "subtitle": "I specialize in creating stunning user interfaces and developing high-quality applications that stand out.",
-    "whatICanDo": "What I can do",
-    "whatICanDoDesc": "I can help develop solutions that will help you grow your business:",
-    "toolsIUse": "Tools I Use",
-    "toolsIUseDesc": "I use the latest tools and technologies to build functional and scalable products:",
-    "uiuxDesign": "UI/UX Design",
-    "uiuxDesignDesc": "I am a designer first, developer second. I can help design clean and modern interfaces:",
+    "title": "About Me",
+    "subtitle": "Since I was young, I've enjoyed creating and sharing. My projects combine creative ideas with practical results for everyday life — from handmade designs to software and app development.",
+    
+    "whatICanDo": "What I Can Do",
+    "whatICanDoDesc": "I can help develop solutions to grow your business:",
     "services": {
       "uiux": "UI/UX Design",
-      "fullstack": "Full Stack Development",
-      "mobile": "Mobile App Development",
-      "database": "Database Design",
+      "fullstack": "Optimization Models",
+      "mobile": "Web Development",
+      "database": "3D Printed Lamp Design",
       "api": "API Integration"
     },
+    
+    "toolsIUse": "My Tools",
+    "toolsIUseDesc": "I use the latest tools and technologies to build functional and scalable products:",
     "tools": {
       "frontend": "Frontend:",
       "backend": "Backend:",
       "design": "Design:",
       "frontendList": "Tailwind CSS, React, TypeScript",
-      "backendList": "Node.js, Fastify, MongoDB, PostgreSQL",
-      "designList": "Figma, Framer, Photoshop"
+      "backendList": "Python, PostgreSQL, Postman, ApiDog",
+      "designList": "Figma, Fusion360, Adobe Illustrator"
     },
+    
+    "uiuxDesign": "Hobbies",
+    "uiuxDesignDesc": "I love sports, the mountains, simulation and gaming, aviation, racing, 3D printing, and programming.",
     "designSkills": {
-      "userCentered": "User-Centered Design",
-      "modern": "Modern & Clean UI",
-      "responsive": "Responsive Layouts",
-      "wireframes": "Wireframes & Prototypes"
+      "userCentered": "Formula 1",
+      "modern": "Mountains & Nature",
+      "responsive": "Simulation & Video Games",
+      "wireframes": "Planes, Racing, 3D Printing, Programming"
     }
   },
   "contact": {
-    "title": "Bringing your ideas to life.",
-    "subtitle": "Let's turn your vision into reality",
-    "description": "Have a project in mind or just want to chat? Let's connect!",
+    "title": "Let's bring your ideas to life.",
+    "subtitle": "Turning your vision into reality",
+    "description": "Got a project in mind or just want to chat? Let's connect!",
     "form": {
       "name": "Name",
       "email": "Email",
       "message": "Message",
       "send": "Send",
-      "namePlaceholder": "Your Name",
+      "namePlaceholder": "Your name",
       "emailPlaceholder": "contact@example.com",
       "messagePlaceholder": "Your message here..."
     }
