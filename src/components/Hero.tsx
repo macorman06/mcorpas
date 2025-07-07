@@ -31,7 +31,6 @@ const Hero = () => {
               </h2>
             </div>
           </div>
-        </div>
           <p className="mt-6 text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed text-left">
             {t('hero.description')}
           </p>
