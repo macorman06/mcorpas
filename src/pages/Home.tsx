@@ -17,6 +17,7 @@ const Home = () => {
         <meta property="og:image" content="/og-image.png" />
       </Helmet>
       <Hero />
+      <div className="border-t border-gray-200 dark:border-gray-700 w-full"></div>
       <Skills />
       <div className="border-t border-gray-200 dark:border-gray-700 w-full"></div>
       <Experience />
