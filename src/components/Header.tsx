@@ -72,14 +72,14 @@ const Header = () => {
               onChange={(e) => changeLanguage(e.target.value)}
               className="
                 appearance-none
-                rounded-md 
                 px-2 py-1
-                text-sm 
-                bg-white dark:bg-gray-800
+                text-sm
+                rounded-lg
+                bg-gray-100 dark:bg-gray-800
                 text-gray-900 dark:text-gray-100
-                border border-transparent 
-                focus:border-blue-500 
-                focus:ring-2 focus:ring-blue-500
+                border border-transparent
+                focus:outline-none focus:ring-2 focus:ring-blue-500
+                hover:bg-gray-200 dark:hover:bg-gray-700
                 transition-colors
                 shadow-sm
               "
@@ -87,20 +87,27 @@ const Header = () => {
               <option value="es">ES</option>
               <option value="en">EN</option>
             </select>
-
-
-
+          
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              className="
+                p-2
+                rounded-lg
+                bg-gray-100 dark:bg-gray-800
+                hover:bg-gray-200 dark:hover:bg-gray-700
+                text-gray-700 dark:text-gray-300
+                transition-colors
+                shadow-sm
+              "
             >
               {theme === 'light' ? (
-                <Moon className="h-5 w-5 text-gray-700 dark:text-gray-300" />
+                <Moon className="h-5 w-5" />
               ) : (
-                <Sun className="h-5 w-5 text-gray-300" />
+                <Sun className="h-5 w-5" />
               )}
             </button>
           </div>
+
         </div>
       </div>
     </header>
