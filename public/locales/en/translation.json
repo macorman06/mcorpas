@@ -45,6 +45,46 @@
       "wireframes": "Planes, Racing, 3D Printing, Programming"
     }
   },
+  "experience": {
+    "title": "My Experience",
+    "subtitle": "From engineering to volunteering: practical solutions and working with people.",
+    "jobs": [
+      {
+        "title": "Backend Developer",
+        "company": "Cisneria Engineering",
+        "description": "Backend development on Tail Assigner, an optimization tool for aircraft allocation. Supporting Vueling and Air Nostrum.",
+        "items": [
+          "API development with Python.",
+          "Automation of planning processes.",
+          "Data queries and analysis in SQL.",
+          "Collaboration with Angular frontend."
+        ],
+        "date": "2023 – Present"
+      },
+      {
+        "title": "Youth Leader & Catechist",
+        "company": "Juveliber | Salesianos Parla",
+        "description": "Educational leisure monitor and volunteer. Managing youth activities, catechesis, and teamwork.",
+        "items": [
+          "Organizing leisure and free-time activities.",
+          "Mentoring young people and teenagers.",
+          "Volunteering in Salesian projects."
+        ],
+        "date": "2018 – Present"
+      },
+      {
+        "title": "Aerodynamics Designer",
+        "company": "Ü Motorsport URJC",
+        "description": "Aerodynamic designer for Formula Student single-seaters. CAD design and CFD simulations.",
+        "items": [
+          "Designing parts with SolidWorks.",
+          "CFD simulations with Ansys Fluent.",
+          "Aerodynamic optimization of components."
+        ],
+        "date": "2021 – 2022"
+      }
+    ]
+  },
   "contact": {
     "title": "Let's bring your ideas to life.",
     "subtitle": "Turning your vision into reality",
