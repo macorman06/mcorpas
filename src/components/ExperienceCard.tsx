@@ -19,7 +19,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
   date,
 }) => {
   return (
-    <div className="relative flex flex-col md:flex-row bg-gray-50 dark:bg-gray-800 rounded-xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+    <div className="relative flex flex-col md:flex-row bg-gray-50 dark:bg-gray-800 rounded-xl p-6 shadow-2xl hover:shadow-xl transition-shadow duration-300">
       {/* Fecha arriba a la derecha */}
       <span className="absolute top-4 right-4 inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-3 py-1 rounded-full font-medium">
         {date}
