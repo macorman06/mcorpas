@@ -1,41 +1,44 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import { Briefcase, Users, Flag, FileText } from 'lucide-react';
 import ExperienceCard from './ExperienceCard';
 
 const Experience = () => {
-  const { t } = useTranslation();
-
   const experienceData = [
     {
       icon: Briefcase,
       title: "Cisneria Engineering",
-      description: "Aquí irá la descripción de Cisneria...",
+      description:
+        "Backend Developer en Tail Assigner, una herramienta de optimización para asignación de aeronaves. Soporte para Vueling y Air Nostrum.",
       items: [
-        "Responsabilidad 1",
-        "Responsabilidad 2",
-        "Responsabilidad 3"
+        "Desarrollo de APIs en Python",
+        "Automatización de procesos de planificación",
+        "Consultas y análisis de datos en SQL",
+        "Colaboración con frontend Angular"
       ],
     },
     {
       icon: Users,
-      title: "Centro Juvenil",
-      description: "Aquí irá la descripción del centro juvenil...",
+      title: "Centro Juvenil Salesianos Parla",
+      description:
+        "Animador y monitor de ocio educativo desde 2018. Coordinación de actividades para jóvenes, trabajo en equipo y voluntariado salesiano.",
       items: [
-        "Responsabilidad 1",
-        "Responsabilidad 2",
-        "Responsabilidad 3"
+        "Organización de actividades de tiempo libre",
+        "Mentoría y acompañamiento de jóvenes",
+        "Gestión de equipos de animadores",
+        "Trabajo colaborativo y voluntariado"
       ],
     },
     {
       icon: Flag,
-      title: "Ü Motorsport",
-      description: "Aquí irá la descripción de Ü Motorsport...",
+      title: "Ü Motorsport - URJC",
+      description:
+        "Aerodynamics Designer en el equipo Formula Student. Diseño y simulación de piezas para monoplazas eléctricos.",
       items: [
-        "Responsabilidad 1",
-        "Responsabilidad 2",
-        "Responsabilidad 3"
+        "Diseño CAD con SolidWorks",
+        "Simulaciones CFD con Ansys Fluent",
+        "Optimización aerodinámica de componentes",
+        "Colaboración multidisciplinar"
       ],
     },
   ];
@@ -45,10 +48,10 @@ const Experience = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-left mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">
-            {t('skills.title') || "Mi Experiencia"}
+            Mi Experiencia
           </h2>
           <p className="text-base text-gray-600 dark:text-gray-300 text-left">
-            {t('skills.subtitle') || "Un resumen de mi trayectoria profesional, voluntaria y académica."}
+            Un resumen de mi trayectoria profesional, voluntaria y académica.
           </p>
         </div>
 
@@ -70,7 +73,7 @@ const Experience = () => {
             className="inline-flex items-center px-4 py-1.5 border border-gray-600 text-sm font-medium rounded-lg text-white bg-black hover:bg-gray-900 transition-colors"
           >
             <FileText className="h-6 w-5 mr-2" />
-            {t('hero.viewProjects') || "Ver Proyectos"}
+            Ver Proyectos
           </Link>
         </div>
       </div>
