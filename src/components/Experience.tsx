@@ -17,7 +17,7 @@ const Experience = () => {
         "Consultas y análisis de datos en SQL.",
         "Colaboración con frontend Angular."
       ],
-      date: "2022 – Presente",
+      date: "2023 – Presente",
     },
     {
       icon: Users,
