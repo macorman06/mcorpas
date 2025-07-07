@@ -44,7 +44,7 @@ const Experience = () => {
             className="inline-flex items-center px-4 py-1.5 border border-gray-600 text-sm font-medium rounded-lg text-white bg-black hover:bg-gray-900 transition-colors"
           >
             <span className="fi fi-es w-5 h-5"></span>
-            <span className="ml-2">Ver CV Español</span>
+            <span className="ml-2">Ver CV</span>
           </a>
         
           <a
@@ -54,7 +54,7 @@ const Experience = () => {
             className="inline-flex items-center px-4 py-1.5 border border-gray-600 text-sm font-medium rounded-lg text-white bg-black hover:bg-gray-900 transition-colors"
           >
             <span className="fi fi-gb w-5 h-5"></span>
-            <span className="ml-2">View CV English</span>
+            <span className="ml-2">View CV</span>
           </a>
         </div>
 
