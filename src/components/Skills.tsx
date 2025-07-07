@@ -25,15 +25,31 @@ const Skills = () => {
       title: t('skills.toolsIUse'),
       description: t('skills.toolsIUseDesc'),
       items: [
-        { icon: 'logos:react', text: 'React' },
-        { icon: 'logos:tailwindcss-icon', text: 'Tailwind CSS' },
-        { icon: 'logos:typescript-icon', text: 'TypeScript' },
-        { icon: 'logos:python', text: 'Python' },
-        { icon: 'logos:postgresql', text: 'PostgreSQL' },
-        { icon: 'logos:postman-icon', text: 'Postman' },
-        { icon: 'logos:figma', text: 'Figma' },
-        { icon: 'logos:adobe-illustrator', text: 'Adobe Illustrator' },
-        { icon: 'simple-icons:autodesk', text: 'Fusion 360' } // Usa Autodesk como genérico para Fusion
+        {
+          category: 'Frontend',
+          icons: [
+            { icon: 'logos:react', name: 'React' },
+            { icon: 'logos:tailwindcss-icon', name: 'Tailwind CSS' },
+            { icon: 'logos:typescript-icon', name: 'TypeScript' }
+          ]
+        },
+        {
+          category: 'Backend',
+          icons: [
+            { icon: 'logos:python', name: 'Python' },
+            { icon: 'logos:postgresql', name: 'PostgreSQL' },
+            { icon: 'logos:postman-icon', name: 'Postman' },
+            { icon: 'logos:api', name: 'ApiDog' }
+          ]
+        },
+        {
+          category: 'Diseño',
+          icons: [
+            { icon: 'logos:figma', name: 'Figma' },
+            { icon: 'logos:adobe-illustrator', name: 'Adobe Illustrator' },
+            { icon: 'simple-icons:autodesk', name: 'Fusion 360' }
+          ]
+        }
       ]
     },
     {
@@ -76,26 +92,41 @@ const Skills = () => {
               <p className="text-gray-600 dark:text-gray-300 mb-6">
                 {skill.description}
               </p>
-              <ul className="space-y-3">
-                {skill.items.map((item, itemIndex) => (
-                  <li
-                    key={itemIndex}
-                    className="flex items-center space-x-3 text-gray-700 dark:text-gray-300"
-                  >
-                    {typeof item === 'object' ? (
-                      <>
-                        <Icon icon={item.icon} className="w-5 h-5 flex-shrink-0" />
-                        <span>{item.text}</span>
-                      </>
-                    ) : (
-                      <>
-                        <span className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full flex-shrink-0"></span>
-                        <span>{item}</span>
-                      </>
-                    )}
-                  </li>
-                ))}
-              </ul>
+
+              {/* Render agrupado solo para herramientas */}
+              {skill.title === t('skills.toolsIUse') ? (
+                <div className="space-y-6">
+                  {skill.items.map((group, groupIndex) => (
+                    <div key={groupIndex}>
+                      <h4 className="text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
+                        {group.category}
+                      </h4>
+                      <div className="flex flex-wrap gap-4">
+                        {group.icons.map((tool, toolIndex) => (
+                          <Icon
+                            key={toolIndex}
+                            icon={tool.icon}
+                            className="w-8 h-8"
+                            title={tool.name}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <ul className="space-y-3">
+                  {skill.items.map((item, itemIndex) => (
+                    <li
+                      key={itemIndex}
+                      className="flex items-start text-gray-700 dark:text-gray-300"
+                    >
+                      <span className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           ))}
         </div>
