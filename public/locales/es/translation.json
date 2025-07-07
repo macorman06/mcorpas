@@ -44,7 +44,46 @@
       "responsive": "Simulación y Videojuegos",
       "wireframes": "Aviones, Carreras, Impresión 3D, Programación"
     }
-
+  },
+  "experience": {
+    "title": "Mi Experiencia",
+    "subtitle": "De la ingeniería al voluntariado: soluciones prácticas y trabajo con personas.",
+    "jobs": [
+      {
+        "title": "Backend Developer",
+        "company": "Cisneria Engineering",
+        "description": "Desarrollo backend en Tail Assigner, una herramienta de optimización para asignación de aeronaves. Soporte a Vueling y Air Nostrum.",
+        "items": [
+          "Desarrollo de APIs en Python.",
+          "Automatización de procesos de planificación.",
+          "Consultas y análisis de datos en SQL.",
+          "Colaboración con frontend Angular."
+        ],
+        "date": "2023 – Presente"
+      },
+      {
+        "title": "Monitor de tiempo libre y catequista",
+        "company": "Juveliber | Salesianos Parla",
+        "description": "Monitor de ocio educativo y voluntariado. Gestión de actividades para jóvenes, catequesis y trabajo en equipo.",
+        "items": [
+          "Organización de actividades de tiempo libre.",
+          "Acompañamiento de jóvenes y adolescentes.",
+          "Voluntariado en proyectos salesianos."
+        ],
+        "date": "2018 – Presente"
+      },
+      {
+        "title": "Aerodynamics Designer",
+        "company": "Ü Motorsport URJC",
+        "description": "Diseñador de aerodinámica para monoplazas de Formula Student. Diseño CAD y simulaciones CFD.",
+        "items": [
+          "Diseño de piezas con SolidWorks.",
+          "Simulación CFD con Ansys Fluent.",
+          "Optimización aerodinámica de componentes."
+        ],
+        "date": "2021 – 2022"
+      }
+    ]
   },
   "contact": {
     "title": "Hagamos realidad tus ideas.",
