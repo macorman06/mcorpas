@@ -39,7 +39,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
       </p>
 
       {/* Descripción */}
-      <p className="text-gray-300 dark:text-gray-800 mb-4">{description}</p>
+      <p className="text-gray-300 dark:text-gray-400 mb-4">{description}</p>
 
       {/* Tareas */}
       <ul className="space-y-2">
