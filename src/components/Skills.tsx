@@ -50,6 +50,13 @@ const Skills = () => {
             { icon: 'logos:adobe-illustrator', name: 'Adobe Illustrator' },
             { icon: 'devicon:fusion', name: 'Fusion 360' }
           ]
+        },
+        {
+          category: "Herramientas de Desarrollo",
+          icons: [
+            { icon: "devicon:vscode", name: "VS Code" },
+            { icon: "devicon:pycharm", name: "PyCharm" }
+          ]
         }
       ]
     },
