@@ -26,7 +26,7 @@ const Hero = () => {
             </h1>
             <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 dark:text-white mt-4">
               <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                Ingeniero Aeroespacial
+                {t('hero.title')}
               </span>
             </h2>
           </div>
