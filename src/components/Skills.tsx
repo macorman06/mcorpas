@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Code, Layers, Smartphone, Database, Settings, Palette, FileText } from 'lucide-react';
+import { Icon } from '@iconify/react';
+import { Code, Layers, Palette, FileText } from 'lucide-react';
 
 const Skills = () => {
   const { t } = useTranslation();
@@ -24,9 +25,15 @@ const Skills = () => {
       title: t('skills.toolsIUse'),
       description: t('skills.toolsIUseDesc'),
       items: [
-        `${t('skills.tools.frontend')} ${t('skills.tools.frontendList')}`,
-        `${t('skills.tools.backend')} ${t('skills.tools.backendList')}`,
-        `${t('skills.tools.design')} ${t('skills.tools.designList')}`
+        { icon: 'logos:react', text: 'React' },
+        { icon: 'logos:tailwindcss-icon', text: 'Tailwind CSS' },
+        { icon: 'logos:typescript-icon', text: 'TypeScript' },
+        { icon: 'logos:python', text: 'Python' },
+        { icon: 'logos:postgresql', text: 'PostgreSQL' },
+        { icon: 'logos:postman-icon', text: 'Postman' },
+        { icon: 'logos:figma', text: 'Figma' },
+        { icon: 'logos:adobe-illustrator', text: 'Adobe Illustrator' },
+        { icon: 'simple-icons:autodesk', text: 'Fusion 360' } // Usa Autodesk como genérico para Fusion
       ]
     },
     {
@@ -73,10 +80,19 @@ const Skills = () => {
                 {skill.items.map((item, itemIndex) => (
                   <li
                     key={itemIndex}
-                    className="flex items-start text-gray-700 dark:text-gray-300"
+                    className="flex items-center space-x-3 text-gray-700 dark:text-gray-300"
                   >
-                    <span className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    {item}
+                    {typeof item === 'object' ? (
+                      <>
+                        <Icon icon={item.icon} className="w-5 h-5 flex-shrink-0" />
+                        <span>{item.text}</span>
+                      </>
+                    ) : (
+                      <>
+                        <span className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full flex-shrink-0"></span>
+                        <span>{item}</span>
+                      </>
+                    )}
                   </li>
                 ))}
               </ul>
