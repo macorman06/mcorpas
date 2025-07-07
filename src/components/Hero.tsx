@@ -31,9 +31,10 @@ const Hero = () => {
             </h2>
           </div>
         </div>
-        <p className="mt-6 text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed text-center md:text-left">
+        <p className="mt-6 text-base md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
           {t('hero.description')}
         </p>
+
       </div>
 
 
