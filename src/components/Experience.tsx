@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Briefcase, Users, FlagCheckered, FileText } from 'lucide-react';
+import { Briefcase, Users, Flag, FileText } from 'lucide-react';
 import ExperienceCard from './ExperienceCard';
 
 const Experience = () => {
@@ -29,7 +29,7 @@ const Experience = () => {
       ],
     },
     {
-      icon: FlagCheckered,
+      icon: Flag,
       title: "Ü Motorsport",
       description: "Aquí irá la descripción de Ü Motorsport...",
       items: [
