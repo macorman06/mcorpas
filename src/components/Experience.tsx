@@ -22,7 +22,7 @@ const Experience = () => {
     {
       icon: Users,
       title: "Monitor de tiempo libre y catequista",
-      company: "Centro Juvenil Salesianos Parla",
+      company: "Juveliber | Salesianos Parla",
       description:
         "Monitor de ocio educativo y voluntariado. Gestión de actividades para jóvenes, catequesis y trabajo en equipo.",
       items: [
