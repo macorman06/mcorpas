@@ -55,7 +55,7 @@ const Experience = () => {
             Mi Experiencia
           </h2>
           <p className="text-base text-gray-600 dark:text-gray-300 text-left">
-            Un resumen de mi trayectoria profesional, voluntaria y académica.
+            De la ingeniería al voluntariado: soluciones prácticas y trabajo con personas.
           </p>
         </div>
 
