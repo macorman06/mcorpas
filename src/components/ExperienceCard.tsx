@@ -34,7 +34,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
       </div>
 
       {/* Empresa debajo */}
-      <p className="text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">
+      <p className="text-sm font-medium text-gray-600 dark:text-gray-600 mb-2">
         {company}
       </p>
 
