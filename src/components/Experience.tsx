@@ -75,11 +75,11 @@ const Experience = () => {
 
         <div className="text-center mt-16">
           <Link
-            to="/contact"
+            to="/projects"
             className="inline-flex items-center px-4 py-1.5 border border-gray-600 text-sm font-medium rounded-lg text-white bg-black hover:bg-gray-900 transition-colors"
           >
-            <Mail className="h-6 w-5 mr-2" />
-            {t('hero.contactMe')}
+            <FileText className="h-6 w-5 mr-2" />
+            {t('hero.viewProjects')}
           </Link>
         </div>
       </div>
