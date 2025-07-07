@@ -35,7 +35,7 @@ const Experience = () => {
     {
       icon: Flag,
       title: "Aerodynamics Designer",
-      company: "Ü Motorsport – URJC",
+      company: "Ü Motorsport URJC",
       description:
         "Diseñador de aerodinámica para monoplazas de Formula Student. Diseño CAD y simulaciones CFD.",
       items: [
