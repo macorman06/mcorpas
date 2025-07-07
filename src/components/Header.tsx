@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
+import { Dropdown } from 'primereact/dropdown';
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -17,9 +18,10 @@ const Header = () => {
     );
   };
 
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
-  };
+  const languages = [
+    { label: 'Español', value: 'es' },
+    { label: 'English', value: 'en' },
+  ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b dark:border-gray-700">
@@ -67,14 +69,14 @@ const Header = () => {
           </nav>
 
           <div className="flex items-center space-x-4">
-            <select
+            <Dropdown
               value={i18n.language}
-              onChange={(e) => changeLanguage(e.target.value)}
-              className="border border-gray-300 dark:border-gray-600 rounded px-2 py-1 text-sm bg-transparent text-gray-700 dark:text-gray-300"
-            >
-              <option value="es">ES</option>
-              <option value="en">EN</option>
-            </select>
+              options={languages}
+              onChange={(e) => i18n.changeLanguage(e.value)}
+              optionLabel="label"
+              placeholder="Idioma"
+              className="w-28"
+            />
 
             <button
               onClick={toggleTheme}
