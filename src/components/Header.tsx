@@ -1,16 +1,24 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Moon, Sun, Code } from 'lucide-react';
+import { Moon, Sun } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
 
 const Header = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const location = useLocation();
   const { theme, toggleTheme } = useTheme();
 
   const isActive = (path: string) => {
-    return location.pathname === path || location.pathname === `/es${path}` || location.pathname === `/en${path}`;
+    return (
+      location.pathname === path ||
+      location.pathname === `/es${path}` ||
+      location.pathname === `/en${path}`
+    );
+  };
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
   };
 
   return (
@@ -24,13 +32,13 @@ const Header = () => {
             <i className="pi pi-send text-blue-600 dark:text-blue-400 text-xl"></i>
             <span>MCorpas</span>
           </Link>
-          
+
           <nav className="hidden md:flex items-center space-x-8">
             <Link
               to="/"
               className={`text-sm font-medium transition-colors ${
-                isActive('/') 
-                  ? 'text-blue-600 dark:text-blue-400' 
+                isActive('/')
+                  ? 'text-blue-600 dark:text-blue-400'
                   : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
               }`}
             >
@@ -39,8 +47,8 @@ const Header = () => {
             <Link
               to="/projects"
               className={`text-sm font-medium transition-colors ${
-                isActive('/projects') 
-                  ? 'text-blue-600 dark:text-blue-400' 
+                isActive('/projects')
+                  ? 'text-blue-600 dark:text-blue-400'
                   : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
               }`}
             >
@@ -49,8 +57,8 @@ const Header = () => {
             <Link
               to="/contact"
               className={`text-sm font-medium transition-colors ${
-                isActive('/contact') 
-                  ? 'text-blue-600 dark:text-blue-400' 
+                isActive('/contact')
+                  ? 'text-blue-600 dark:text-blue-400'
                   : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
               }`}
             >
@@ -58,16 +66,27 @@ const Header = () => {
             </Link>
           </nav>
 
-          <button
-            onClick={toggleTheme}
-            className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-          >
-            {theme === 'light' ? (
-              <Moon className="h-5 w-5 text-gray-700 dark:text-gray-300" />
-            ) : (
-              <Sun className="h-5 w-5 text-gray-700 dark:text-gray-300" />
-            )}
-          </button>
+          <div className="flex items-center space-x-4">
+            <select
+              value={i18n.language}
+              onChange={(e) => changeLanguage(e.target.value)}
+              className="border border-gray-300 dark:border-gray-600 rounded px-2 py-1 text-sm bg-transparent text-gray-700 dark:text-gray-300"
+            >
+              <option value="es">ES</option>
+              <option value="en">EN</option>
+            </select>
+
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+            >
+              {theme === 'light' ? (
+                <Moon className="h-5 w-5 text-gray-700 dark:text-gray-300" />
+              ) : (
+                <Sun className="h-5 w-5 text-gray-700 dark:text-gray-300" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
     </header>
