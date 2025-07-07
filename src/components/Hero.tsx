@@ -14,7 +14,7 @@ const Hero = () => {
             <img
               src="/profile/avatar_mcorpas.png"
               alt="Marcos Corpas"
-              className="w-48 h-48 rounded-full"
+              className="w-12 h-48 rounded-full"
             />
             <div className="text-left">
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white">
