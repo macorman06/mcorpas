@@ -47,7 +47,7 @@ const Skills = () => {
           icons: [
             { icon: 'logos:figma', name: 'Figma' },
             { icon: 'logos:adobe-illustrator', name: 'Adobe Illustrator' },
-            { icon: 'devicon:fusion360', name: 'Fusion 360' }
+            { icon: 'logos:fusion360', name: 'Fusion 360' }
           ]
         }
       ]
