@@ -40,9 +40,9 @@ const Experience = () => {
       description:
         "Diseñador de aerodinámica para monoplazas de Formula Student. Diseño CAD y simulaciones CFD.",
       items: [
-        "Diseño de piezas con SolidWorks",
-        "Simulación CFD con Ansys Fluent",
-        "Optimización aerodinámica de componentes",
+        "Diseño de piezas con SolidWorks.",
+        "Simulación CFD con Ansys Fluent.",
+        "Optimización aerodinámica de componentes.",
       ],
       date: "2021 – 2022",
     },
