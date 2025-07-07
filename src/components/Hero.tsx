@@ -17,13 +17,14 @@ const Hero = () => {
             className="w-40 h-40 md:w-48 md:h-48 rounded-full mx-auto md:mx-0"
           />
           <div>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white">
+            <h1 className="text-3xl md:text-6xl font-bold text-gray-900 dark:text-white">
               Hey, soy{' '}
               <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
                 Marcos
               </span>{' '}
               ✨
             </h1>
+
             <h2 className="text-3xl md:text-6xl font-semibold text-gray-900 dark:text-white mt-4">
               <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
                 Ingeniero Aeroespacial
