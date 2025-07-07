@@ -18,7 +18,7 @@ const Hero = () => {
           />
           <div>
             <h1 className="text-3xl md:text-6xl font-bold text-gray-900 dark:text-white">
-              {t('hero.viewProjects')}
+              {t('hero.greeting')}
               <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
                 Marcos
               </span>{' '}
