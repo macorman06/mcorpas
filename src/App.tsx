@@ -1,3 +1,6 @@
+import 'primereact/resources/themes/saga-blue/theme.css'; // O el tema que uses
+import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
 import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
