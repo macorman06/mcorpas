@@ -16,7 +16,7 @@ const App = () => {
       <div className="flex flex-col min-h-screen bg-white dark:bg-gray-900 transition-colors">
         <Suspense fallback={<div>Loading...</div>}>
           <Header />
-          <main className="pt-18 flex-grow w-auto">
+          <main className="pt-18 flex-grow w-screen">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/projects" element={<ProjectsPage />} />
