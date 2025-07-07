@@ -39,7 +39,7 @@ const Skills = () => {
             { icon: 'logos:python', name: 'Python' },
             { icon: 'logos:postgresql', name: 'PostgreSQL' },
             { icon: 'logos:postman-icon', name: 'Postman' },
-            { icon: 'logos:api', name: 'ApiDog' }
+            { icon: 'logos:apidog-icon', name: 'ApiDog' }
           ]
         },
         {
