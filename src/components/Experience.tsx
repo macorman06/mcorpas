@@ -24,7 +24,7 @@ const Experience = () => {
       title: "Monitor de tiempo libre y catequista",
       company: "Centro Juvenil Salesianos Parla",
       description:
-        "Animador de ocio educativo y voluntariado desde 2018. Coordinación de actividades para jóvenes, mentoría y trabajo en equipo.",
+        "Monitor de ocio educativo y voluntariado. Gestión de actividades para jóvenes, catequesis y trabajo en equipo.",
       items: [
         "Organización de actividades de tiempo libre.",
         "Acompañamiento de jóvenes y adolescentes.",
