@@ -68,29 +68,34 @@ const Header = () => {
           </nav>
 
           <div className="flex items-center space-x-4">
-            <button
-              onClick={() => changeLanguage('es')}
-              className="
-                p-2 rounded-lg 
-                bg-gray-100 dark:bg-gray-800 
-                hover:bg-gray-200 dark:hover:bg-gray-700 
-                transition-colors shadow-sm
-              "
-            >
-              <span className="fi fi-es w-5 h-5"></span>
-            </button>
-
-            <button
-              onClick={() => changeLanguage('en')}
-              className="
-                p-2 rounded-lg 
-                bg-gray-100 dark:bg-gray-800 
-                hover:bg-gray-200 dark:hover:bg-gray-700 
-                transition-colors shadow-sm
-              "
-            >
-              <span className="fi fi-gb w-5 h-5"></span>
-            </button>
+            <div className="relative">
+              <select
+                value={i18n.language}
+                onChange={(e) => changeLanguage(e.target.value)}
+                className="
+                  appearance-none
+                  pl-8 pr-4 py-2
+                  text-sm rounded-lg
+                  bg-gray-100 dark:bg-gray-800
+                  text-gray-900 dark:text-gray-100
+                  border border-transparent
+                  focus:outline-none focus:ring-2 focus:ring-blue-500
+                  hover:bg-gray-200 dark:hover:bg-gray-700
+                  transition-colors shadow-sm
+                "
+              >
+                <option value="es">🇪🇸 Español</option>
+                <option value="en">🇬🇧 English</option>
+              </select>
+              {/* Flecha del desplegable */}
+              <div className="pointer-events-none absolute inset-y-0 left-2 flex items-center">
+                {i18n.language === 'es' ? (
+                  <span className="fi fi-es w-5 h-5"></span>
+                ) : (
+                  <span className="fi fi-gb w-5 h-5"></span>
+                )}
+              </div>
+            </div>
 
             <button
               onClick={toggleTheme}
