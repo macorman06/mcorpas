@@ -8,7 +8,7 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-purple-900/20 dark:to-blue-900/20">
-    <div className="w-full max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-0 overflow-x-hidden">
+    <div className="w-full max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 sm:pt-0 overflow-x-hidden">
         <div className="mb-8 w-full">
         <div class="flex flex-wrap md:flex-nowrap items-center gap-6">
             <img
