@@ -54,7 +54,6 @@ const Skills = () => {
           icons: [
             { icon: "devicon:vscode", name: "VS Code" },
             { icon: "devicon:pycharm", name: "PyCharm" },
-            { icon: 'logos:postman-icon', name: 'Postman' },
             { icon: 'logos:apidog-icon', name: 'ApiDog' },
           ]
         }
