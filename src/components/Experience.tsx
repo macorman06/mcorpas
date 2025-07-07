@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Briefcase, Users, Flag, FileText } from 'lucide-react';
+import { FileText, Briefcase, Users, Flag } from 'lucide-react';
 import ExperienceCard from './ExperienceCard';
 
 const Experience = () => {
@@ -72,8 +71,18 @@ const Experience = () => {
             />
           ))}
         </div>
-      </div>
 
+        <div className="text-center mt-16">
+          <a
+            href="/CV_MarcosCorpas.pdf"
+            download
+            className="inline-flex items-center px-4 py-1.5 border border-gray-600 text-sm font-medium rounded-lg text-white bg-black hover:bg-gray-900 transition-colors"
+          >
+            <FileText className="h-6 w-5 mr-2" />
+            Descargar CV
+          </a>
+        </div>
+      </div>
     </section>
   );
 };
