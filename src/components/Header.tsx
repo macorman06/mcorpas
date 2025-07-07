@@ -70,11 +70,24 @@ const Header = () => {
             <select
               value={i18n.language}
               onChange={(e) => changeLanguage(e.target.value)}
-              className="appearance-none border border-gray-300 dark:border-gray-600 rounded px-2 py-1 text-sm bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none"
+              className="
+                appearance-none
+                rounded-md 
+                px-2 py-1
+                text-sm 
+                bg-white dark:bg-gray-800
+                text-gray-900 dark:text-gray-100
+                border border-transparent 
+                focus:border-blue-500 
+                focus:ring-2 focus:ring-blue-500
+                transition-colors
+                shadow-sm
+              "
             >
-              <option value="es" className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100">ES</option>
-              <option value="en" className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100">EN</option>
+              <option value="es">ES</option>
+              <option value="en">EN</option>
             </select>
+
 
 
             <button
