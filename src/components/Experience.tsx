@@ -38,12 +38,11 @@ const Experience = () => {
       title: "Aerodynamics Designer",
       company: "Ü Motorsport – URJC",
       description:
-        "Diseñador de aerodinámica para monoplazas eléctricos de Formula Student. Diseño CAD y simulaciones CFD.",
+        "Diseñador de aerodinámica para monoplazas de Formula Student. Diseño CAD y simulaciones CFD.",
       items: [
         "Diseño de piezas con SolidWorks",
         "Simulación CFD con Ansys Fluent",
         "Optimización aerodinámica de componentes",
-        "Trabajo en equipo multidisciplinar"
       ],
       date: "2021 – 2022",
     },
