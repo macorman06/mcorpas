@@ -84,7 +84,19 @@ const Header = () => {
                 shadow-sm
               "
             >
-              <option value="es">ES</option>
+              <option className="
+                appearance-none
+                px-2 py-1
+                text-sm
+                rounded-lg
+                bg-gray-100 dark:bg-gray-800
+                text-gray-900 dark:text-gray-100
+                border border-transparent
+                focus:outline-none focus:ring-2 focus:ring-blue-500
+                hover:bg-gray-200 dark:hover:bg-gray-700
+                transition-colors
+                shadow-sm
+              " value="es">ES</option>
               <option value="en">EN</option>
             </select>
           
