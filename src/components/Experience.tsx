@@ -12,10 +12,10 @@ const Experience = () => {
       description:
         "Desarrollo backend en Tail Assigner, una herramienta de optimización para asignación de aeronaves. Soporte a Vueling y Air Nostrum.",
       items: [
-        "Desarrollo de APIs en Python",
-        "Automatización de procesos de planificación",
-        "Consultas y análisis de datos en SQL",
-        "Colaboración con frontend Angular"
+        "Desarrollo de APIs en Python.",
+        "Automatización de procesos de planificación.",
+        "Consultas y análisis de datos en SQL.",
+        "Colaboración con frontend Angular."
       ],
       date: "2022 – Presente",
     },
