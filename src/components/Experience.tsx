@@ -21,7 +21,7 @@ const Experience = () => {
     },
     {
       icon: Users,
-      title: "Animador y Monitor",
+      title: "Monitor de tiempo libre y catequista",
       company: "Centro Juvenil Salesianos Parla",
       description:
         "Animador de ocio educativo y voluntariado desde 2018. Coordinación de actividades para jóvenes, mentoría y trabajo en equipo.",
