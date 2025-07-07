@@ -59,4 +59,60 @@ const Header = () => {
               to="/contact"
               className={`text-sm font-medium transition-colors ${
                 isActive('/contact')
-                  ? 'text-blue-600 dark:text-blue-400
+                  ? 'text-blue-600 dark:text-blue-400'
+                  : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+              }`}
+            >
+              {t('nav.contact')}
+            </Link>
+          </nav>
+
+          <div className="flex items-center space-x-4">
+            <button
+              onClick={() => changeLanguage('es')}
+              className="
+                p-2 rounded-lg 
+                bg-gray-100 dark:bg-gray-800 
+                hover:bg-gray-200 dark:hover:bg-gray-700 
+                transition-colors shadow-sm
+              "
+            >
+              <span className="fi fi-es w-5 h-5"></span>
+            </button>
+
+            <button
+              onClick={() => changeLanguage('en')}
+              className="
+                p-2 rounded-lg 
+                bg-gray-100 dark:bg-gray-800 
+                hover:bg-gray-200 dark:hover:bg-gray-700 
+                transition-colors shadow-sm
+              "
+            >
+              <span className="fi fi-gb w-5 h-5"></span>
+            </button>
+
+            <button
+              onClick={toggleTheme}
+              className="
+                p-2 rounded-lg
+                bg-gray-100 dark:bg-gray-800
+                hover:bg-gray-200 dark:hover:bg-gray-700
+                text-gray-700 dark:text-gray-300
+                transition-colors shadow-sm
+              "
+            >
+              {theme === 'light' ? (
+                <Moon className="h-5 w-5" />
+              ) : (
+                <Sun className="h-5 w-5" />
+              )}
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
