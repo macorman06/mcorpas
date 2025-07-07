@@ -1,5 +1,5 @@
 import React from 'react';
-import { Briefcase, Users, FlagCheckered } from 'lucide-react';
+import { Briefcase, Users, Flag } from 'lucide-react';
 import ExperienceCard from './ExperienceCard';
 
 const Experience = () => {
