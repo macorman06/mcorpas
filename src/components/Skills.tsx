@@ -38,8 +38,6 @@ const Skills = () => {
           icons: [
             { icon: 'logos:python', name: 'Python' },
             { icon: 'logos:postgresql', name: 'PostgreSQL' },
-            { icon: 'logos:postman-icon', name: 'Postman' },
-            { icon: 'logos:apidog-icon', name: 'ApiDog' },
             { icon: 'skill-icons:git', name: 'Git' }
           ]
         },
@@ -52,10 +50,12 @@ const Skills = () => {
           ]
         },
         {
-          category: "Herramientas de Desarrollo",
+          category: "Herramientas",
           icons: [
             { icon: "devicon:vscode", name: "VS Code" },
-            { icon: "devicon:pycharm", name: "PyCharm" }
+            { icon: "devicon:pycharm", name: "PyCharm" },
+            { icon: 'logos:postman-icon', name: 'Postman' },
+            { icon: 'logos:apidog-icon', name: 'ApiDog' },
           ]
         }
       ]
