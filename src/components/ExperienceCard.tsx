@@ -46,7 +46,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
         {items.map((item, index) => (
           <li
             key={index}
-            className="flex items-start text-gray-700 dark:text-gray-100"
+            className="flex items-start text-gray-700 dark:text-gray-200"
           >
             <span className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
             {item}
