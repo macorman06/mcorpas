@@ -26,10 +26,9 @@ const Experience = () => {
       description:
         "Animador de ocio educativo y voluntariado desde 2018. Coordinación de actividades para jóvenes, mentoría y trabajo en equipo.",
       items: [
-        "Organización de actividades de tiempo libre",
-        "Acompañamiento de jóvenes y adolescentes",
-        "Gestión de equipos de animadores",
-        "Voluntariado en proyectos salesianos"
+        "Organización de actividades de tiempo libre.",
+        "Acompañamiento de jóvenes y adolescentes.",
+        "Voluntariado en proyectos salesianos."
       ],
       date: "2018 – Presente",
     },
