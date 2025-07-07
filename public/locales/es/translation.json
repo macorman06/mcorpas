@@ -50,7 +50,7 @@
     "subtitle": "De la ingeniería al voluntariado: soluciones prácticas y trabajo con personas.",
     "jobs": [
       {
-        "title": "Backend Developer",
+        "title": "Desarrollador backend",
         "company": "Cisneria Engineering",
         "description": "Desarrollo backend en Tail Assigner, una herramienta de optimización para asignación de aeronaves. Soporte a Vueling y Air Nostrum.",
         "items": [
@@ -73,7 +73,7 @@
         "date": "2018 – Presente"
       },
       {
-        "title": "Aerodynamics Designer",
+        "title": "Diseñador de aerodinámica",
         "company": "Ü Motorsport URJC",
         "description": "Diseñador de aerodinámica para monoplazas de Formula Student. Diseño CAD y simulaciones CFD.",
         "items": [
