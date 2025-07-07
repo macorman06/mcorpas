@@ -93,7 +93,6 @@ const Skills = () => {
                 {skill.description}
               </p>
 
-              {/* Render agrupado solo para herramientas */}
               {skill.title === t('skills.toolsIUse') ? (
                 <div className="space-y-6">
                   {skill.items.map((group, groupIndex) => (
@@ -103,12 +102,15 @@ const Skills = () => {
                       </h4>
                       <div className="flex flex-wrap gap-4">
                         {group.icons.map((tool, toolIndex) => (
-                          <Icon
-                            key={toolIndex}
-                            icon={tool.icon}
-                            className="w-8 h-8"
-                            title={tool.name}
-                          />
+                          <div key={toolIndex} className="relative group">
+                            <Icon
+                              icon={tool.icon}
+                              className="w-8 h-8"
+                            />
+                            <span className="absolute bottom-full mb-2 hidden group-hover:flex px-2 py-1 rounded bg-gray-800 text-white text-xs whitespace-nowrap">
+                              {tool.name}
+                            </span>
+                          </div>
                         ))}
                       </div>
                     </div>
