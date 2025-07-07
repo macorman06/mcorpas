@@ -12,39 +12,35 @@
     "viewProjects": "Ver Proyectos"
   },
   "skills": {
-    "title": "Sobre mi",
-    "subtitle": "Desde pequeño disfruto creando y compartiendo. Mis proyectos combinan ideas creativas con resultados prácticos para el día a día, desde diseños hechos a mano hasta desarrollo de aplicaciones y software.",
-    
-    "whatICanDo": "Qué puedo hacer",
-    "whatICanDoDesc": "Puedo ayudar a desarrollar soluciones que harán crecer tu negocio:",
-    "services": {
-      "uiux": "Diseño UI/UX",
-      "fullstack": "Modelos de optimización",
-      "mobile": "Desarrollo de webs",
-      "database": "Diseño de lámparas impresas en 3D",
-      "api": "Integración de APIs"
-    },
-    
-    "toolsIUse": "Mis herramientas",
-    "toolsIUseDesc": "Uso las últimas herramientas y tecnologías para construir productos funcionales y escalables:",
-    "tools": {
-      "frontend": "Frontend:",
-      "backend": "Backend:",
-      "design": "Diseño:",
-      "frontendList": "Tailwind CSS, React, TypeScript",
-      "backendList": "Python, PostgreSQL, Postman, ApiDog",
-      "designList": "Figma, Fusion360, Adobe Illustrator"
-    },
-    
-    "uiuxDesign": "Aficiones",
-    "uiuxDesignDesc": "Me encanta el deporte, la montaña, la simulación, los videojuegos, los aviones, las carreras, la impresión 3D y la programación.",
-    "designSkills": {
-      "userCentered": "Fórmula 1",
-      "modern": "Montaña y Naturaleza",
-      "responsive": "Simulación y Videojuegos",
-      "wireframes": "Aviones, Carreras, Impresión 3D, Programación"
-    }
+    "title": "Experiencia",
+    "subtitle": "Un resumen de mi trayectoria profesional, voluntaria y universitaria.",
 
+    "cisneriaTitle": "Cisneria Engineering",
+    "cisneriaDesc": "Backend Developer (Python) para Tail Assigner. Optimización de asignación de aeronaves para Vueling y Air Nostrum. Análisis de datos y automatización de procesos.",
+    "cisneriaItems": [
+      "Desarrollo de APIs en Python",
+      "Automatización de planificación táctica",
+      "Consultas SQL básicas",
+      "Soporte en frontend Angular"
+    ],
+
+    "juventudTitle": "Centro Juvenil Salesianos Parla",
+    "juventudDesc": "Animador juvenil y monitor de ocio educativo. Desde 2018 acompaño a jóvenes en su desarrollo personal y organizo actividades de ocio y tiempo libre.",
+    "juventudItems": [
+      "Mentoría y acompañamiento",
+      "Organización de actividades",
+      "Trabajo en equipo",
+      "Voluntariado salesiano"
+    ],
+
+    "umotorsportTitle": "Ü Motorsport - URJC",
+    "umotorsportDesc": "Aerodynamics Designer en el equipo de Formula Student. Diseño y optimización de piezas aerodinámicas para monoplazas eléctricos.",
+    "umotorsportItems": [
+      "Diseño CAD (SolidWorks)",
+      "Simulaciones CFD (Ansys Fluent)",
+      "Optimización aerodinámica",
+      "Trabajo en equipo multidisciplinar"
+    ]
   },
   "contact": {
     "title": "Hagamos realidad tus ideas.",
@@ -64,6 +60,6 @@
     "name": "Marcos Corpas",
     "location": "Basado en España",
     "rights": "Todos los derechos reservados.",
-    "designedWith": "Sitio web diseñado en Figma. Construido con Next.js, TypeScript y Tailwind CSS."
+    "designedWith": "Sitio web diseñado en Figma. Construido con React, TypeScript y Tailwind CSS."
   }
 }
