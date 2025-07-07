@@ -36,15 +36,15 @@ const Experience = () => {
           ))}
         </div>
 
-        <div className="text-center mt-16 flex flex-col md:flex-row justify-center gap-4">
+        <div className="text-center mt-16 flex flex-wrap justify-center gap-4">
           <a
             href="/CV_MarcosCorpas_ES.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-4 py-1.5 border border-gray-600 text-sm font-medium rounded-lg text-white bg-black hover:bg-gray-900 transition-colors"
           >
-            <FileText className="h-6 w-5 mr-2" />
-            Ver CV Español
+            🇪🇸
+            <span className="ml-2">Ver CV Español</span>
           </a>
           <a
             href="/CV_MarcosCorpas_EN.pdf"
@@ -52,10 +52,11 @@ const Experience = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center px-4 py-1.5 border border-gray-600 text-sm font-medium rounded-lg text-white bg-black hover:bg-gray-900 transition-colors"
           >
-            <FileText className="h-6 w-5 mr-2" />
-            View CV English
+            🇬🇧
+            <span className="ml-2">View CV English</span>
           </a>
         </div>
+
       </div>
     </section>
   );
