@@ -39,14 +39,14 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
       </p>
 
       {/* Descripción */}
-      <p className="text-gray-300 dark:text-gray-400 mb-4">{description}</p>
+      <p className="text-gray-600 dark:text-gray-300 mb-4">{description}</p>
 
       {/* Tareas */}
       <ul className="space-y-2">
         {items.map((item, index) => (
           <li
             key={index}
-            className="flex items-start text-gray-700 dark:text-gray-300"
+            className="flex items-start text-gray-700 dark:text-gray-200"
           >
             <span className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
             {item}
