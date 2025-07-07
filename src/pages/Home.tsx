@@ -18,7 +18,7 @@ const Home = () => {
       </Helmet>
       <Hero />
       <Skills />
-      <div className="border-t border-gray-200 dark:border-gray-700 my-12 mx-auto w-1/2"></div>
+      <div className="border-t border-gray-200 dark:border-gray-700 my-12 w-full"></div>
       <Experience />
 
     </>
