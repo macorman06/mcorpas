@@ -24,8 +24,7 @@ const Hero = () => {
               </span>{' '}
               ✨
             </h1>
-
-            <h2 className="text-3xl md:text-6xl font-semibold text-gray-900 dark:text-white mt-4">
+            <h2 className="text-2xl md:text-6xl font-semibold text-gray-900 dark:text-white mt-4">
               <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
                 Ingeniero Aeroespacial
               </span>
