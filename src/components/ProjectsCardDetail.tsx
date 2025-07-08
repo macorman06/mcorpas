@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { X, Instagram, Github, ExternalLink } from 'lucide-react';
+import { Instagram, Github, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Project } from '../Projects'; // Ajusta la ruta si tu interfaz está en otro sitio
+import { Project } from '../Projects';
 
 interface ProjectCardDetailProps {
   project: Project;
@@ -24,43 +24,22 @@ const ProjectCardDetail: React.FC<ProjectCardDetailProps> = ({ project, onClose 
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80">
-      <div className="relative bg-white dark:bg-gray-900 rounded-xl shadow-xl max-w-3xl w-full p-6 overflow-y-auto">
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 text-gray-500 hover:text-gray-900 dark:hover:text-white"
-        >
-          <X className="w-6 h-6" />
-        </button>
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80"
+      onClick={onClose}
+    >
+      <div
+        className="relative bg-white dark:bg-gray-900 rounded-xl shadow-xl max-w-3xl w-full p-6 overflow-y-auto"
+        onClick={(e) => e.stopPropagation()} // Evita cerrar cuando clicas dentro
+      >
+        {/* Imagen superior siempre la cover */}
+        <img
+          src={project.cover}
+          alt={project.title}
+          className="w-full h-64 object-cover rounded-lg mb-6"
+        />
 
-        {hasGallery ? (
-          <div className="relative mb-6">
-            <img
-              src={project.images[currentIndex]}
-              alt={`Slide ${currentIndex + 1}`}
-              className="w-full h-64 object-cover rounded-lg"
-            />
-            <button
-              onClick={prevSlide}
-              className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-700/50 hover:bg-gray-700 text-white rounded-full p-2"
-            >
-              &#10094;
-            </button>
-            <button
-              onClick={nextSlide}
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-700/50 hover:bg-gray-700 text-white rounded-full p-2"
-            >
-              &#10095;
-            </button>
-          </div>
-        ) : (
-          <img
-            src={project.cover}
-            alt={project.title}
-            className="w-full h-64 object-cover rounded-lg mb-4"
-          />
-        )}
-
+        {/* Info principal */}
         <div className="flex flex-wrap items-center gap-2 mb-4">
           <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
             {project.title}
@@ -92,7 +71,7 @@ const ProjectCardDetail: React.FC<ProjectCardDetailProps> = ({ project, onClose 
           ))}
         </div>
 
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-wrap gap-4 mb-6">
           {project.instagram && (
             <a
               href={project.instagram}
@@ -141,6 +120,29 @@ const ProjectCardDetail: React.FC<ProjectCardDetailProps> = ({ project, onClose 
             </>
           )}
         </div>
+
+        {/* Carrusel final */}
+        {hasGallery && (
+          <div className="relative">
+            <img
+              src={project.images[currentIndex]}
+              alt={`Slide ${currentIndex + 1}`}
+              className="w-full max-h-96 object-contain rounded-lg"
+            />
+            <button
+              onClick={prevSlide}
+              className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-700/50 hover:bg-gray-700 text-white rounded-full p-2"
+            >
+              &#10094;
+            </button>
+            <button
+              onClick={nextSlide}
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-700/50 hover:bg-gray-700 text-white rounded-full p-2"
+            >
+              &#10095;
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
