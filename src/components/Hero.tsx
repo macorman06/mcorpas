@@ -36,9 +36,9 @@ const Hero = () => {
           </p>
         </div>
 
-        <div className="flex flex-wrap w-full items-center justify-start gap-12 sm:justify-center">
+        <div className="flex flex-col sm:flex-row w-full items-center justify-center gap-6">
           {/* Botones */}
-          <div className="flex flex-wrap gap-4 justify-start sm:justify-center">
+          <div className="flex flex-wrap justify-center gap-4">
             <Link
               to="/contact"
               className="inline-flex items-center px-4 py-1.5 border border-gray-600 text-sm font-medium rounded-lg text-white bg-black hover:bg-gray-900 transition-colors"
@@ -59,7 +59,7 @@ const Hero = () => {
           <span className="hidden sm:block w-px h-6 bg-gray-400"></span>
         
           {/* Redes */}
-          <div className="flex flex-wrap space-x-8 justify-start sm:justify-center">
+          <div className="flex justify-center gap-8">
             <a href="https://github.com/macorman06/macorman06" className="text-gray-400 hover:text-white transition-colors">
               <Github className="h-6 w-6" />
             </a>
@@ -68,6 +68,7 @@ const Hero = () => {
             </a>
           </div>
         </div>
+
 
 
       </div>
