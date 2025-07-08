@@ -4,6 +4,7 @@ import { Github, Dribbble, Linkedin, Twitter } from 'lucide-react';
 
 const Footer = () => {
   const { t } = useTranslation();
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-gray-900 dark:bg-gray-950 text-white py-12">
@@ -12,7 +13,7 @@ const Footer = () => {
           <div className="mb-4 md:mb-0">
             <h3 className="text-lg font-semibold mb-2">{t('footer.name')}</h3>
             <p className="text-gray-400 text-sm">
-              © 2025 Marcos. {t('footer.rights')}
+              © {currentYear} Marcos. {t('footer.rights')}
             </p>
           </div>
         </div>
