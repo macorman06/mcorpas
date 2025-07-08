@@ -77,7 +77,7 @@ const Header = () => {
                 onChange={(e) => changeLanguage(e.target.value)}
                 className="
                   appearance-none
-                  px-2 py-2
+                  px-3 py-2
                   text-sm rounded-lg
                   bg-gray-100 dark:bg-gray-800
                   text-gray-900 dark:text-gray-100
