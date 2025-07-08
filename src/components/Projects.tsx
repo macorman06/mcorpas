@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ExternalLink, Instagram, X, Github, Filter } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import ProjectCardDetail from './ProjectCardDetail'; // Ruta correcta
+import ProjectCardDetail from 'src/components/ProjectsCardDetail.tsx'; // Ruta correcta
 
 export type ProjectStatus = 'En progreso' | 'Terminado' | 'Sin soporte';
 
