@@ -36,7 +36,7 @@ const Hero = () => {
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center justify-start gap-12 sm:justify-center">
+        <div className="flex flex-wrap w-full items-center justify-start gap-12 sm:justify-center">
           {/* Botones */}
           <div className="flex flex-wrap gap-4 justify-start sm:justify-center">
             <Link
@@ -68,6 +68,7 @@ const Hero = () => {
             </a>
           </div>
         </div>
+
 
       </div>
     </section>
