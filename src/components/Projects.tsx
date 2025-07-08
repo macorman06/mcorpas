@@ -73,13 +73,15 @@ const Projects = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">Mis proyectos</h2>
             <p className="text-base text-gray-600 dark:text-gray-300">Aquí muestro una colección de proyectos recientes.</p>
           </div>
-          <button
-            onClick={() => setSortBy(sortBy === 'date' ? 'name' : 'date')}
-            className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg"
-          >
-            <Filter className="h-5 w-5 mr-2" />
-            Ordenar por {sortBy === 'date' ? 'Nombre' : 'Fecha'}
-          </button>
+          
+            <button
+              onClick={() => setSortBy(sortBy === 'date' ? 'name' : 'date')}
+              className="inline-flex items-center px-4 py-1.5 border border-gray-600 text-sm font-medium rounded-lg text-white bg-black hover:bg-gray-900 transition-colors"
+            >
+              <Filter className="h-6 w-5 mr-2" />
+              Ordenar por {sortBy === 'date' ? 'Nombre' : 'Fecha'}
+            </button>
+
         </div>
 
         <motion.div
