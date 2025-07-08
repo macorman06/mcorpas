@@ -44,7 +44,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-purple-900/20 dark:to-blue-900/20">
+    <section className="min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat dark:bg-gradient-to-br dark:from-gray-900 dark:via-purple-900/20 dark:to-blue-900/20" style={{ backgroundImage: 'var(--tw-gradient-stops, url(/backgrounds/light_background.png))' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-28 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
