@@ -48,7 +48,10 @@ const Projects = () => {
       title: "Jesper3DMakes",
       description: "Lámparas y decoración 3D.",
       cover: "/projects/jesper/jesper_lamp_render.jpg",
-      images: [],
+      images: [
+        "/projects/jesper/jesper_lamp_extra1.jpg",
+        "/projects/jesper/jesper_lamp_extra2.jpg",
+      ],
       tags: ["3D Printing", "Design"],
       instagram: "https://www.instagram.com/jesper3d.makes/",
       date: 2020,
