@@ -37,7 +37,7 @@ const Hero = () => {
       </div>
 
 
-        <div className="flex items-center justify-left gap-12">
+        <div className="flex flex-wrap items-center justify-left gap-12">
           {/* Botones */}
           <div className="flex gap-4">
             <Link
