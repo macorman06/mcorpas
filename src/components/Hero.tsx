@@ -37,42 +37,42 @@ const Hero = () => {
       </div>
 
 
-        <div className="flex flex-wrap items-center justify-left gap-12">
-          {/* Botones */}
-          <div className="flex gap-4">
-            <Link
-              to="/contact"
-              className="inline-flex items-center px-4 py-1.5 border border-gray-600 text-sm font-medium rounded-lg text-white bg-black hover:bg-gray-900 transition-colors"
-            >
-              <Mail className="h-6 w-5 mr-2" />
-              {t('hero.contactMe')}
-            </Link>
-            <Link
-              to="/projects"
-              className="inline-flex items-center px-4 py-1.5 border border-gray-600 text-sm font-medium rounded-lg text-white bg-black hover:bg-gray-900 transition-colors"
-            >
-              <FileText className="h-6 w-5 mr-2" />
-              {t('hero.viewProjects')}
-            </Link>
-          </div>
+      <div className="flex flex-wrap items-center justify-left gap-12">
+        {/* Botones */}
+        <div className="flex gap-4">
+          <Link
+            to="/contact"
+            className="inline-flex items-center px-4 py-1.5 border border-gray-600 text-sm font-medium rounded-lg text-white bg-black hover:bg-gray-900 transition-colors"
+          >
+            <Mail className="h-6 w-5 mr-2" />
+            {t('hero.contactMe')}
+          </Link>
+          <Link
+            to="/projects"
+            className="inline-flex items-center px-4 py-1.5 border border-gray-600 text-sm font-medium rounded-lg text-white bg-black hover:bg-gray-900 transition-colors"
+          >
+            <FileText className="h-6 w-5 mr-2" />
+            {t('hero.viewProjects')}
+          </Link>
+        </div>
 
-        
-          {/* Separador */}
-          <span className="w-px h-6 bg-gray-400"></span>
-        
-          {/* Redes */}
-          <div className="flex space-x-8">
-            <a href="https://github.com/macorman06/macorman06" className="text-gray-400 hover:text-white transition-colors">
-              <Github className="h-6 w-6" />
-            </a>
+      
+        {/* Separador */}
+        <span className="w-px h-6 bg-gray-400"></span>
+      
+        {/* Redes */}
+        <div className="flex space-x-8">
+          <a href="https://github.com/macorman06/macorman06" className="text-gray-400 hover:text-white transition-colors">
+            <Github className="h-6 w-6" />
+          </a>
 
-            <a href="https://www.linkedin.com/in/marcos-corpas-manzano-8146391aa/" className="text-gray-400 hover:text-white transition-colors">
-              <Linkedin className="h-6 w-6" />
-            </a>
+          <a href="https://www.linkedin.com/in/marcos-corpas-manzano-8146391aa/" className="text-gray-400 hover:text-white transition-colors">
+            <Linkedin className="h-6 w-6" />
+          </a>
 
-          </div>
-        </div>        
-      </div>
+        </div>
+      </div>        
+    </div>
     </section>
   );
 };
