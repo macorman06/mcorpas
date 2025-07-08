@@ -7,7 +7,10 @@ const Hero = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat dark:bg-gradient-to-br dark:from-gray-900 dark:via-purple-900/20 dark:to-blue-900/20" style={{ backgroundImage: 'var(--tw-gradient-stops, url(/backgrounds/light_background.png))' }}>
+    <section
+      className="min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat dark:bg-gradient-to-br dark:from-gray-900 dark:via-purple-900/20 dark:to-blue-900/20"
+      style={{ backgroundImage: 'url(/backgrounds/light_background.png)' }}
+    >
       <div className="w-full max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-0 overflow-x-hidden">
         <div className="mb-8 w-full">
           <div className="flex flex-col md:flex-row items-center md:items-start gap-6 text-center md:text-left">
