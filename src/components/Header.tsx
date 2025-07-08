@@ -84,8 +84,8 @@ const Header = () => {
                   transition-colors shadow-sm
                 "
               >
-                <option value="es">🇪🇸 Español</option>
-                <option value="en">🇬🇧 English</option>
+                <option value="es">Español</option>
+                <option value="en">English</option>
               </select>
               {/* Flecha del desplegable */}
               <div className="pointer-events-none absolute inset-y-0 left-2 flex items-center">
