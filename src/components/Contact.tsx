@@ -111,11 +111,12 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 transition-colors"
+                className="w-full inline-flex items-center justify-center px-4 py-1.5 border border-gray-600 text-sm font-medium rounded-lg text-white bg-black hover:bg-gray-900 transition-colors"
               >
                 <Send className="h-5 w-5 mr-2" />
                 {t('contact.form.send')}
               </button>
+
             </form>
           </div>
         </div>
