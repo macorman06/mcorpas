@@ -118,41 +118,114 @@ const Projects = () => {
           </div>
         </div>
 
-        <div
-          key={index}
-          className="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-xl hover:shadow-lg transition-shadow duration-300 relative"
-        >
-          <img
-            src={project.cover}
-            alt={project.title}
-            className="w-full h-48 object-cover"
-          />
-          {/* Chip de fecha arriba derecha */}
-          <span className="absolute top-4 right-4 px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-xs rounded-full">
-            {project.date}
-          </span>
-        
-          <div className="p-6">
-            <div className="flex flex-wrap items-center gap-2 mb-2">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                {project.title}
-              </h3>
-              <span className={`px-2 py-1 text-xs rounded-full ${
-                project.status === 'En progreso'
-                  ? 'bg-green-200 dark:bg-green-700 text-green-800 dark:text-green-200'
-                  : project.status === 'Terminado'
-                  ? 'bg-blue-200 dark:bg-blue-700 text-blue-800 dark:text-blue-200'
-                  : 'bg-red-200 dark:bg-red-700 text-red-800 dark:text-red-200'
-              }`}>
-                {project.status}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {sortedProjects.map((project, index) => (
+            <div
+              key={index}
+              className="relative bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-xl hover:shadow-lg transition-shadow duration-300"
+            >
+              <img
+                src={project.cover}
+                alt={project.title}
+                className="w-full h-48 object-cover"
+              />
+              {/* Chip de fecha arriba derecha */}
+              <span className="absolute top-4 right-4 px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-xs rounded-full">
+                {project.date}
               </span>
+
+              <div className="p-6">
+                <div className="flex flex-wrap items-center gap-2 mb-2">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                    {project.title}
+                  </h3>
+                  <span className={`px-2 py-1 text-xs rounded-full ${
+                    project.status === 'En progreso'
+                      ? 'bg-green-200 dark:bg-green-700 text-green-800 dark:text-green-200'
+                      : project.status === 'Terminado'
+                      ? 'bg-blue-200 dark:bg-blue-700 text-blue-800 dark:text-blue-200'
+                      : 'bg-red-200 dark:bg-red-700 text-red-800 dark:text-red-200'
+                  }`}>
+                    {project.status}
+                  </span>
+                </div>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tags.map((tag, tagIndex) => (
+                    <span
+                      key={tagIndex}
+                      className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex flex-wrap gap-4">
+                  {project.instagram && (
+                    <a
+                      href={project.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-pink-600 dark:text-pink-400 hover:text-pink-800 dark:hover:text-pink-300 transition-colors"
+                    >
+                      <Instagram className="h-5 w-5 mr-1" />
+                      Instagram
+                    </a>
+                  )}
+
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                    >
+                      <Github className="h-5 w-5 mr-1" />
+                      Código
+                    </a>
+                  )}
+
+                  {project.live && (
+                    <>
+                      {project.live === "/" ? (
+                        <Link
+                          to="/"
+                          className="flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
+                        >
+                          <ExternalLink className="h-5 w-5 mr-1" />
+                          Ir al Home
+                        </Link>
+                      ) : (
+                        <a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
+                        >
+                          <ExternalLink className="h-5 w-5 mr-1" />
+                          Ver Web
+                        </a>
+                      )}
+                    </>
+                  )}
+
+                  {project.images && project.images.length > 0 && (
+                    <button
+                      onClick={() => openGallery(project)}
+                      className="flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
+                    >
+                      <ExternalLink className="h-5 w-5 mr-1" />
+                      Ver Galería
+                    </button>
+                  )}
+                </div>
+              </div>
             </div>
-            <p className="text-gray-600 dark:text-gray-300 mb-4">
-              {project.description}
-            </p>
-            {/* ... resto igual */}
-          </div>
+          ))}
         </div>
+      </div>
 
       {isOpen && activeProject && (
         <div className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center">
