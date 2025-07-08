@@ -60,7 +60,7 @@ const Projects = () => {
       tags: ["Aerolíneas", "Optimización", "Sostenibilidad", "Python"],
       live: "https://tfg-9db.pages.dev/",
       date: 2025,
-      status: "Terminado",
+      status: "En progreso",
     },
   ];
 
