@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="mb-4 md:mb-0">
             <h3 className="text-lg font-semibold mb-2">{t('footer.name')}</h3>
             <p className="text-gray-400 text-sm">
-              © {currentYear} Marcos. {t('footer.rights')}
+              © {currentYear+1} Marcos. {t('footer.rights')}
             </p>
           </div>
         </div>
