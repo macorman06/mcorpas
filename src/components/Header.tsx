@@ -1,123 +1,52 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import { Moon, Sun } from 'lucide-react';
-import { useTheme } from '../hooks/useTheme';
-import 'flag-icons/css/flag-icons.min.css';
+import { Listbox } from '@headlessui/react'
+import { Check, ChevronUpDown } from 'lucide-react'
 
-const Header = () => {
-  const { t, i18n } = useTranslation();
-  const location = useLocation();
-  const { theme, toggleTheme } = useTheme();
+const languages = [
+  { id: 'es', name: 'Español', flag: 'fi fi-es' },
+  { id: 'en', name: 'English', flag: 'fi fi-gb' },
+]
 
-  const isActive = (path: string) => {
-    return (
-      location.pathname === path ||
-      location.pathname === `/es${path}` ||
-      location.pathname === `/en${path}`
-    );
-  };
-
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
-  };
-
+export default function LanguageSelector({ language, setLanguage }) {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b dark:border-gray-700">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <Link
-            to="/"
-            className="flex items-center space-x-2 text-lg font-bold text-gray-900 dark:text-white"
-          >
-            <i className="pi pi-send text-blue-600 dark:text-blue-400 text-xl"></i>
-            <span>MCorpas</span>
-          </Link>
-
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link
-              to="/"
-              className={`text-sm font-medium transition-colors ${
-                isActive('/')
-                  ? 'text-blue-600 dark:text-blue-400'
-                  : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
-              }`}
+    <Listbox value={language} onChange={setLanguage}>
+      <div className="relative mt-1">
+        <Listbox.Button className="relative w-full cursor-pointer rounded-lg bg-gray-100 dark:bg-gray-800 py-2 pl-8 pr-10 text-left shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
+          <span className="block truncate">{languages.find(l => l.id === language).name}</span>
+          <span className="absolute inset-y-0 left-2 flex items-center">
+            <span className={languages.find(l => l.id === language).flag + " w-5 h-5"}></span>
+          </span>
+          <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+            <ChevronUpDown className="h-5 w-5 text-gray-400" aria-hidden="true" />
+          </span>
+        </Listbox.Button>
+        <Listbox.Options className="absolute mt-1 w-full rounded-md bg-white dark:bg-gray-800 shadow-lg z-50">
+          {languages.map((lang) => (
+            <Listbox.Option
+              key={lang.id}
+              className={({ active }) =>
+                `relative cursor-pointer select-none py-2 pl-8 pr-4 ${
+                  active ? 'bg-blue-500 text-white' : 'text-gray-900 dark:text-gray-100'
+                }`
+              }
+              value={lang.id}
             >
-              {t('nav.home')}
-            </Link>
-            <Link
-              to="/projects"
-              className={`text-sm font-medium transition-colors ${
-                isActive('/projects')
-                  ? 'text-blue-600 dark:text-blue-400'
-                  : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
-              }`}
-            >
-              {t('nav.projects')}
-            </Link>
-            <Link
-              to="/contact"
-              className={`text-sm font-medium transition-colors ${
-                isActive('/contact')
-                  ? 'text-blue-600 dark:text-blue-400'
-                  : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
-              }`}
-            >
-              {t('nav.contact')}
-            </Link>
-          </nav>
-
-          <div className="flex items-center space-x-4">
-            <div className="relative">
-              <select
-                value={i18n.language}
-                onChange={(e) => changeLanguage(e.target.value)}
-                className="
-                  appearance-none
-                  pl-8 pr-4 py-2
-                  text-sm rounded-lg
-                  bg-gray-100 dark:bg-gray-800
-                  text-gray-900 dark:text-gray-100
-                  border border-transparent
-                  focus:outline-none focus:ring-2 focus:ring-blue-500
-                  hover:bg-gray-200 dark:hover:bg-gray-700
-                  transition-colors shadow-sm
-                "
-              >
-                <option value="es">Español</option>
-                <option value="en">English</option>
-              </select>
-              {/* Flecha del desplegable */}
-              <div className="pointer-events-none absolute inset-y-0 left-2 flex items-center">
-                {i18n.language === 'es' ? (
-                  <span className="fi fi-es w-5 h-5"></span>
-                ) : (
-                  <span className="fi fi-gb w-5 h-5"></span>
-                )}
-              </div>
-            </div>
-
-            <button
-              onClick={toggleTheme}
-              className="
-                p-2 rounded-lg
-                bg-gray-100 dark:bg-gray-800
-                hover:bg-gray-200 dark:hover:bg-gray-700
-                text-gray-700 dark:text-gray-300
-                transition-colors shadow-sm
-              "
-            >
-              {theme === 'light' ? (
-                <Moon className="h-5 w-5" />
-              ) : (
-                <Sun className="h-5 w-5" />
+              {({ selected }) => (
+                <>
+                  <span className="block truncate">{lang.name}</span>
+                  <span className="absolute inset-y-0 left-2 flex items-center">
+                    <span className={`${lang.flag} w-5 h-5`}></span>
+                  </span>
+                  {selected ? (
+                    <span className="absolute inset-y-0 right-2 flex items-center">
+                      <Check className="h-5 w-5" />
+                    </span>
+                  ) : null}
+                </>
               )}
-            </button>
-          </div>
-        </div>
+            </Listbox.Option>
+          ))}
+        </Listbox.Options>
       </div>
-    </header>
-  );
-};
-
-export default Header;
+    </Listbox>
+  )
+}
