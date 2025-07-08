@@ -8,39 +8,39 @@ const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const projects = [
-    {
-      title: "Jesper3DMakes",
-      description:
-        "Lámparas, piezas decorativas y diseños creativos impresos en 3D. Proyectos personalizados para decoración y regalo.",
-      cover: "/projects/jesper/jesper_lamp_render.jpg",
-      images: [
-        "/projects/jesper/jesper_lamp_extra1.jpg",
-        "/projects/jesper/jesper_lamp_extra2.jpg",
-        "/projects/jesper/jesper_lamp_extra3.jpg",
-      ],
-      tags: ["3D Printing", "Design", "Handmade", "Jesper3DMakes"],
-      instagram: "https://www.instagram.com/jesper3d.makes/",
-    },
-    {
-      title: "Portfolio Website",
-      description:
-        "Mi sitio web personal hecho con React, Tailwind y Vite. Responsive, multiidioma, SEO optimizado y con contacto funcional.",
-      cover: "/projects/portfolio/portfolio.png",
-      images: [], // Sin galería
-      tags: ["React", "Tailwind CSS", "TypeScript", "Vite"],
-      github: "https://github.com/macorman06/mcorpas.git",
-      live: "/",
-    },
-    {
-      title: "TFG - Optimización de Rotaciones",
-      description:
-        "Trabajo de Fin de Grado en Ingeniería Aeroespacial: herramienta para optimizar rotaciones de aeronaves de forma sostenible.",
-      cover: "/projects/tfg/tfg_opti.png",
-      images: [], // Sin galería
-      tags: ["Aerolíneas", "Optimización", "Sostenibilidad", "Python"],
-      live: "https://tfg-9db.pages.dev/"
-    },
-  ];
+  {
+    title: "Jesper3DMakes",
+    description: "...",
+    cover: "...",
+    images: [...],
+    tags: ["3D Printing", "Design", "Handmade", "Jesper3DMakes"],
+    instagram: "...",
+    startDate: "2020",
+    status: "In Progress"
+  },
+  {
+    title: "Portfolio Website",
+    description: "...",
+    cover: "...",
+    images: [],
+    tags: ["React", "Tailwind CSS", "TypeScript", "Vite"],
+    github: "...",
+    live: "/",
+    startDate: "2025",
+    status: "In Progress"
+  },
+  {
+    title: "TFG - Optimización de Rotaciones",
+    description: "...",
+    cover: "...",
+    images: [],
+    tags: ["Aerolíneas", "Optimización", "Sostenibilidad", "Python"],
+    live: "...",
+    startDate: "2025",
+    status: "Completed"
+  },
+];
+
 
   const openGallery = (project: any) => {
     setActiveProject(project);
