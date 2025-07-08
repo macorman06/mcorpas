@@ -51,6 +51,7 @@ const Projects = () => {
       images: [
         "/projects/jesper/jesper_lamp_extra1.jpg",
         "/projects/jesper/jesper_lamp_extra2.jpg",
+        "/projects/jesper/jesper_lamp_extra3.jpg",
       ],
       tags: ["3D Printing", "Design"],
       instagram: "https://www.instagram.com/jesper3d.makes/",
