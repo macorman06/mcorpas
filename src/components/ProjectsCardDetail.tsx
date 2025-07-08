@@ -1,10 +1,7 @@
-// components/ProjectCardDetail.tsx
-
 import React from 'react';
 import { X, Instagram, Github, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-import type { Project } from '../Projects'; // Ajusta la ruta si lo necesitas
+import { Project } from '../Projects'; // Ajusta ruta según tu estructura
 
 interface ProjectCardDetailProps {
   project: Project;
