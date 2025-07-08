@@ -1,15 +1,20 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { Github, Dribbble, Linkedin, Twitter, Mail, FileText } from 'lucide-react';
+import { Github, Linkedin, Mail, FileText } from 'lucide-react';
 
 const Hero = () => {
   const { t } = useTranslation();
 
   return (
     <section
-      className="min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat dark:bg-gradient-to-br dark:from-gray-900 dark:via-purple-900/20 dark:to-blue-900/20"
-      style={{ backgroundImage: 'url(/backgrounds/light_background.png)' }}
+      className="
+        min-h-screen
+        flex items-center justify-center
+        bg-cover bg-center bg-no-repeat
+        bg-[url('/backgrounds/light_background.png')]
+        dark:bg-gradient-to-br dark:from-gray-900 dark:via-purple-900/20 dark:to-blue-900/20
+      "
     >
       <div className="w-full max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-0 overflow-x-hidden">
         <div className="mb-8 w-full">
@@ -25,7 +30,6 @@ const Hero = () => {
                 <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
                   Marcos
                 </span>{' '}
-                
               </h1>
               <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 dark:text-white mt-4">
                 <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
@@ -57,23 +61,26 @@ const Hero = () => {
               {t('hero.viewProjects')}
             </Link>
           </div>
-        
+
           {/* Separador */}
           <span className="hidden sm:block w-px h-6 bg-gray-400"></span>
-        
+
           {/* Redes */}
           <div className="flex justify-center gap-8">
-            <a href="https://github.com/macorman06/macorman06" className="text-gray-400 hover:text-white transition-colors">
+            <a
+              href="https://github.com/macorman06/macorman06"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
               <Github className="h-6 w-6" />
             </a>
-            <a href="https://www.linkedin.com/in/marcos-corpas-manzano-8146391aa/" className="text-gray-400 hover:text-white transition-colors">
+            <a
+              href="https://www.linkedin.com/in/marcos-corpas-manzano-8146391aa/"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
               <Linkedin className="h-6 w-6" />
             </a>
           </div>
         </div>
-
-
-
       </div>
     </section>
   );
