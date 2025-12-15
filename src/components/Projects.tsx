@@ -2,106 +2,16 @@ import React, { useState } from 'react';
 import { ExternalLink, Instagram, Github, Filter } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Icon } from '@iconify/react';
 import ProjectCardDetail from './ProjectsCardDetail';
-
-export type ProjectStatus = 'En progreso' | 'Terminado' | 'Sin soporte';
-
-export interface Project {
-  title: string;
-  description: string;
-  detailedDescription?: string;
-  cover: string;
-  images: string[];
-  tags: string[];
-  instagram?: string;
-  github?: string;
-  live?: string;
-  date: number;
-  status: ProjectStatus;
-}
+import { Project } from '../types/project.types';
+import projectsData from '../data/projectsData.json';
 
 const Projects = () => {
   const [sortBy, setSortBy] = useState<'name' | 'date'>('date');
   const [activeCardProject, setActiveCardProject] = useState<Project | null>(null);
 
-  const projects: Project[] = [
-    {
-      title: "Fuel Trip Optimizer",
-      description: "API REST (en desarrollo) para optimizar rutas de viaje según precios de combustible, consumo y preferencias personales.",
-      detailedDescription: `Fuel Trip Optimizer es un proyecto en desarrollo cuyo objetivo es ayudar a conductores a decidir dónde y cuándo repostar para minimizar tanto el coste del viaje como el tiempo perdido en desvíos.
-
-Actualmente:
-- Se está construyendo una API REST con Python y FastAPI.
-- El backend se ejecuta en entorno local mediante Docker.
-- Se están definiendo los modelos y validaciones con Pydantic.
-- Se está trabajando en la integración con la API del Ministerio de Industria (precios de combustible en España).
-
-Objetivos técnicos a corto y medio plazo:
-- Desplegar la API en AWS utilizando servicios serverless (por ejemplo, AWS Lambda + API Gateway).
-- Gestionar la infraestructura con Terraform (Infrastructure as Code).
-- Introducir un sistema de caché con Redis para reducir llamadas a APIs externas y mejorar el rendimiento.
-- Automatizar el ciclo de vida del proyecto con pipelines CI/CD (GitLab) incluyendo tests con Pytest y análisis estático.
-- Documentar la API con Swagger/OpenAPI y facilitar la importación en herramientas como ApiDog.
-
-Alcance funcional previsto:
-- Calcular rutas que tengan en cuenta el precio del combustible, el consumo estimado y el combustible restante.
-- Comparar distintas estrategias de repostaje (repostar antes, desviarse a una gasolinera más barata, etc.).
-- Extender el modelo en el futuro para soportar vehículos eléctricos (planificación de paradas de carga y tiempos de recarga).
-- Preparar el sistema para escenarios de uso como gestión de flotas y viajes de media/larga distancia.`,
-      cover: "/projects/fuel-trip-optimizer/img.png",
-      images: [],
-      tags: [
-        "Python",
-        "FastAPI",
-        "Docker",
-        "Pydantic",
-        "Pytest",
-        "REST API",
-        "AWS (objetivo)",
-        "Terraform (objetivo)",
-        "Redis (objetivo)",
-        "CI/CD (objetivo)"
-      ],
-      date: 2025,
-      status: "En progreso",
-    },
-
-    {
-      title: "Portfolio Website",
-      description: "Mi web personal con React y Tailwind.",
-      cover: "/projects/portfolio/portfolio.png",
-      images: [],
-      tags: ["React", "Tailwind CSS"],
-      github: "https://github.com/macorman06/mcorpas.git",
-      live: "/",
-      date: 2025,
-      status: "En progreso",
-    },
-    {
-      title: "TFG - Rotaciones",
-      description: "TFG optimización de rotaciones de aeronaves.",
-      cover: "/projects/tfg/tfg_opti.png",
-      images: [],
-      tags: ["Aerolíneas", "Python"],
-      live: "https://tfg-9db.pages.dev/",
-      date: 2025,
-      status: "Terminado",
-    },
-    {
-      title: "Jesper3DMakes",
-      description: "Lámparas y decoración 3D.",
-      cover: "/projects/jesper/jesper_lamp_render.jpg",
-      images: [
-        "/projects/jesper/jesper_lamp_extra1.jpg",
-        "/projects/jesper/jesper_lamp_extra2.jpg",
-        "/projects/jesper/jesper_lamp_extra3.jpg",
-      ],
-      tags: ["3D Printing", "Design"],
-      instagram: "https://www.instagram.com/jesper3d.makes/",
-      date: 2020,
-      status: "En progreso",
-    },
-  ];
+  const projects: Project[] = projectsData;
 
   const sortedProjects = [...projects].sort((a, b) => {
     return sortBy === 'name' ? a.title.localeCompare(b.title) : b.date - a.date;
@@ -123,7 +33,6 @@ Alcance funcional previsto:
             <Filter className="h-6 w-5 mr-2" />
             Ordenar por {sortBy === 'date' ? 'Nombre' : 'Fecha'}
           </button>
-
         </div>
 
         <motion.div
@@ -140,32 +49,75 @@ Alcance funcional previsto:
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4 }}
                 onClick={() => setActiveCardProject(project)}
-                className="relative cursor-pointer bg-gray-100 dark:bg-gray-800 rounded-xl overflow-hidden shadow-xl hover:shadow-lg transition-shadow duration-300"
+                className="relative cursor-pointer bg-gray-100 dark:bg-gray-800 rounded-xl overflow-hidden shadow-xl hover:shadow-lg transition-shadow duration-300 flex flex-col"
               >
                 <img src={project.cover} alt={project.title} className="w-full h-48 object-cover" />
                 <span className="absolute top-4 right-4 px-2 py-1 bg-gray-300 dark:bg-gray-700 text-xs rounded-full text-gray-800 dark:text-gray-200">
                   {project.date}
                 </span>
-                <div className="p-6">
-                  <div className="flex flex-wrap items-center gap-2 mb-2">
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{project.title}</h3>
-                    <span className={`px-2 py-1 text-xs rounded-full ${
+
+                {/* Content wrapper with flex-grow to push links to bottom */}
+                <div className="p-6 flex flex-col flex-grow">
+                  {/* Title and Status Badge */}
+                  <div className="flex items-start justify-between gap-2 mb-2">
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white flex-1">{project.title}</h3>
+                    <span className={`px-2 py-1 text-xs rounded-full whitespace-nowrap ${
                       project.status === 'En progreso'
                         ? 'bg-green-200 dark:bg-green-700 text-green-800 dark:text-green-200'
-                        : project.status === 'Terminado'
-                          ? 'bg-blue-200 dark:bg-blue-700 text-blue-800 dark:text-blue-200'
-                          : 'bg-red-200 dark:bg-red-700 text-red-800 dark:text-red-200'
+                        : project.status === 'Activo'
+                          ? 'bg-emerald-200 dark:bg-emerald-700 text-emerald-800 dark:text-emerald-200'
+                          : project.status === 'Terminado'
+                            ? 'bg-blue-200 dark:bg-blue-700 text-blue-800 dark:text-blue-200'
+                            : 'bg-red-200 dark:bg-red-700 text-red-800 dark:text-red-200'
                     }`}>
                       {project.status}
                     </span>
                   </div>
+
                   <p className="text-gray-700 dark:text-gray-300 mb-4">{project.description}</p>
+
+                  {/* Technology Icons Preview - First 4 */}
+                  {project.techIcons && project.techIcons.length > 0 && (
+                    <div className="flex items-center gap-3 mb-4">
+                      {project.techIcons.slice(0, 4).map((tech, i) => (
+                        <div
+                          key={i}
+                          className="group relative"
+                          title={tech.name}
+                        >
+                          {tech.icon.startsWith('/') || tech.icon.startsWith('http') ? (
+                            <img
+                              src={tech.icon}
+                              alt={tech.name}
+                              className="w-8 h-8 transition-transform duration-200 group-hover:scale-110 object-contain"
+                            />
+                          ) : (
+                            <Icon
+                              icon={tech.icon}
+                              className="w-8 h-8 transition-transform duration-200 group-hover:scale-110"
+                            />
+                          )}
+                        </div>
+                      ))}
+                      {project.techIcons.length > 4 && (
+                        <span className="text-xs text-gray-500 dark:text-gray-400">
+                          +{project.techIcons.length - 4} más
+                        </span>
+                      )}
+                    </div>
+                  )}
+
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag, i) => (
                       <span key={i} className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-xs rounded-full text-blue-800 dark:text-blue-200">{tag}</span>
                     ))}
                   </div>
-                  <div className="flex flex-wrap gap-4">
+
+                  {/* Spacer to push links to bottom */}
+                  <div className="flex-grow"></div>
+
+                  {/* Links aligned to the right and at the bottom */}
+                  <div className="flex flex-wrap gap-4 justify-end mt-auto">
                     {project.instagram && (
                       <a
                         href={project.instagram}

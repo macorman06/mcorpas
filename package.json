@@ -13,7 +13,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "@iconify/react": "^6.0.0",
+    "@iconify/react": "^6.0.2",
     "flag-icons": "^7.5.0",
     "framer-motion": "^12.23.0",
     "i18next": "^23.7.6",
@@ -25,6 +25,7 @@
     "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
     "react-i18next": "^14.0.0",
+    "react-markdown": "^10.1.0",
     "react-router-dom": "^6.26.1"
   },
   "devDependencies": {

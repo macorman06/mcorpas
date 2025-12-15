@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
 import { X, ExternalLink, Instagram, Github } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Project } from './Projects';
+import { Icon } from '@iconify/react';
+import { Project } from '../types/project.types';
 
 interface ProjectCardDetailProps {
   project: Project;
@@ -56,9 +58,11 @@ const ProjectCardDetail: React.FC<ProjectCardDetailProps> = ({ project, onClose 
             <span className={`px-2 py-1 text-xs rounded-full ${
               project.status === 'En progreso'
                 ? 'bg-green-200 dark:bg-green-700 text-green-800 dark:text-green-200'
-                : project.status === 'Terminado'
-                  ? 'bg-blue-200 dark:bg-blue-700 text-blue-800 dark:text-blue-200'
-                  : 'bg-red-200 dark:bg-red-700 text-red-800 dark:text-red-200'
+                : project.status === 'Activo'
+                  ? 'bg-emerald-200 dark:bg-emerald-700 text-emerald-800 dark:text-emerald-200'
+                  : project.status === 'Terminado'
+                    ? 'bg-blue-200 dark:bg-blue-700 text-blue-800 dark:text-blue-200'
+                    : 'bg-red-200 dark:bg-red-700 text-red-800 dark:text-red-200'
             }`}>
               {project.status}
             </span>
@@ -67,10 +71,55 @@ const ProjectCardDetail: React.FC<ProjectCardDetailProps> = ({ project, onClose 
             </span>
           </div>
 
-          <div className="text-gray-700 dark:text-gray-300 mb-4 whitespace-pre-line leading-relaxed">
-            {project.detailedDescription || project.description}
+          <div className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed max-w-none markdown-content">
+            <ReactMarkdown
+              components={{
+                p: ({node, ...props}) => <p className="mb-4" {...props} />,
+                h2: ({node, ...props}) => <h2 className="text-lg font-semibold mt-6 mb-3" {...props} />,
+                h3: ({node, ...props}) => <h3 className="text-base font-semibold mt-5 mb-2" {...props} />,
+                strong: ({node, ...props}) => <strong className="font-bold text-gray-900 dark:text-white" {...props} />,
+                ul: ({node, ...props}) => <ul className="list-disc list-inside my-4 space-y-1" {...props} />,
+                li: ({node, ...props}) => <li className="my-1" {...props} />
+              }}
+            >
+              {project.detailedDescription || project.description}
+            </ReactMarkdown>
           </div>
 
+
+          {/* Technology Icons Section */}
+          {project.techIcons && project.techIcons.length > 0 && (
+            <div className="mb-6">
+              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Tecnologías</h4>
+              <div className="flex flex-wrap gap-4">
+                {project.techIcons.map((tech, index) => (
+                  <div
+                    key={index}
+                    className="flex flex-col items-center gap-1 group"
+                    title={tech.name}
+                  >
+                    {tech.icon.startsWith('/') || tech.icon.startsWith('http') ? (
+                      <img
+                        src={tech.icon}
+                        alt={tech.name}
+                        className="w-10 h-10 transition-transform duration-200 group-hover:scale-110 object-contain"
+                      />
+                    ) : (
+                      <Icon
+                        icon={tech.icon}
+                        className="w-10 h-10 transition-transform duration-200 group-hover:scale-110"
+                      />
+                    )}
+                    <span className="text-xs text-gray-600 dark:text-gray-400 text-center">
+                      {tech.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Tags Section */}
           <div className="flex flex-wrap gap-2 mb-4">
             {project.tags.map((tag, i) => (
               <span
@@ -82,6 +131,7 @@ const ProjectCardDetail: React.FC<ProjectCardDetailProps> = ({ project, onClose 
             ))}
           </div>
 
+          {/* Additional Images */}
           {project.images && project.images.length > 0 && (
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
               {project.images.map((image, index) => (
@@ -95,6 +145,7 @@ const ProjectCardDetail: React.FC<ProjectCardDetailProps> = ({ project, onClose 
             </div>
           )}
 
+          {/* Links Section */}
           <div className="flex flex-wrap gap-4 mb-6">
             {project.instagram && (
               <a
