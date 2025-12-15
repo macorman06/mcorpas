@@ -9,6 +9,7 @@ export type ProjectStatus = 'En progreso' | 'Terminado' | 'Sin soporte';
 export interface Project {
   title: string;
   description: string;
+  detailedDescription?: string;
   cover: string;
   images: string[];
   tags: string[];
@@ -24,6 +25,47 @@ const Projects = () => {
   const [activeCardProject, setActiveCardProject] = useState<Project | null>(null);
 
   const projects: Project[] = [
+    {
+      title: "Fuel Trip Optimizer",
+      description: "API REST (en desarrollo) para optimizar rutas de viaje según precios de combustible, consumo y preferencias personales.",
+      detailedDescription: `Fuel Trip Optimizer es un proyecto en desarrollo cuyo objetivo es ayudar a conductores a decidir dónde y cuándo repostar para minimizar tanto el coste del viaje como el tiempo perdido en desvíos.
+
+Actualmente:
+- Se está construyendo una API REST con Python y FastAPI.
+- El backend se ejecuta en entorno local mediante Docker.
+- Se están definiendo los modelos y validaciones con Pydantic.
+- Se está trabajando en la integración con la API del Ministerio de Industria (precios de combustible en España).
+
+Objetivos técnicos a corto y medio plazo:
+- Desplegar la API en AWS utilizando servicios serverless (por ejemplo, AWS Lambda + API Gateway).
+- Gestionar la infraestructura con Terraform (Infrastructure as Code).
+- Introducir un sistema de caché con Redis para reducir llamadas a APIs externas y mejorar el rendimiento.
+- Automatizar el ciclo de vida del proyecto con pipelines CI/CD (GitLab) incluyendo tests con Pytest y análisis estático.
+- Documentar la API con Swagger/OpenAPI y facilitar la importación en herramientas como ApiDog.
+
+Alcance funcional previsto:
+- Calcular rutas que tengan en cuenta el precio del combustible, el consumo estimado y el combustible restante.
+- Comparar distintas estrategias de repostaje (repostar antes, desviarse a una gasolinera más barata, etc.).
+- Extender el modelo en el futuro para soportar vehículos eléctricos (planificación de paradas de carga y tiempos de recarga).
+- Preparar el sistema para escenarios de uso como gestión de flotas y viajes de media/larga distancia.`,
+      cover: "/projects/fuel-trip-optimizer/img.png",
+      images: [],
+      tags: [
+        "Python",
+        "FastAPI",
+        "Docker",
+        "Pydantic",
+        "Pytest",
+        "REST API",
+        "AWS (objetivo)",
+        "Terraform (objetivo)",
+        "Redis (objetivo)",
+        "CI/CD (objetivo)"
+      ],
+      date: 2025,
+      status: "En progreso",
+    },
+
     {
       title: "Portfolio Website",
       description: "Mi web personal con React y Tailwind.",
@@ -73,14 +115,14 @@ const Projects = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">Mis proyectos</h2>
             <p className="text-base text-gray-600 dark:text-gray-300">Aquí muestro una colección de proyectos recientes.</p>
           </div>
-          
-            <button
-              onClick={() => setSortBy(sortBy === 'date' ? 'name' : 'date')}
-              className="inline-flex items-center px-4 py-1.5 border border-gray-600 text-sm font-medium rounded-lg text-white bg-black hover:bg-gray-900 transition-colors"
-            >
-              <Filter className="h-6 w-5 mr-2" />
-              Ordenar por {sortBy === 'date' ? 'Nombre' : 'Fecha'}
-            </button>
+
+          <button
+            onClick={() => setSortBy(sortBy === 'date' ? 'name' : 'date')}
+            className="inline-flex items-center px-4 py-1.5 border border-gray-600 text-sm font-medium rounded-lg text-white bg-black hover:bg-gray-900 transition-colors"
+          >
+            <Filter className="h-6 w-5 mr-2" />
+            Ordenar por {sortBy === 'date' ? 'Nombre' : 'Fecha'}
+          </button>
 
         </div>
 
@@ -111,8 +153,8 @@ const Projects = () => {
                       project.status === 'En progreso'
                         ? 'bg-green-200 dark:bg-green-700 text-green-800 dark:text-green-200'
                         : project.status === 'Terminado'
-                        ? 'bg-blue-200 dark:bg-blue-700 text-blue-800 dark:text-blue-200'
-                        : 'bg-red-200 dark:bg-red-700 text-red-800 dark:text-red-200'
+                          ? 'bg-blue-200 dark:bg-blue-700 text-blue-800 dark:text-blue-200'
+                          : 'bg-red-200 dark:bg-red-700 text-red-800 dark:text-red-200'
                     }`}>
                       {project.status}
                     </span>
