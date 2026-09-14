@@ -101,14 +101,15 @@
   },
   "projectsPage": {
     "title": "Projects",
-    "subtitle": "Things I've built — from optimization to 3D printing.",
+    "subtitle": "Things I've built — from sustainable aircraft rotations to 3D printing.",
     "sortBy": "Sort by",
     "sortName": "name",
     "sortDate": "date",
     "code": "Code",
     "live": "Live site",
     "home": "Go home",
-    "tech": "Technologies"
+    "tech": "Technologies",
+    "pdf": "View thesis (PDF)"
   },
   "footer": {
     "name": "Marcos Corpas",

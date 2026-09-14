@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, Instagram, Github, ArrowUpDown } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Instagram, FileText, ArrowUpDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import ProjectCardDetail from './ProjectsCardDetail';
@@ -81,6 +80,17 @@ const Projects = () => {
                 </p>
 
                 <div className="mt-auto flex flex-wrap gap-5 text-sm">
+                  {project.pdf && (
+                    <a
+                      href={project.pdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-1.5 text-[var(--proj-mute)] hover:text-[var(--proj-accent)] transition-colors"
+                    >
+                      <FileText className="h-4 w-4" /> {t('projectsPage.pdf')}
+                    </a>
+                  )}
                   {project.instagram && (
                     <a
                       href={project.instagram}
@@ -92,37 +102,6 @@ const Projects = () => {
                       <Instagram className="h-4 w-4" /> Instagram
                     </a>
                   )}
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center gap-1.5 text-[var(--proj-mute)] hover:text-[var(--proj-accent)] transition-colors"
-                    >
-                      <Github className="h-4 w-4" /> {t('projectsPage.code')}
-                    </a>
-                  )}
-                  {project.live &&
-                    (project.live === '/' ? (
-                      <Link
-                        to="/"
-                        onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center gap-1.5 text-[var(--proj-mute)] hover:text-[var(--proj-accent)] transition-colors"
-                      >
-                        <ExternalLink className="h-4 w-4" /> {t('projectsPage.home')}
-                      </Link>
-                    ) : (
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center gap-1.5 text-[var(--proj-mute)] hover:text-[var(--proj-accent)] transition-colors"
-                      >
-                        <ExternalLink className="h-4 w-4" /> {t('projectsPage.live')}
-                      </a>
-                    ))}
                 </div>
               </motion.article>
             ))}

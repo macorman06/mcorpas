@@ -1,4 +1,4 @@
-export type ProjectStatus = 'En progreso' | 'Activo' | 'Terminado' | 'Sin soporte';
+export type ProjectStatus = 'En progreso' | 'Activo' | 'Terminado' | 'Terminado · 9,5' | 'Sin soporte';
 
 export interface TechIcon {
   icon: string;
@@ -16,6 +16,8 @@ export interface Project {
   instagram?: string;
   github?: string;
   live?: string;
+  /** Same-origin PDF (e.g. thesis), not an external link */
+  pdf?: string;
   date: number;
   status: ProjectStatus;
 }

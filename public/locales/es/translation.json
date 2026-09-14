@@ -101,14 +101,15 @@
   },
   "projectsPage": {
     "title": "Proyectos",
-    "subtitle": "Cosas que he construido — de optimización a impresión 3D.",
+    "subtitle": "Cosas que he construido — del TFG de rotaciones a la impresión 3D.",
     "sortBy": "Ordenar por",
     "sortName": "nombre",
     "sortDate": "fecha",
     "code": "Código",
     "live": "Ver web",
     "home": "Ir al inicio",
-    "tech": "Tecnologías"
+    "tech": "Tecnologías",
+    "pdf": "Ver memoria (PDF)"
   },
   "footer": {
     "name": "Marcos Corpas",
