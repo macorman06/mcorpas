@@ -1,61 +1,24 @@
 [
   {
-    "title": "Fuel Trip Optimizer",
-    "description": "Web app para optimizar rutas de viaje según precios de combustible, consumo y preferencias personales.",
-    "detailedDescription": "Fuel Trip Optimizer es un proyecto en desarrollo cuyo objetivo es ayudar a conductores a decidir dónde y cuándo repostar para minimizar tanto el coste del viaje como el tiempo perdido en desvíos.\n\n**Problema**\n- Los precios del combustible varían mucho entre gasolineras y es difícil decidir si compensa desviarse para repostar más barato.\n- Los conductores suelen tomar decisiones con poca información, sin considerar consumo real, combustible restante ni tiempo de desvío.\n- No existe, de forma sencilla, una visión global del viaje que combine coste, tiempo y preferencias personales.\n\n**Solución**\n- Fuel Trip Optimizer busca ofrecer una herramienta que recomiende la mejor estrategia de repostaje para cada viaje.\n- El sistema analiza precios de combustible, consumo del vehículo, ruta planificada y desvíos posibles para minimizar coste y tiempo perdido.\n- El objetivo es que el usuario solo tenga que indicar origen, destino y parámetros básicos del vehículo para obtener recomendaciones claras.\n\n**Cómo funciona la herramienta**\n- El proyecto cuenta con una **API REST** en desarrollo y una **interfaz web** que se está construyendo en paralelo.\n- La API se conecta a **Google Routes** para obtener direcciones, tiempos de viaje y rutas alternativas, así como las variables necesarias para alimentar el modelo de optimización de repostaje.\n- Se integra también con la API del **Ministerio de Industria** para obtener precios de combustible actualizados en gasolineras de España.\n- La interfaz web permite visualizar las rutas en un mapa, comparar opciones de repostaje y entender de forma visual el impacto en coste y tiempo.\n\n**Tecnologías y despliegue**\n- Backend en desarrollo con **Python** y **FastAPI**, utilizando **Pydantic** para el modelado y validación de datos.\n- Actualmente el backend se ejecuta en entorno local mediante **Docker**, lo que facilita el desarrollo aislado y reproducible.\n- El control de versiones y la automatización del flujo de trabajo se gestionan con **Git** y **GitLab CI/CD**, incluyendo tests con **Pytest** y pasos de calidad de código.\n- El objetivo de despliegue a medio plazo es una arquitectura serverless en **AWS**, utilizando servicios como **AWS Lambda** y **API Gateway** para exponer la API de forma escalable y gestionada.\n- Se planea desarrollar una conexión con **base de datos propia** con **PostgreSQL** para reducir el número de peticiones a la API del Ministerio de Transportes. \n- La API se documenta con **Swagger/OpenAPI**, facilitando la integración con herramientas como ApiDog y permitiendo a otros servicios consumirla de forma sencilla.\n",
-
-    "cover": "/projects/fuel-trip-optimizer/img.png",
+    "title": "TFG — Rotaciones sostenibles",
+    "description": "Modelo MILP integrado ARP+TAP para generar rotaciones de aeronaves minimizando combustible y emisiones. Calificado con 9,5.",
+    "detailedDescription": "Trabajo de Fin de Grado (URJC, Grado en Ingeniería Aeroespacial en Aeronavegación). Tutor: Luis Cadarso Morga. Cotutor: Manuel Fuentes González. Curso 2025/2026. **Calificación: 9,5.**\n\n**Problema**\nLa aviación debe crecer manteniendo compromisos ambientales cada vez más exigentes. La planificación operativa suele resolver en secuencia el Aircraft Routing Problem (ARP) y el Tail Assignment Problem (TAP), perdiendo oportunidades de optimizar juntos eficiencia y sostenibilidad.\n\n**Solución**\nModelo de programación entera mixta (MILP) que integra ARP y TAP en una sola formulación: asigna vuelos a matrículas concretas y construye rotaciones operativas, priorizando aeronaves más eficientes para reducir consumo de combustible y emisiones de CO₂. La función objetivo combina criterios configurables (performance factor, ocupación, overbooking).\n\n**Implementación y validación**\n- Implementado en **Python** con el solver **Gurobi**.\n- Validado con datos operativos reales anonimizados de una aerolínea europea de bajo coste (mayo 2025), facilitados en el contexto de Cisneria Engineering.\n- Instancias de hasta **667 vuelos** y **125 aeronaves**, resueltas en tiempos entre ~19 s y pocos minutos según configuración.\n- Cuatro casos de estudio con distintos pesos: viabilidad, robustez operativa y priorización sostenible.\n\n**Resultado**\nDemuestra la viabilidad de un enfoque integrado ARP+TAP orientado a sostenibilidad, con soluciones factibles que equilibran eficiencia operativa y criterios ambientales.\n",
+    "cover": "/projects/tfg/tfg_cover.png",
     "images": [],
-    "tags": ["Optimización", "Ahorro de combustible", "Web"],
+    "tags": ["Aerolíneas", "Optimización", "Sostenibilidad", "MILP"],
     "techIcons": [
       { "icon": "logos:python", "name": "Python" },
-      { "icon": "devicon:fastapi", "name": "FastAPI" },
-      { "icon": "logos:postgresql", "name": "PostgreSQL" },
-      { "icon": "logos:aws", "name": "AWS" },
-      { "icon": "logos:docker-icon", "name": "Docker" },
-      { "icon": "/icons/pydantic.png", "name": "Pydantic" },
-      { "icon": "/icons/pytest.png", "name": "Pytest" },
+      { "icon": "/icons/gurobi.png", "name": "Gurobi" },
+      { "icon": "/icons/latex.png", "name": "LaTeX" },
       { "icon": "devicon:gitlab", "name": "GitLab CI/CD" }
     ],
-    "date": 2025,
-    "status": "En progreso"
-  },
-  {
-    "title": "Portfolio Website",
-    "description": "Mi web personal para mostrar proyectos en desarrollo y habilidades.",
-    "cover": "/projects/portfolio/portfolio.png",
-    "images": [],
-    "tags": ["Portfolio", "Personal Website"],
-    "techIcons": [
-      { "icon": "logos:react", "name": "React" },
-      { "icon": "logos:tailwindcss-icon", "name": "Tailwind CSS" },
-      { "icon": "logos:typescript-icon", "name": "TypeScript" }
-    ],
-    "github": "https://github.com/macorman06/mcorpas.git",
-    "live": "/",
-    "date": 2025,
-    "status": "Activo"
-  },
-  {
-    "title": "TFG - Rotaciones",
-    "description": "Desarrollo POC para modelo de asignación de rotaciones sostenibles a aeronaves.",
-    "cover": "/projects/tfg/tfg_opti.png",
-    "images": [],
-    "tags": ["Aerolíneas", "Python", "Optimización"],
-    "techIcons": [
-      { "icon": "logos:python", "name": "Python" },
-      { "icon": "devicon:gitlab", "name": "GitLab CI/CD" },
-      { "icon": "/icons/latex.png", "name": "LaTeX" },
-      { "icon": "devicon:flask", "name": "Flask" },
-      { "icon": "/icons/gurobi.png", "name": "Gurobi" }
-    ],
-    "live": "https://tfg-9db.pages.dev/",
-    "date": 2025,
-    "status": "En progreso"
+    "pdf": "/projects/tfg/Generacion_rotaciones_sostenibles_aeronaves_Marcos_Corpas.pdf",
+    "date": 2026,
+    "status": "Terminado · 9,5"
   },
   {
     "title": "Jesper3DMakes",
-    "description": "Proyecto benéfico de diseño y creanción de lámparas led y decoración 3D.",
+    "description": "Proyecto benéfico de diseño y creación de lámparas LED y decoración 3D.",
     "cover": "/projects/jesper/jesper_lamp_render.jpg",
     "images": [
       "/projects/jesper/jesper_lamp_extra1.jpg",

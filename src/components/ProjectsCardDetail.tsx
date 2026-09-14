@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { X, ExternalLink, Instagram, Github } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { X, Instagram, FileText } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Icon } from '@iconify/react';
 import { useTranslation } from 'react-i18next';
@@ -144,6 +143,16 @@ const ProjectCardDetail: React.FC<ProjectCardDetailProps> = ({ project, onClose 
           )}
 
           <div className="flex flex-wrap gap-6 pt-2 border-t border-[var(--proj-line)]">
+            {project.pdf && (
+              <a
+                href={project.pdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-[var(--proj-ink)] hover:text-[var(--proj-accent)] transition-colors"
+              >
+                <FileText className="h-4 w-4" /> {t('projectsPage.pdf')}
+              </a>
+            )}
             {project.instagram && (
               <a
                 href={project.instagram}
@@ -154,34 +163,6 @@ const ProjectCardDetail: React.FC<ProjectCardDetailProps> = ({ project, onClose 
                 <Instagram className="h-4 w-4" /> Instagram
               </a>
             )}
-            {project.github && (
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-[var(--proj-ink)] hover:text-[var(--proj-accent)] transition-colors"
-              >
-                <Github className="h-4 w-4" /> {t('projectsPage.code')}
-              </a>
-            )}
-            {project.live &&
-              (project.live === '/' ? (
-                <Link
-                  to="/"
-                  className="inline-flex items-center gap-1.5 text-[var(--proj-ink)] hover:text-[var(--proj-accent)] transition-colors"
-                >
-                  <ExternalLink className="h-4 w-4" /> {t('projectsPage.home')}
-                </Link>
-              ) : (
-                <a
-                  href={project.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-[var(--proj-ink)] hover:text-[var(--proj-accent)] transition-colors"
-                >
-                  <ExternalLink className="h-4 w-4" /> {t('projectsPage.live')}
-                </a>
-              ))}
           </div>
         </div>
       </motion.div>
