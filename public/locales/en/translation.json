@@ -99,10 +99,21 @@
       "messagePlaceholder": "Your message here..."
     }
   },
+  "projectsPage": {
+    "title": "Projects",
+    "subtitle": "Things I've built — from optimization to 3D printing.",
+    "sortBy": "Sort by",
+    "sortName": "name",
+    "sortDate": "date",
+    "code": "Code",
+    "live": "Live site",
+    "home": "Go home",
+    "tech": "Technologies"
+  },
   "footer": {
     "name": "Marcos Corpas",
     "location": "Based in Spain",
     "rights": "All rights reserved.",
-    "designedWith": "Website designed in Figma. Built with Next.js, TypeScript and Tailwind CSS."
+    "designedWith": "Website designed in Figma. Built with React, TypeScript and Tailwind CSS."
   }
 }
