@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileText, Briefcase, Users, Flag } from 'lucide-react';
+import { Briefcase, Users, Flag } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import ExperienceCard from './ExperienceCard';
 
@@ -38,13 +38,22 @@ const Experience = () => {
         
         <div className="text-center mt-16 flex flex-wrap justify-center gap-4">        
           <a
+            href="/CV_MarcosCorpas_ES.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-4 py-1.5 border border-gray-600 text-sm font-medium rounded-lg text-white bg-black hover:bg-gray-900 transition-colors"
+          >
+            <span className="fi fi-es w-5 h-5"></span>
+            <span className="ml-2">Ver CV (ES)</span>
+          </a>
+          <a
             href="/CV_MarcosCorpas_EN.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-4 py-1.5 border border-gray-600 text-sm font-medium rounded-lg text-white bg-black hover:bg-gray-900 transition-colors"
           >
             <span className="fi fi-gb w-5 h-5"></span>
-            <span className="ml-2">View CV</span>
+            <span className="ml-2">View CV (EN)</span>
           </a>
         </div>
 

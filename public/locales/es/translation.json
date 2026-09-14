@@ -99,10 +99,21 @@
       "messagePlaceholder": "Tu mensaje aquí..."
     }
   },
+  "projectsPage": {
+    "title": "Proyectos",
+    "subtitle": "Cosas que he construido — de optimización a impresión 3D.",
+    "sortBy": "Ordenar por",
+    "sortName": "nombre",
+    "sortDate": "fecha",
+    "code": "Código",
+    "live": "Ver web",
+    "home": "Ir al inicio",
+    "tech": "Tecnologías"
+  },
   "footer": {
     "name": "Marcos Corpas",
     "location": "Basado en España",
     "rights": "Todos los derechos reservados.",
-    "designedWith": "Sitio web diseñado en Figma. Construido con Next.js, TypeScript y Tailwind CSS."
+    "designedWith": "Sitio web diseñado en Figma. Construido con React, TypeScript y Tailwind CSS."
   }
 }

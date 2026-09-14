@@ -7,9 +7,9 @@ const ProjectsPage = () => {
     <>
       <Helmet>
         <title>Proyectos - Marcos Corpas</title>
-        <meta name="description" content="Explora mis proyectos de desarrollo web y aplicaciones móviles. Trabajos realizados con React, Node.js, TypeScript y más." />
+        <meta name="description" content="Proyectos de Marcos Corpas: optimización, backend Python, web y diseño 3D." />
         <meta property="og:title" content="Proyectos - Marcos Corpas" />
-        <meta property="og:description" content="Explora mis proyectos de desarrollo web y aplicaciones móviles. Trabajos realizados con React, Node.js, TypeScript y más." />
+        <meta property="og:description" content="Proyectos de Marcos Corpas: optimización, backend Python, web y diseño 3D." />
       </Helmet>
       <div className="pt-16">
         <Projects />

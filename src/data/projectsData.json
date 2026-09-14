@@ -25,7 +25,7 @@
     "description": "Mi web personal para mostrar proyectos en desarrollo y habilidades.",
     "cover": "/projects/portfolio/portfolio.png",
     "images": [],
-    "tags": ["Portoflio", "Personal Website"],
+    "tags": ["Portfolio", "Personal Website"],
     "techIcons": [
       { "icon": "logos:react", "name": "React" },
       { "icon": "logos:tailwindcss-icon", "name": "Tailwind CSS" },
