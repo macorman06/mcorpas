@@ -1,42 +1,37 @@
-import 'primereact/resources/themes/saga-blue/theme.css'; // O el tema que uses
-import 'primereact/resources/primereact.min.css';
-import 'primeicons/primeicons.css';
-import React, { Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import { Suspense } from 'react';
+import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import ProjectsPage from './pages/ProjectsPage';
-import ContactPage from './pages/ContactPage';
 import './i18n';
 
-const App = () => {
-  const { i18n } = useTranslation();
+const prefixes = ['', '/es', '/en'];
 
-  return (
-    <Router>
-      <div className="flex flex-col min-h-screen bg-white dark:bg-gray-900 transition-colors">
-        <Suspense fallback={<div>Loading...</div>}>
-          <Header />
-          <main className="">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/projects" element={<ProjectsPage />} />
-              <Route path="/contact" element={<ContactPage />} />
-              <Route path="/es" element={<Home />} />
-              <Route path="/es/projects" element={<ProjectsPage />} />
-              <Route path="/es/contact" element={<ContactPage />} />
-              <Route path="/en" element={<Home />} />
-              <Route path="/en/projects" element={<ProjectsPage />} />
-              <Route path="/en/contact" element={<ContactPage />} />
-            </Routes>
-          </main>
-          <Footer />
-        </Suspense>
+const App = () => (
+  <Router>
+    <Suspense fallback={<div className="min-h-screen bg-[var(--bg)]" />}>
+      <div className="flex min-h-screen flex-col bg-[var(--bg)] text-[var(--ink)]">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-3 focus:z-50 focus:rounded focus:bg-[var(--ink)] focus:px-3 focus:py-2 focus:text-[var(--bg)]"
+        >
+          Saltar al contenido
+        </a>
+        <Header />
+        <main id="main" className="flex-1">
+          <Routes>
+            {prefixes.map((p) => [
+              <Route key={`${p}/`} path={`${p}/`} element={<Home />} />,
+              <Route key={`${p}/projects`} path={`${p}/projects`} element={<Home section="projects" />} />,
+              <Route key={`${p}/contact`} path={`${p}/contact`} element={<Home section="contact" />} />,
+            ])}
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </main>
+        <Footer />
       </div>
-    </Router>
-  );
-};
+    </Suspense>
+  </Router>
+);
 
 export default App;

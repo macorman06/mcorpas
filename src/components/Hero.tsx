@@ -1,85 +1,52 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { Github, Linkedin, Mail, FileText } from 'lucide-react';
+import { ArrowDown, Download, Github, Linkedin } from 'lucide-react';
+import FollowHead from './FollowHead';
+import { links } from '../data/links';
 
 const Hero = () => {
   const { t } = useTranslation();
 
   return (
-    <section
-      className="
-        min-h-screen
-        flex items-center justify-center
-        bg-cover bg-center bg-no-repeat
-        bg-[url('/backgrounds/light_background.png')]
-        dark:bg-gradient-to-br dark:from-gray-900 dark:via-purple-900/20 dark:to-blue-900/20
-      "
-    >
-      <div className="w-full max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-0 overflow-x-hidden">
-        <div className="mb-8 w-full">
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-6 text-center md:text-left">
-            <img
-              src="/profile/avatar_mcorpas.png"
-              alt="Marcos Corpas"
-              className="w-40 h-40 md:w-48 md:h-48 rounded-full mx-auto md:mx-0"
-            />
-            <div>
-              <h1 className="text-3xl md:text-6xl font-bold text-gray-900 dark:text-white">
-                {t('hero.greeting')}
-                <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                  Marcos
-                </span>{' '}
-              </h1>
-              <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 dark:text-white mt-4">
-                <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                  {t('hero.title')}
-                </span>
-              </h2>
-            </div>
+    <section className="relative flex min-h-[100svh] items-center pt-16">
+      <div className="mx-auto grid w-full max-w-6xl items-center gap-12 px-4 py-14 sm:px-6 md:grid-cols-[1.1fr_0.9fr] md:gap-16 lg:px-8">
+        <div className="order-2 md:order-1">
+          <p className="mb-5 font-display text-2xl text-[var(--accent)] md:text-3xl">{t('hero.greeting')}</p>
+          <h1 className="font-display text-4xl font-semibold leading-[1.08] tracking-tight text-[var(--ink)] [text-wrap:balance] md:text-[2.6rem] lg:text-[3.25rem]">
+            {t('hero.title')}
+          </h1>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-[var(--mute)]">{t('hero.description')}</p>
+
+          <div className="mt-9 flex flex-wrap items-center gap-3">
+            <a
+              href={links.cv}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-md bg-[var(--ink)] px-5 py-3 text-sm font-semibold text-[var(--bg)] transition-colors hover:bg-[var(--accent)] hover:text-[var(--accent-ink)]"
+            >
+              <Download className="h-4 w-4" />
+              {t('hero.cv')}
+              <span className="font-normal opacity-70">· {t('hero.cvNote')}</span>
+            </a>
+            <Link
+              to="/#projects"
+              className="inline-flex items-center gap-2 rounded-md border border-[var(--line)] px-5 py-3 text-sm font-semibold text-[var(--ink)] transition-colors hover:border-[var(--ink)]"
+            >
+              {t('hero.viewProjects')}
+              <ArrowDown className="h-4 w-4" />
+            </Link>
+            <span className="mx-1 hidden h-6 w-px bg-[var(--line)] sm:block" aria-hidden="true" />
+            <a href={links.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-2 text-[var(--mute)] transition-colors hover:text-[var(--ink)]">
+              <Linkedin className="h-5 w-5" />
+            </a>
+            <a href={links.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="p-2 text-[var(--mute)] transition-colors hover:text-[var(--ink)]">
+              <Github className="h-5 w-5" />
+            </a>
           </div>
-          <p className="mt-6 text-base md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
-            {t('hero.description')}
-          </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row w-full items-center justify-center gap-6">
-          {/* Botones */}
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              to="/contact"
-              className="inline-flex items-center px-4 py-1.5 border border-gray-600 text-sm font-medium rounded-lg text-white bg-black hover:bg-gray-900 transition-colors"
-            >
-              <Mail className="h-6 w-5 mr-2" />
-              {t('hero.contactMe')}
-            </Link>
-            <Link
-              to="/projects"
-              className="inline-flex items-center px-4 py-1.5 border border-gray-600 text-sm font-medium rounded-lg text-white bg-black hover:bg-gray-900 transition-colors"
-            >
-              <FileText className="h-6 w-5 mr-2" />
-              {t('hero.viewProjects')}
-            </Link>
-          </div>
-
-          {/* Separador */}
-          <span className="hidden sm:block w-px h-6 bg-gray-400"></span>
-
-          {/* Redes */}
-          <div className="flex justify-center gap-8">
-            <a
-              href="https://github.com/macorman06/macorman06"
-              className="text-gray-400 hover:text-white transition-colors"
-            >
-              <Github className="h-6 w-6" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/marcos-corpas-manzano-8146391aa/"
-              className="text-gray-400 hover:text-white transition-colors"
-            >
-              <Linkedin className="h-6 w-6" />
-            </a>
-          </div>
+        <div className="order-1 md:order-2">
+          <FollowHead src="/profile/avatar.webp" alt={t('hero.avatarAlt')} />
         </div>
       </div>
     </section>

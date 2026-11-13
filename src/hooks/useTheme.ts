@@ -1,26 +1,25 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
+type Theme = 'light' | 'dark';
+
+const initialTheme = (): Theme =>
+  typeof document !== 'undefined' && document.documentElement.classList.contains('dark') ? 'dark' : 'light';
 
 export const useTheme = () => {
-  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+  const [theme, setTheme] = useState<Theme>(initialTheme);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark';
-    if (savedTheme) {
-      setTheme(savedTheme);
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem('theme', theme);
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    document.documentElement.classList.toggle('dark', theme === 'dark');
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
+    const next = theme === 'light' ? 'dark' : 'light';
+    try {
+      localStorage.setItem('theme', next);
+    } catch {
+      /* storage unavailable: theme still applies for this visit */
+    }
+    setTheme(next);
   };
 
   return { theme, toggleTheme };

@@ -1,86 +1,88 @@
-@import 'flag-icons/css/flag-icons.min.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply font-body;
-  line-height: 1.6;
+/* One palette for the whole site: warm paper, near-black ink, moss accent. */
+:root {
+  --bg: #f7f5f2;
+  --surface: #efece7;
+  --ink: #1a1a1a;
+  --mute: #5c5c5c;
+  --line: #e4e0da;
+  --accent: #3d5a45;
+  --accent-ink: #f7f5f2;
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #121212;
+  --surface: #1a1a1a;
+  --ink: #f2f2f0;
+  --mute: #a3a3a3;
+  --line: #2a2a2a;
+  --accent: #8fb097;
+  --accent-ink: #121212;
+  color-scheme: dark;
+}
+
+/* Legacy names still used by the projects components. */
+:root,
+.dark {
+  --proj-bg: var(--bg);
+  --proj-ink: var(--ink);
+  --proj-mute: var(--mute);
+  --proj-line: var(--line);
+  --proj-accent: var(--accent);
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  background-color: var(--bg);
 }
 
-/* Projects surface tokens (Design A) */
-.projects-surface {
-  --proj-bg: #f7f5f2;
-  --proj-ink: #1a1a1a;
-  --proj-mute: #5c5c5c;
-  --proj-line: #e4e0da;
-  --proj-accent: #3d5a45;
-  background-color: var(--proj-bg);
-  color: var(--proj-ink);
+body {
+  @apply font-body;
+  background-color: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-.dark .projects-surface {
-  --proj-bg: #121212;
-  --proj-ink: #f2f2f0;
-  --proj-mute: #a3a3a3;
-  --proj-line: #2a2a2a;
-  --proj-accent: #7a9b82;
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
+/* Follow-the-cursor portrait */
+.head-host .head-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.head-host.is-ready .head-image {
+  opacity: 0;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 4px;
+.section-kicker {
+  @apply text-xs font-semibold uppercase tracking-[0.18em] text-[var(--accent)];
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-.dark ::-webkit-scrollbar-track {
-  background: #1f2937;
-}
-
-.dark ::-webkit-scrollbar-thumb {
-  background: #4b5563;
-}
-
-.dark ::-webkit-scrollbar-thumb:hover {
-  background: #6b7280;
-}
-
-button:focus,
-input:focus,
-textarea:focus,
-select:focus {
-  outline: 2px solid #3d5a45;
-  outline-offset: 2px;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.5s ease-out;
 }

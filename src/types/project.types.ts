@@ -1,23 +1,32 @@
-export type ProjectStatus = 'En progreso' | 'Activo' | 'Terminado' | 'Terminado · 9,5' | 'Sin soporte';
-
-export interface TechIcon {
-  icon: string;
-  name: string;
+export interface Localized {
+  es: string;
+  en: string;
 }
 
+export type ProjectKind = 'engineering' | 'personal';
+
 export interface Project {
+  id: string;
   title: string;
-  description: string;
-  detailedDescription?: string;
-  cover: string;
-  images: string[];
-  tags: string[];
-  techIcons?: TechIcon[];
-  instagram?: string;
-  github?: string;
-  live?: string;
-  /** Same-origin PDF (e.g. thesis), not an external link */
-  pdf?: string;
-  date: number;
-  status: ProjectStatus;
+  kind: ProjectKind;
+  /** Free text so it can be a range ("2024 – hoy") or omitted when unknown. */
+  year?: string;
+  status: Localized;
+  /** One line: what it is. Shown in the list. */
+  summary: Localized;
+  /** Two to four short facts, shown in the detail panel. */
+  facts: Localized[];
+  /** What I actually did, stated plainly. */
+  role: Localized;
+  /** Built mostly through AI-assisted coding: shown as a visible label. */
+  aiAssisted?: boolean;
+  stack: string[];
+  cover?: string;
+  images?: string[];
+  links?: {
+    pdf?: string;
+    instagram?: string;
+    github?: string;
+    live?: string;
+  };
 }

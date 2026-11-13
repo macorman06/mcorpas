@@ -1,65 +1,61 @@
-import React from 'react';
-import { Briefcase, Users, Flag } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import ExperienceCard from './ExperienceCard';
+import { Download } from 'lucide-react';
+import Section from './Section';
+import { links } from '../data/links';
+
+interface Job {
+  role: string;
+  org: string;
+  date: string;
+  items?: string[];
+  note?: string;
+}
+
+const Row = ({ entry }: { entry: Job }) => (
+  <li className="grid gap-1 border-t border-[var(--line)] py-7 first:border-t-0 first:pt-0 sm:grid-cols-[9.5rem_1fr] sm:gap-8">
+    <p className="text-sm tabular-nums text-[var(--mute)] sm:pt-1">{entry.date}</p>
+    <div>
+      <h4 className="text-lg font-semibold leading-snug text-[var(--ink)]">{entry.role}</h4>
+      <p className="text-[var(--accent)]">{entry.org}</p>
+      {entry.note && <p className="mt-2 text-[var(--mute)]">{entry.note}</p>}
+      {entry.items && (
+        <ul className="mt-3 space-y-2 text-[var(--ink)]">
+          {entry.items.map((item, i) => (
+            <li key={i} className="relative pl-4 before:absolute before:left-0 before:top-[0.7em] before:h-px before:w-2 before:bg-[var(--mute)]">
+              {item}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </li>
+);
 
 const Experience = () => {
   const { t } = useTranslation();
-
-  const experienceData = t('experience.jobs', { returnObjects: true });
+  const jobs = t('experience.jobs', { returnObjects: true }) as Job[];
+  const education = t('experience.education', { returnObjects: true }) as Job[];
 
   return (
-    <section className="py-20 bg-white dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-left mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">
-            {t('experience.title')}
-          </h2>
-          <p className="text-base text-gray-600 dark:text-gray-300 text-left">
-            {t('experience.subtitle')}
-          </p>
-        </div>
+    <Section id="experience" kicker={t('experience.kicker')} title={t('experience.title')}>
+      <h3 className="mb-6 text-sm font-semibold uppercase tracking-[0.14em] text-[var(--mute)]">{t('experience.workTitle')}</h3>
+      <ol>{Array.isArray(jobs) && jobs.map((j, i) => <Row key={i} entry={j} />)}</ol>
 
-        <div className="space-y-8">
-          {experienceData.map((exp: any, index: number) => (
-            <ExperienceCard
-              key={index}
-              icon={
-                index === 0 ? Briefcase : index === 1 ? Users : Flag
-              }
-              title={exp.title}
-              company={exp.company}
-              description={exp.description}
-              items={exp.items}
-              date={exp.date}
-            />
-          ))}
-        </div>
-        
-        <div className="text-center mt-16 flex flex-wrap justify-center gap-4">        
-          <a
-            href="/CV_MarcosCorpas_ES.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-4 py-1.5 border border-gray-600 text-sm font-medium rounded-lg text-white bg-black hover:bg-gray-900 transition-colors"
-          >
-            <span className="fi fi-es w-5 h-5"></span>
-            <span className="ml-2">Ver CV (ES)</span>
-          </a>
-          <a
-            href="/CV_MarcosCorpas_EN.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-4 py-1.5 border border-gray-600 text-sm font-medium rounded-lg text-white bg-black hover:bg-gray-900 transition-colors"
-          >
-            <span className="fi fi-gb w-5 h-5"></span>
-            <span className="ml-2">View CV (EN)</span>
-          </a>
-        </div>
+      <h3 className="mb-6 mt-14 text-sm font-semibold uppercase tracking-[0.14em] text-[var(--mute)]">{t('experience.educationTitle')}</h3>
+      <ol>{Array.isArray(education) && education.map((j, i) => <Row key={i} entry={j} />)}</ol>
 
+      <p className="mt-10 text-[var(--mute)]">{t('experience.languages')}</p>
 
-      </div>
-    </section>
+      <a
+        href={links.cv}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-8 inline-flex items-center gap-2 border-b border-[var(--ink)] pb-0.5 text-sm font-semibold text-[var(--ink)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+      >
+        <Download className="h-4 w-4" />
+        {t('hero.cv')} · {t('hero.cvNote')}
+      </a>
+    </Section>
   );
 };
 

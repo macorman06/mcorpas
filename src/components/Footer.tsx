@@ -1,22 +1,12 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Github, Dribbble, Linkedin, Twitter } from 'lucide-react';
 
 const Footer = () => {
   const { t } = useTranslation();
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="bg-gray-900 dark:bg-gray-950 text-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0">
-            <h3 className="text-lg font-semibold mb-2">{t('footer.name')}</h3>
-            <p className="text-gray-400 text-sm">
-              © {currentYear} Marcos. {t('footer.rights')}
-            </p>
-          </div>
-        </div>
+    <footer className="border-t border-[var(--line)] py-10">
+      <div className="mx-auto flex max-w-6xl flex-wrap justify-between gap-3 px-4 text-sm text-[var(--mute)] sm:px-6 lg:px-8">
+        <p>© {new Date().getFullYear()} Marcos Corpas</p>
+        <p>{t('footer.rights')}</p>
       </div>
     </footer>
   );

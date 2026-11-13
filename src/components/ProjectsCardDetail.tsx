@@ -1,173 +1,137 @@
-import React, { useEffect } from 'react';
-import ReactMarkdown from 'react-markdown';
-import { X, Instagram, FileText } from 'lucide-react';
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Icon } from '@iconify/react';
 import { useTranslation } from 'react-i18next';
+import { FileText, Github, Globe, Instagram, X } from 'lucide-react';
 import { Project } from '../types/project.types';
+import { currentLang } from '../i18n';
 
-interface ProjectCardDetailProps {
+interface Props {
   project: Project;
   onClose: () => void;
 }
 
-const ProjectCardDetail: React.FC<ProjectCardDetailProps> = ({ project, onClose }) => {
+const ProjectDetail = ({ project, onClose }: Props) => {
   const { t } = useTranslation();
+  const lang = currentLang();
+  const closeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
+    const previous = document.activeElement as HTMLElement | null;
+    const overflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
+    closeRef.current?.focus();
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
+    document.addEventListener('keydown', onKey);
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = overflow;
+      document.removeEventListener('keydown', onKey);
+      previous?.focus();
     };
-  }, []);
+  }, [onClose]);
 
-  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.target === e.currentTarget) {
-      onClose();
-    }
-  };
+  const linkClass =
+    'inline-flex items-center gap-1.5 font-semibold text-[var(--ink)] transition-colors hover:text-[var(--accent)]';
 
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.25 }}
-      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/70 p-0 sm:p-6"
-      onClick={handleBackdropClick}
+      transition={{ duration: 0.2 }}
+      className="fixed inset-0 z-50 flex items-end justify-center bg-black/60 sm:items-center sm:p-6"
+      onClick={(e) => e.target === e.currentTarget && onClose()}
     >
       <motion.div
-        initial={{ y: 48, opacity: 0 }}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="project-title"
+        initial={{ y: 40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        exit={{ y: 32, opacity: 0 }}
-        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-        className="projects-surface relative w-full max-w-3xl max-h-[92vh] overflow-y-auto sm:rounded-sm shadow-none border border-[var(--proj-line)]"
+        exit={{ y: 24, opacity: 0 }}
+        transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+        className="relative max-h-[92svh] w-full max-w-2xl overflow-y-auto border border-[var(--line)] bg-[var(--bg)] text-[var(--ink)]"
       >
         <button
+          ref={closeRef}
           type="button"
           onClick={onClose}
-          aria-label="Close"
-          className="absolute top-4 right-4 z-10 p-2 text-[var(--proj-mute)] hover:text-[var(--proj-ink)] transition-colors"
+          aria-label={t('projectsPage.close')}
+          className="absolute right-3 top-3 z-10 inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--bg)] text-[var(--mute)] transition-colors hover:text-[var(--ink)]"
         >
           <X className="h-5 w-5" />
         </button>
 
-        <img
-          src={project.cover}
-          alt={project.title}
-          className="w-full h-56 sm:h-72 object-cover"
-        />
+        {project.cover && <img src={project.cover} alt="" className="h-52 w-full object-cover sm:h-64" />}
 
-        <div className="p-6 sm:p-8 font-body">
-          <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2 mb-2">
-            <h3 className="font-display text-3xl font-semibold text-[var(--proj-ink)]">
-              {project.title}
-            </h3>
-            <span className="text-sm tabular-nums text-[var(--proj-mute)]">{project.date}</span>
-          </div>
-          <p className="text-xs uppercase tracking-[0.14em] text-[var(--proj-accent)] mb-6">
-            {project.status}
+        <div className="p-6 sm:p-9">
+          <p className="text-sm tabular-nums text-[var(--mute)]">
+            {project.year ? `${project.year} · ` : ''}
+            <span className="text-[var(--accent)]">{project.status[lang]}</span>
           </p>
+          <h3 id="project-title" className="mt-1 pr-8 font-display text-2xl font-semibold leading-tight sm:text-3xl">
+            {project.title}
+          </h3>
+          <p className="mt-4 text-lg leading-relaxed">{project.summary[lang]}</p>
 
-          <div className="text-[var(--proj-mute)] mb-8 leading-relaxed markdown-content">
-            <ReactMarkdown
-              components={{
-                p: ({ node, ...props }) => <p className="mb-4 text-[var(--proj-ink)]/80" {...props} />,
-                h2: ({ node, ...props }) => (
-                  <h2 className="font-display text-xl font-semibold text-[var(--proj-ink)] mt-6 mb-3" {...props} />
-                ),
-                h3: ({ node, ...props }) => (
-                  <h3 className="font-display text-lg font-semibold text-[var(--proj-ink)] mt-5 mb-2" {...props} />
-                ),
-                strong: ({ node, ...props }) => (
-                  <strong className="font-semibold text-[var(--proj-ink)]" {...props} />
-                ),
-                ul: ({ node, ...props }) => (
-                  <ul className="list-disc list-inside my-4 space-y-1" {...props} />
-                ),
-                li: ({ node, ...props }) => <li className="my-1" {...props} />,
-              }}
-            >
-              {project.detailedDescription || project.description}
-            </ReactMarkdown>
-          </div>
-
-          {project.techIcons && project.techIcons.length > 0 && (
-            <div className="mb-8">
-              <h4 className="font-display text-lg font-semibold text-[var(--proj-ink)] mb-3">
-                {t('projectsPage.tech')}
-              </h4>
-              <div className="flex flex-wrap gap-2">
-                {project.techIcons.map((tech, index) => (
-                  <span
-                    key={index}
-                    className="inline-flex items-center gap-2 px-3 py-1.5 text-sm border border-[var(--proj-line)] text-[var(--proj-ink)]"
-                    title={tech.name}
-                  >
-                    {tech.icon.startsWith('/') || tech.icon.startsWith('http') ? (
-                      <img src={tech.icon} alt="" className="w-4 h-4 object-contain" />
-                    ) : (
-                      <Icon icon={tech.icon} className="w-4 h-4" />
-                    )}
-                    {tech.name}
-                  </span>
-                ))}
-              </div>
-            </div>
+          {project.facts.length > 0 && (
+            <ul className="mt-6 space-y-3 text-[var(--mute)]">
+              {project.facts.map((f, i) => (
+                <li key={i} className="relative pl-4 leading-relaxed before:absolute before:left-0 before:top-[0.75em] before:h-px before:w-2 before:bg-[var(--accent)]">
+                  {f[lang]}
+                </li>
+              ))}
+            </ul>
           )}
 
-          {project.tags.length > 0 && (
-            <div className="flex flex-wrap gap-2 mb-8">
-              {project.tags.map((tag, i) => (
-                <span
-                  key={i}
-                  className="px-2.5 py-1 text-xs tracking-wide border border-[var(--proj-line)] text-[var(--proj-mute)]"
-                >
-                  {tag}
+          <dl className="mt-8 grid gap-5 border-t border-[var(--line)] pt-6 sm:grid-cols-[8rem_1fr]">
+            <dt className="text-sm font-semibold uppercase tracking-[0.12em] text-[var(--mute)]">{t('projectsPage.role')}</dt>
+            <dd className="leading-relaxed">{project.role[lang]}</dd>
+            <dt className="text-sm font-semibold uppercase tracking-[0.12em] text-[var(--mute)]">{t('projectsPage.stack')}</dt>
+            <dd className="flex flex-wrap gap-2">
+              {project.stack.map((s) => (
+                <span key={s} className="border border-[var(--line)] px-2.5 py-1 text-sm">
+                  {s}
                 </span>
               ))}
-            </div>
-          )}
+            </dd>
+          </dl>
 
           {project.images && project.images.length > 0 && (
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-8">
-              {project.images.map((image, index) => (
-                <img
-                  key={index}
-                  src={image}
-                  alt={`${project.title} ${index + 1}`}
-                  className="w-full h-32 object-cover"
-                />
+            <div className="mt-8 grid grid-cols-3 gap-2">
+              {project.images.map((src, i) => (
+                <img key={src} src={src} alt={`${project.title} ${i + 1}`} loading="lazy" className="aspect-square w-full object-cover" />
               ))}
             </div>
           )}
 
-          <div className="flex flex-wrap gap-6 pt-2 border-t border-[var(--proj-line)]">
-            {project.pdf && (
-              <a
-                href={project.pdf}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-[var(--proj-ink)] hover:text-[var(--proj-accent)] transition-colors"
-              >
-                <FileText className="h-4 w-4" /> {t('projectsPage.pdf')}
-              </a>
-            )}
-            {project.instagram && (
-              <a
-                href={project.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-[var(--proj-ink)] hover:text-[var(--proj-accent)] transition-colors"
-              >
-                <Instagram className="h-4 w-4" /> Instagram
-              </a>
-            )}
-          </div>
+          {project.links && (
+            <div className="mt-8 flex flex-wrap gap-6 border-t border-[var(--line)] pt-6 text-sm">
+              {project.links.pdf && (
+                <a href={project.links.pdf} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                  <FileText className="h-4 w-4" /> {t('projectsPage.pdf')}
+                </a>
+              )}
+              {project.links.github && (
+                <a href={project.links.github} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                  <Github className="h-4 w-4" /> GitHub
+                </a>
+              )}
+              {project.links.live && (
+                <a href={project.links.live} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                  <Globe className="h-4 w-4" /> Web
+                </a>
+              )}
+              {project.links.instagram && (
+                <a href={project.links.instagram} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                  <Instagram className="h-4 w-4" /> Instagram
+                </a>
+              )}
+            </div>
+          )}
         </div>
       </motion.div>
     </motion.div>
   );
 };
 
-export default ProjectCardDetail;
+export default ProjectDetail;

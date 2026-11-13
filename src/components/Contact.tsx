@@ -1,127 +1,90 @@
-import React, { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Send } from 'lucide-react';
+import { Github, Linkedin, Mail, Send } from 'lucide-react';
+import Section from './Section';
+import { links } from '../data/links';
+
+type State = 'idle' | 'sending' | 'sent' | 'error';
+
+const field =
+  'mt-2 w-full rounded-none border-0 border-b border-[var(--line)] bg-transparent px-0 py-2.5 text-[var(--ink)] placeholder:text-[var(--mute)] focus:border-[var(--accent)] focus:outline-none focus:ring-0';
 
 const Contact = () => {
   const { t } = useTranslation();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+  const [state, setState] = useState<State>('idle');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
+    const form = e.currentTarget;
+    const data = Object.fromEntries(new FormData(form).entries());
+    setState('sending');
     try {
       const response = await fetch('https://formspree.io/f/xwpbjboa', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          message: formData.message
-        }),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(data),
       });
-
-      if (response.ok) {
-        alert('¡Mensaje enviado!');
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        alert('Hubo un error al enviar el mensaje.');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      alert('Hubo un error al enviar el mensaje.');
+      if (!response.ok) throw new Error(String(response.status));
+      form.reset();
+      setState('sent');
+    } catch {
+      setState('error');
     }
   };
 
+  const contactLink = 'inline-flex items-center gap-3 text-lg text-[var(--ink)] transition-colors hover:text-[var(--accent)]';
+
   return (
-    <section className="min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat dark:bg-gradient-to-br dark:from-gray-900 dark:via-purple-900/20 dark:to-blue-900/20" style={{ backgroundImage: 'var(--tw-gradient-stops, url(/backgrounds/light_background.png))' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-28 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              {t('contact.title')}
-            </h2>
-            <h3 className="text-xl md:text-2xl text-blue-600 dark:text-blue-400 mb-6">
-              {t('contact.subtitle')}
-            </h3>
-            <p className="text-lg text-gray-600 dark:text-gray-300">
-              {t('contact.description')}
+    <Section id="contact" kicker={t('contact.kicker')} title={t('contact.title')} intro={t('contact.description')}>
+      <div className="grid gap-14 lg:grid-cols-[1fr_1.2fr]">
+        <ul className="space-y-5">
+          <li>
+            <a href={`mailto:${links.email}`} className={contactLink}>
+              <Mail className="h-5 w-5 text-[var(--mute)]" /> {links.email}
+            </a>
+          </li>
+          <li>
+            <a href={links.linkedin} target="_blank" rel="noopener noreferrer" className={contactLink}>
+              <Linkedin className="h-5 w-5 text-[var(--mute)]" /> linkedin.com/in/mcorpasmanzano
+            </a>
+          </li>
+          <li>
+            <a href={links.github} target="_blank" rel="noopener noreferrer" className={contactLink}>
+              <Github className="h-5 w-5 text-[var(--mute)]" /> github.com/macorman06
+            </a>
+          </li>
+        </ul>
+
+        <form onSubmit={handleSubmit} className="space-y-7">
+          <label className="block text-sm font-semibold text-[var(--mute)]">
+            {t('contact.form.name')}
+            <input name="name" type="text" autoComplete="name" required className={field} />
+          </label>
+          <label className="block text-sm font-semibold text-[var(--mute)]">
+            {t('contact.form.email')}
+            <input name="email" type="email" autoComplete="email" required className={field} />
+          </label>
+          <label className="block text-sm font-semibold text-[var(--mute)]">
+            {t('contact.form.message')}
+            <textarea name="message" rows={4} required className={`${field} resize-none`} />
+          </label>
+          <div className="flex flex-wrap items-center gap-5">
+            <button
+              type="submit"
+              disabled={state === 'sending'}
+              className="inline-flex items-center gap-2 rounded-md bg-[var(--ink)] px-5 py-3 text-sm font-semibold text-[var(--bg)] transition-colors hover:bg-[var(--accent)] hover:text-[var(--accent-ink)] disabled:opacity-60"
+            >
+              <Send className="h-4 w-4" />
+              {state === 'sending' ? t('contact.form.sending') : t('contact.form.send')}
+            </button>
+            <p role="status" className="text-sm text-[var(--mute)]">
+              {state === 'sent' && t('contact.form.sent')}
+              {state === 'error' && t('contact.form.error')}
             </p>
           </div>
-
-          <div className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-2xl">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  {t('contact.form.name')}
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder={t('contact.form.namePlaceholder')}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
-                  required
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  {t('contact.form.email')}
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder={t('contact.form.emailPlaceholder')}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
-                  required
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  {t('contact.form.message')}
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder={t('contact.form.messagePlaceholder')}
-                  rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 resize-none"
-                  required
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full inline-flex items-center justify-center px-4 py-1.5 border border-gray-600 text-sm font-medium rounded-lg text-white bg-black hover:bg-gray-900 transition-colors"
-              >
-                <Send className="h-5 w-5 mr-2" />
-                {t('contact.form.send')}
-              </button>
-
-            </form>
-          </div>
-        </div>
+        </form>
       </div>
-    </section>
+    </Section>
   );
 };
 

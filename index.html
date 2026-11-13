@@ -1,66 +1,56 @@
 <!doctype html>
-<html lang="es" class="dark">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-
-    <!-- Favicon clásico -->
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <!-- Favicon PNGs -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <!-- Android Chrome Icons -->
-    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
-
-    <!-- Viewport responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Título SEO -->
-    <title>Marcos Corpas | Ingeniero Aeroespacial & Desarrollador</title>
-
-    <!-- Meta descripción -->
-    <meta name="description" content="Marcos Corpas, Ingeniero Aeroespacial apasionado por la tecnología. Desarrollo backend en Python, aplicaciones fullstack con React y diseños creativos 3D. Uniendo funcionalidad, diseño y utilidad en cada proyecto." />
-
-    <!-- Palabras clave -->
-    <meta name="keywords" content="Marcos Corpas, Ingeniero Aeroespacial, Backend Python, Fullstack React, Optimización, Desarrollo Web, Diseño 3D" />
-
-    <!-- Canonical URL -->
+    <title>Marcos Corpas | Ingeniero Aeroespacial · Operaciones aéreas, optimización y software</title>
+    <meta name="description" content="Marcos Corpas, ingeniero aeroespacial (Aeronavegación, URJC). Desarrollo software de planificación y asignación de aeronaves usado por aerolíneas, con Python, optimización matemática y AWS." />
     <link rel="canonical" href="https://mcorpas.pages.dev/" />
+    <meta name="robots" content="index, follow" />
 
-    <!-- Robots -->
-    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+    <meta name="theme-color" content="#f7f5f2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)" />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Marcos Corpas | Ingeniero Aeroespacial & Desarrollador" />
-    <meta property="og:description" content="Marcos Corpas, Ingeniero Aeroespacial apasionado por la tecnología. Desarrollo backend en Python, aplicaciones fullstack con React y diseños creativos 3D." />
+    <meta property="og:title" content="Marcos Corpas | Ingeniero Aeroespacial" />
+    <meta property="og:description" content="Operaciones aéreas, optimización y software. Sistemas de asignación de aeronaves en producción para aerolíneas." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://mcorpas.pages.dev/" />
     <meta property="og:site_name" content="Marcos Corpas" />
-    <meta property="og:image" content="https://mcorpas.pages.dev/profile/avatar_mcorpas.png" />
-
-    <!-- Twitter Card básica (sin user) -->
+    <meta property="og:image" content="https://mcorpas.pages.dev/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- Seguridad básica -->
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 
-    <!-- Fonts: Fraunces (display) + Source Sans 3 (body) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5B61P0QXW"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-E5B61P0QXW');
-  </script>
-    
+    <!-- Apply the saved or system theme before first paint -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (dark) document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="preload" as="image" href="/profile/avatar.webp" type="image/webp" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5B61P0QXW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-E5B61P0QXW');
+    </script>
   </head>
   <body>
     <div id="root"></div>

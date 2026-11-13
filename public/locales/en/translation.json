@@ -1,120 +1,147 @@
 {
+  "meta": {
+    "title": "Marcos Corpas | Aerospace Engineer · Airline operations, optimization & software",
+    "description": "Aerospace engineer (Air Navigation, URJC). I build aircraft assignment and operations planning software used by airlines, with Python, mathematical optimization and AWS.",
+    "projectsTitle": "Projects | Marcos Corpas",
+    "projectsDescription": "BSc thesis on sustainable aircraft rotations (9.5/10) and personal projects: HERES, Atlas, Catan AI, Home Lab and Jesper3DMakes."
+  },
   "nav": {
-    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
     "projects": "Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "menu": "Menu",
+    "language": "Change language",
+    "themeLight": "Switch to light mode",
+    "themeDark": "Switch to dark mode"
   },
   "hero": {
-    "greeting": "Hi, I'm ",
-    "title": "Aerospace Engineer",
-    "description": "Passionate about building and bringing ideas to life, from backend development with Python to fullstack projects and 3D design.",
-    "contactMe": "Contact Me",
-    "viewProjects": "View Projects"
+    "greeting": "Hi, I'm Marcos.",
+    "title": "Aerospace engineer. I build the software that decides which aircraft flies each route.",
+    "description": "At Cisneria Engineering since 2023, working on aircraft assignment and operations planning systems used in production by airlines.",
+    "cv": "Download CV",
+    "cvNote": "PDF",
+    "viewProjects": "See projects",
+    "contact": "Contact",
+    "avatarAlt": "Illustrated portrait of Marcos Corpas",
+    "headHint": "Move your cursor: I'll keep an eye on it.",
+    "headHintTouch": "Tap to one side: I'll keep an eye on it.",
+    "headPaused": "Motion paused.",
+    "headPause": "Pause the portrait's motion",
+    "headResume": "Resume the portrait's motion"
   },
-  "skills": {
-    "title": "About Me",
-    "subtitle": "Since I was young, I've enjoyed creating and sharing. My projects combine creative ideas with practical results for everyday life — from handmade designs to software and app development.",
-    
-    "whatICanDo": "What I Can Do",
-    "whatICanDoDesc": "I can help develop solutions to grow your business:",
-    "services": {
-      "uiux": "UI/UX Design",
-      "fullstack": "Optimization Models",
-      "mobile": "Web Development",
-      "database": "3D Printed Lamp Design",
-      "api": "API Integration"
-    },
-    
-    "toolsIUse": "My Tools",
-    "toolsIUseDesc": "I use the latest tools and technologies to build functional and scalable products:",
-    "tools": {
-      "frontend": "Frontend:",
-      "backend": "Backend:",
-      "design": "Design:",
-      "frontendList": "Tailwind CSS, React, TypeScript",
-      "backendList": "Python, PostgreSQL, Postman, ApiDog",
-      "designList": "Figma, Fusion360, Adobe Illustrator"
-    },
-    
-    "uiuxDesign": "Hobbies",
-    "uiuxDesignDesc": "I love sports, the mountains, simulation and gaming, aviation, racing, 3D printing, and programming.",
-    "designSkills": {
-      "userCentered": "Formula 1",
-      "modern": "Mountains & Nature",
-      "responsive": "Simulation & Video Games",
-      "wireframes": "Planes, Racing, 3D Printing, Programming"
-    }
+  "about": {
+    "kicker": "About",
+    "title": "Aviation, optimization and software, in that order.",
+    "body": [
+      "I'm an aerospace engineer from URJC, Air Navigation track. For over three years at Cisneria Engineering I've worked on the planning logic of an aircraft assignment system used in production by airlines, including the TAP Air Portugal rollout.",
+      "My thesis, a MILP model that generates aircraft rotations with sustainability criteria, was graded 9.5/10. I rely on Python, data and AWS, and I want to steer my career towards aerospace and defense engineering: systems integration, simulation, UAV and air navigation."
+    ],
+    "hobbies": "Outside work: Formula 1, the mountains, simulators, 3D printing, and volunteering as a youth leader at Salesianos Parla."
   },
   "experience": {
-    "title": "My Experience",
-    "subtitle": "From engineering to volunteering: practical solutions and working with people.",
+    "kicker": "Background",
+    "title": "Experience and education",
+    "workTitle": "Experience",
+    "educationTitle": "Education",
     "jobs": [
       {
-        "title": "Backend Developer",
-        "company": "Cisneria Engineering",
-        "description": "Backend development on Tail Assigner, an optimization tool for aircraft allocation. Supporting Vueling and Air Nostrum.",
+        "role": "Project Engineer · Airline Operations Planning & Optimization",
+        "org": "Cisneria Engineering",
+        "date": "07/2023 – present",
         "items": [
-          "API development with Python.",
-          "Automation of planning processes.",
-          "Data queries and analysis in SQL.",
-          "Collaboration with Angular frontend."
-        ],
-        "date": "2023 – Present"
+          "Planning logic of aircraft assignment software used in production by airlines: planning rules, operational data validation and automation of tactical planning.",
+          "TAP Air Portugal technical rollout: data integration, business rules, backend services and go-live support.",
+          "Python services and REST APIs (Flask, PostgreSQL) tested with Pytest: 85% coverage across the microservices.",
+          "Daily operation of AWS production infrastructure for two clients (ECS Fargate, RDS, S3, CloudWatch) and cost inventory."
+        ]
       },
       {
-        "title": "Youth Leader & Catechist",
-        "company": "Juveliber | Salesianos Parla",
-        "description": "Educational leisure monitor and volunteer. Managing youth activities, catechesis, and teamwork.",
+        "role": "Aerodynamics Designer",
+        "org": "Ü Motorsport – URJC (Formula Student)",
+        "date": "09/2019 – 06/2021",
         "items": [
-          "Organizing leisure and free-time activities.",
-          "Mentoring young people and teenagers.",
-          "Volunteering in Salesian projects."
-        ],
-        "date": "2018 – Present"
+          "Designed and optimized a single-seater's rear wing with SolidWorks and CFD (Ansys Fluent)."
+        ]
       },
       {
-        "title": "Aerodynamics Designer",
-        "company": "Ü Motorsport URJC",
-        "description": "Aerodynamic designer for Formula Student single-seaters. CAD design and CFD simulations.",
+        "role": "Youth leader (volunteer)",
+        "org": "Salesianos Parla",
+        "date": "2018 – present",
         "items": [
-          "Designing parts with SolidWorks.",
-          "CFD simulations with Ansys Fluent.",
-          "Aerodynamic optimization of components."
-        ],
-        "date": "2021 – 2022"
+          "Mentoring youth groups. I built HERES, their organisation platform."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "role": "BSc Aerospace Engineering – Air Navigation",
+        "org": "Universidad Rey Juan Carlos",
+        "date": "2018 – 2026",
+        "note": "Thesis: sustainable aircraft rotations (MILP). Grade 9.5/10."
+      },
+      {
+        "role": "Advanced Program in DevOps & Cloud",
+        "org": "UNIR",
+        "date": "2026",
+        "note": "Preparing AZ-900 and AWS Cloud Practitioner."
+      }
+    ],
+    "languages": "Languages: Spanish (native), English (B2+, professional), French (comprehension)."
+  },
+  "skills": {
+    "kicker": "Skills",
+    "title": "What I work with",
+    "groups": [
+      {
+        "title": "Aerospace & engineering",
+        "items": "Air navigation, airline operations planning (aircraft routing, tail assignment), aerodynamics & CFD (Ansys Fluent), CAD (SolidWorks)."
+      },
+      {
+        "title": "Optimization & data",
+        "items": "MILP/MIP, Gurobi, scheduling, scenario analysis, Python, SQL/PostgreSQL."
+      },
+      {
+        "title": "Software",
+        "items": "Python, Flask, REST APIs, Pytest, Git, Postman; working with Angular front-end teams."
+      },
+      {
+        "title": "Cloud & DevOps",
+        "items": "AWS (ECS Fargate, RDS, S3, CloudWatch, Secrets Manager), Docker, GitLab CI/CD; CloudFormation and Jenkins pipeline review."
       }
     ]
   },
+  "projectsPage": {
+    "kicker": "Projects",
+    "title": "Things I've built",
+    "subtitle": "The thesis first. Then personal projects I actually use.",
+    "engineering": "Engineering",
+    "personal": "Personal projects",
+    "aiNote": "Several personal projects were coded with AI assistance. Each one says what I did myself: the idea, the decisions, the testing and the real use.",
+    "aiLabel": "Built with AI assistance",
+    "role": "My role",
+    "stack": "Stack",
+    "pdf": "Read the thesis (PDF)",
+    "open": "Open",
+    "close": "Close",
+    "back": "Back to home"
+  },
   "contact": {
-    "title": "Let's bring your ideas to life.",
-    "subtitle": "Turning your vision into reality",
-    "description": "Got a project in mind or just want to chat? Let's connect!",
+    "kicker": "Contact",
+    "title": "Let's talk.",
+    "description": "If you're looking for someone for an aerospace engineering, airline operations or optimization team, drop me a line.",
+    "email": "Email",
     "form": {
       "name": "Name",
       "email": "Email",
       "message": "Message",
       "send": "Send",
-      "namePlaceholder": "Your name",
-      "emailPlaceholder": "contact@example.com",
-      "messagePlaceholder": "Your message here..."
+      "sending": "Sending…",
+      "sent": "Message sent. I'll get back to you soon.",
+      "error": "It couldn't be sent. Please email me directly."
     }
   },
-  "projectsPage": {
-    "title": "Projects",
-    "subtitle": "Things I've built — from sustainable aircraft rotations to 3D printing.",
-    "sortBy": "Sort by",
-    "sortName": "name",
-    "sortDate": "date",
-    "code": "Code",
-    "live": "Live site",
-    "home": "Go home",
-    "tech": "Technologies",
-    "pdf": "View thesis (PDF)"
-  },
   "footer": {
-    "name": "Marcos Corpas",
-    "location": "Based in Spain",
-    "rights": "All rights reserved.",
-    "designedWith": "Website designed in Figma. Built with React, TypeScript and Tailwind CSS."
+    "rights": "Built with React and TypeScript."
   }
 }
