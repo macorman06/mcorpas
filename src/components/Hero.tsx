@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { ArrowDown, Download, Github, Linkedin } from 'lucide-react';
-import FollowHead from './FollowHead';
 import { links } from '../data/links';
 
 const Hero = () => {
@@ -9,11 +8,10 @@ const Hero = () => {
 
   return (
     <section className="relative flex min-h-[100svh] items-center pt-16">
-      <div className="mx-auto grid w-full max-w-6xl items-center gap-12 px-4 py-14 sm:px-6 md:grid-cols-[1.1fr_0.9fr] md:gap-16 lg:px-8">
+      <div className="mx-auto grid w-full max-w-6xl items-center gap-12 px-4 py-14 sm:px-6 grid-cols-[minmax(0,1fr)] md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:gap-16 lg:px-8">
         <div className="order-2 md:order-1">
-          <p className="mb-5 font-display text-2xl text-[var(--accent)] md:text-3xl">{t('hero.greeting')}</p>
-          <h1 className="font-display text-4xl font-semibold leading-[1.08] tracking-tight text-[var(--ink)] [text-wrap:balance] md:text-[2.6rem] lg:text-[3.25rem]">
-            {t('hero.title')}
+          <h1 className="font-display text-4xl font-extrabold leading-[1.02] tracking-tight text-[var(--ink)] [text-wrap:balance] md:text-5xl lg:text-6xl">
+            {t('hero.greeting')}
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-[var(--mute)]">{t('hero.description')}</p>
 
@@ -22,7 +20,7 @@ const Hero = () => {
               href={links.cv}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-md bg-[var(--ink)] px-5 py-3 text-sm font-semibold text-[var(--bg)] transition-colors hover:bg-[var(--accent)] hover:text-[var(--accent-ink)]"
+              className="inline-flex items-center gap-2 bg-[var(--signal)] px-5 py-3 text-sm font-bold text-[var(--signal-ink)] transition-colors hover:bg-[var(--ink)] hover:text-[var(--bg)]"
             >
               <Download className="h-4 w-4" />
               {t('hero.cv')}
@@ -30,7 +28,7 @@ const Hero = () => {
             </a>
             <Link
               to="/#projects"
-              className="inline-flex items-center gap-2 rounded-md border border-[var(--line)] px-5 py-3 text-sm font-semibold text-[var(--ink)] transition-colors hover:border-[var(--ink)]"
+              className="inline-flex items-center gap-2 border border-[var(--ink)] px-5 py-3 text-sm font-semibold text-[var(--ink)] transition-colors hover:bg-[var(--surface)]"
             >
               {t('hero.viewProjects')}
               <ArrowDown className="h-4 w-4" />
@@ -46,7 +44,14 @@ const Hero = () => {
         </div>
 
         <div className="order-1 md:order-2">
-          <FollowHead src="/profile/avatar.webp" alt={t('hero.avatarAlt')} />
+          <img
+            src="/profile/avatar.webp"
+            alt={t('hero.avatarAlt')}
+            width={960}
+            height={960}
+            decoding="async"
+            className="mx-auto aspect-square w-full max-w-[22rem] rounded-full bg-[#181833] object-cover md:max-w-[26rem]"
+          />
         </div>
       </div>
     </section>

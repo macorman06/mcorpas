@@ -22,6 +22,8 @@ export interface Project {
   aiAssisted?: boolean;
   stack: string[];
   cover?: string;
+  /** Alt text for the cover image. */
+  coverAlt?: Localized;
   images?: string[];
   links?: {
     pdf?: string;

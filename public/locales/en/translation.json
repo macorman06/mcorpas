@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Marcos Corpas | Aerospace Engineer · Airline operations, optimization & software",
-    "description": "Aerospace engineer (Air Navigation, URJC). I build aircraft assignment and operations planning software used by airlines, with Python, mathematical optimization and AWS.",
+    "title": "Marcos Corpas | Aerospace Engineer · Backend, optimization and DevOps & Cloud",
+    "description": "Aerospace Engineering graduate specialized in backend software development, mathematical optimization and DevOps & Cloud.",
     "projectsTitle": "Projects | Marcos Corpas",
-    "projectsDescription": "BSc thesis on sustainable aircraft rotations (9.5/10) and personal projects: HERES, Atlas, Catan AI, Home Lab and Jesper3DMakes."
+    "projectsDescription": "BSc thesis on sustainable aircraft rotations (9.5/10) and personal projects: HERES, Atlas, Catan AI, Jesper3DMakes, Fuel Trip Optimizer and BiciMad."
   },
   "nav": {
     "about": "About",
@@ -16,33 +16,27 @@
     "themeDark": "Switch to dark mode"
   },
   "hero": {
-    "greeting": "Hi, I'm Marcos.",
-    "title": "Aerospace engineer. I build the software that decides which aircraft flies each route.",
-    "description": "At Cisneria Engineering since 2023, working on aircraft assignment and operations planning systems used in production by airlines.",
+    "greeting": "Hola, soy Marcos.",
+    "description": "Aerospace Engineering graduate specialized in backend software development, mathematical optimization and DevOps & Cloud.",
     "cv": "Download CV",
     "cvNote": "PDF",
     "viewProjects": "See projects",
     "contact": "Contact",
-    "avatarAlt": "Illustrated portrait of Marcos Corpas",
-    "headHint": "Move your cursor: I'll keep an eye on it.",
-    "headHintTouch": "Tap to one side: I'll keep an eye on it.",
-    "headPaused": "Motion paused.",
-    "headPause": "Pause the portrait's motion",
-    "headResume": "Resume the portrait's motion"
+    "avatarAlt": "Illustrated portrait of Marcos Corpas, smiling, with dark brown hair and a moustache, on a dark blue background"
   },
   "about": {
     "kicker": "About",
     "title": "Aviation, optimization and software, in that order.",
     "body": [
-      "I'm an aerospace engineer from URJC, Air Navigation track. For over three years at Cisneria Engineering I've worked on the planning logic of an aircraft assignment system used in production by airlines, including the TAP Air Portugal rollout.",
-      "My thesis, a MILP model that generates aircraft rotations with sustainability criteria, was graded 9.5/10. I rely on Python, data and AWS, and I want to steer my career towards aerospace and defense engineering: systems integration, simulation, UAV and air navigation."
+      "I'm an aerospace engineer from URJC (Air Navigation, 2018–2026). My thesis, a MILP model solved with Gurobi that generates aircraft rotations with sustainability criteria, was graded 9.5/10. I completed UNIR's Advanced Program in DevOps & Cloud (8.99/10). I'm looking for a backend, optimization or aerospace and air navigation operations team."
     ],
-    "hobbies": "Outside work: Formula 1, the mountains, simulators, 3D printing, and volunteering as a youth leader at Salesianos Parla."
+    "hobbies": "Outside work: Formula 1, the mountains, simulators and 3D printing."
   },
   "experience": {
     "kicker": "Background",
     "title": "Experience and education",
     "workTitle": "Experience",
+    "otherTitle": "Other",
     "educationTitle": "Education",
     "jobs": [
       {
@@ -55,13 +49,15 @@
           "Python services and REST APIs (Flask, PostgreSQL) tested with Pytest: 85% coverage across the microservices.",
           "Daily operation of AWS production infrastructure for two clients (ECS Fargate, RDS, S3, CloudWatch) and cost inventory."
         ]
-      },
+      }
+    ],
+    "other": [
       {
         "role": "Aerodynamics Designer",
         "org": "Ü Motorsport – URJC (Formula Student)",
         "date": "09/2019 – 06/2021",
         "items": [
-          "Designed and optimized a single-seater's rear wing with SolidWorks and CFD (Ansys Fluent)."
+          "Aerodynamics design: rear wing with SolidWorks and CFD (Ansys Fluent)."
         ]
       },
       {
@@ -69,7 +65,7 @@
         "org": "Salesianos Parla",
         "date": "2018 – present",
         "items": [
-          "Mentoring youth groups. I built HERES, their organisation platform."
+          "Mentoring youth groups."
         ]
       }
     ],
@@ -77,14 +73,14 @@
       {
         "role": "BSc Aerospace Engineering – Air Navigation",
         "org": "Universidad Rey Juan Carlos",
-        "date": "2018 – 2026",
+        "date": "2018 – 01/2026",
         "note": "Thesis: sustainable aircraft rotations (MILP). Grade 9.5/10."
       },
       {
         "role": "Advanced Program in DevOps & Cloud",
         "org": "UNIR",
-        "date": "2026",
-        "note": "Preparing AZ-900 and AWS Cloud Practitioner."
+        "date": "02/2026 – 10/2026",
+        "note": "UNIR own degree (450 h, 18 ECTS), grade 8.99/10. Includes AZ-900 and AWS Cloud Practitioner preparation; it is not a vendor certification."
       }
     ],
     "languages": "Languages: Spanish (native), English (B2+, professional), French (comprehension)."
@@ -114,11 +110,9 @@
   "projectsPage": {
     "kicker": "Projects",
     "title": "Things I've built",
-    "subtitle": "The thesis first. Then personal projects I actually use.",
+    "subtitle": "The thesis first. Then personal projects with their real status: in use, prototype or just an idea.",
     "engineering": "Engineering",
     "personal": "Personal projects",
-    "aiNote": "Several personal projects were coded with AI assistance. Each one says what I did myself: the idea, the decisions, the testing and the real use.",
-    "aiLabel": "Built with AI assistance",
     "role": "My role",
     "stack": "Stack",
     "pdf": "Read the thesis (PDF)",
@@ -129,7 +123,7 @@
   "contact": {
     "kicker": "Contact",
     "title": "Let's talk.",
-    "description": "If you're looking for someone for an aerospace engineering, airline operations or optimization team, drop me a line.",
+    "description": "If you are hiring for a Python backend, optimization or aerospace operations team, get in touch.",
     "email": "Email",
     "form": {
       "name": "Name",
@@ -140,8 +134,5 @@
       "sent": "Message sent. I'll get back to you soon.",
       "error": "It couldn't be sent. Please email me directly."
     }
-  },
-  "footer": {
-    "rights": "Built with React and TypeScript."
   }
 }

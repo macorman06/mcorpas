@@ -72,7 +72,7 @@ const Contact = () => {
             <button
               type="submit"
               disabled={state === 'sending'}
-              className="inline-flex items-center gap-2 rounded-md bg-[var(--ink)] px-5 py-3 text-sm font-semibold text-[var(--bg)] transition-colors hover:bg-[var(--accent)] hover:text-[var(--accent-ink)] disabled:opacity-60"
+              className="inline-flex items-center gap-2 rounded-md bg-[var(--ink)] px-5 py-3 text-sm font-semibold text-[var(--bg)] transition-colors hover:bg-[var(--signal)] hover:text-[var(--signal-ink)] disabled:opacity-60"
             >
               <Send className="h-4 w-4" />
               {state === 'sending' ? t('contact.form.sending') : t('contact.form.send')}

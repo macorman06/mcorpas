@@ -8,9 +8,9 @@ import { Project } from '../types/project.types';
 export const projects: Project[] = [
   {
     id: 'tfg',
-    title: 'TFG — Rotaciones sostenibles de aeronaves',
+    title: 'TFG — Generación de rotaciones sostenibles para aeronaves',
     kind: 'engineering',
-    year: '2026',
+    year: '2025/2026',
     status: { es: 'Terminado · 9,5', en: 'Completed · 9.5/10' },
     summary: {
       es: 'Modelo de optimización que asigna cada vuelo a un avión concreto y construye sus rotaciones, priorizando los aviones que menos consumen.',
@@ -26,20 +26,28 @@ export const projects: Project[] = [
         en: 'Validated with anonymized real operational data from a European low-cost airline: up to 667 flights and 125 aircraft.',
       },
       {
-        es: 'Soluciones en un rango de unos 19 segundos a pocos minutos según la configuración; cuatro casos de estudio.',
-        en: 'Solved in roughly 19 seconds to a few minutes depending on configuration; four case studies.',
+        es: 'Cuatro casos de estudio, resueltos en entre 19 y 357 segundos según la configuración.',
+        en: 'Four case studies, solved in 19 to 357 seconds depending on configuration.',
       },
       {
-        es: 'Grado en Ingeniería Aeroespacial en Aeronavegación, URJC. Calificación: 9,5.',
-        en: 'BSc Aerospace Engineering (Air Navigation), URJC. Grade: 9.5/10.',
+        es: 'Factor de rendimiento ponderado (menor es más eficiente): S3 3,55 y S4 3,73 (fig. 7.1 de la memoria).',
+        en: 'Weighted performance factor (lower is more efficient): S3 3.55 and S4 3.73 (fig. 7.1 of the thesis).',
+      },
+      {
+        es: 'Grado en Ingeniería Aeroespacial en Aeronavegación, URJC, curso 2025/2026. Calificación: 9,5.',
+        en: 'BSc Aerospace Engineering (Air Navigation), URJC, academic year 2025/2026. Grade: 9.5/10.',
       },
     ],
     role: {
       es: 'Autor: formulación del modelo, implementación en Python, casos de estudio y memoria.',
       en: 'Author: model formulation, Python implementation, case studies and thesis.',
     },
-    stack: ['Python', 'Gurobi', 'MILP', 'LaTeX', 'GitLab CI/CD'],
-    cover: '/projects/tfg/tfg_cover.png',
+    stack: ['Python', 'Gurobi', 'MILP', 'LaTeX'],
+    cover: '/projects/tfg/tfg_cover.svg',
+    coverAlt: {
+      es: 'Portada del TFG: Generación de rotaciones sostenibles para aeronaves, URJC 2025/2026; modelo MILP con Gurobi, hasta 667 vuelos y 125 aviones; factor ponderado S3 3,55 y S4 3,73.',
+      en: 'Thesis cover: Generation of sustainable aircraft rotations, URJC 2025/2026; MILP model with Gurobi, up to 667 flights and 125 aircraft; weighted factor S3 3.55 and S4 3.73.',
+    },
     links: { pdf: '/projects/tfg/Generacion_rotaciones_sostenibles_aeronaves_Marcos_Corpas.pdf' },
   },
   {
@@ -113,12 +121,8 @@ export const projects: Project[] = [
         en: 'Rules engine, baseline bots, game viewer and local human play.',
       },
       {
-        es: 'Red neuronal entrenada por imitación y por resultados: 36 modelos sobre 960 partidas, comprobados en 256 partidas nuevas.',
-        en: 'Neural network trained by imitation and on outcomes: 36 models over 960 games, checked on 256 unseen games.',
-      },
-      {
-        es: 'Resultado: la mejora del predictor (1,2 %) no superó el criterio fijado de antemano, así que no se dio por buena.',
-        en: 'Result: the predictor improvement (1.2%) did not pass the threshold set in advance, so it was not adopted.',
+        es: 'Experimentos con una red neuronal evaluados contra criterios fijados de antemano; proyecto en pausa.',
+        en: 'Neural-network experiments judged against criteria set in advance; project on hold.',
       },
     ],
     role: {
@@ -129,30 +133,55 @@ export const projects: Project[] = [
     stack: ['Python', 'Machine learning'],
   },
   {
-    id: 'homelab',
-    title: 'Home Lab',
+    id: 'fueltrip',
+    title: 'Fuel Trip Optimizer',
     kind: 'personal',
-    status: { es: 'En uso', en: 'In use' },
+    status: { es: 'Prototipo', en: 'Prototype' },
     summary: {
-      es: 'Domótica de casa con Home Assistant en una Raspberry Pi: dispositivos Zigbee, paneles propios y avisos automáticos.',
-      en: 'Home automation with Home Assistant on a Raspberry Pi: Zigbee devices, custom dashboards and automatic alerts.',
+      es: 'Prototipo que compara paradas de repostaje en una ruta en coche, con precios oficiales de gasolineras y la ruta de Google Directions.',
+      en: 'Prototype that compares refuelling stops on a car route, using official fuel-station prices and the Google Directions route.',
     },
     facts: [
       {
-        es: 'Avisos cinco minutos antes de reuniones, partidos y sesiones de F1: al móvil siempre, y por el altavoz solo si estoy en casa.',
-        en: 'Alerts five minutes before meetings, matches and F1 sessions: always on my phone, on the speaker only when I am home.',
+        es: 'API en Python/FastAPI; selecciona gasolineras en el corredor de la ruta y las agrupa en clusters.',
+        en: 'Python/FastAPI API; picks stations along the route corridor and groups them into clusters.',
       },
       {
-        es: 'Botones y paneles para persianas y carga del coche.',
-        en: 'Buttons and dashboards for blinds and car charging.',
+        es: 'Exporta resultados a CSV y mapas Folium. Aún sin pruebas automáticas.',
+        en: 'Exports results to CSV and Folium maps. No automated tests yet.',
+      },
+      {
+        es: 'Ampliación prevista (no implementada): incluir la carga de vehículo eléctrico.',
+        en: 'Planned extension (not implemented): add electric-vehicle charging.',
       },
     ],
     role: {
-      es: 'Instalación, configuración y mantenimiento. Scripts de apoyo escritos con asistencia de IA.',
-      en: 'Setup, configuration and maintenance. Helper scripts written with AI assistance.',
+      es: 'Idea y planteamiento del problema. Código con asistencia de IA.',
+      en: 'Idea and problem framing. Code written with AI assistance.',
     },
     aiAssisted: true,
-    stack: ['Home Assistant', 'Docker', 'Zigbee', 'Raspberry Pi'],
+    stack: ['Python', 'FastAPI', 'Google Directions', 'Folium'],
+  },
+  {
+    id: 'bicimad',
+    title: 'BiciMad',
+    kind: 'personal',
+    status: { es: 'Solo idea', en: 'Idea only' },
+    summary: {
+      es: 'Idea de herramienta para sacar más partido a las bicis públicas de Madrid. Todavía no hay implementación.',
+      en: "Idea for a tool to get more out of Madrid's public bikes. Nothing is implemented yet.",
+    },
+    facts: [
+      {
+        es: 'Sin código ni prototipo: está aquí para ser transparente sobre qué es idea y qué es trabajo hecho.',
+        en: 'No code or prototype: listed here to be clear about what is an idea and what is finished work.',
+      },
+    ],
+    role: {
+      es: 'Concepto.',
+      en: 'Concept.',
+    },
+    stack: [],
   },
   {
     id: 'jesper',
@@ -176,6 +205,10 @@ export const projects: Project[] = [
     },
     stack: ['Fusion 360', '3D printing'],
     cover: '/projects/jesper/jesper_lamp_render.jpg',
+    coverAlt: {
+      es: 'Render de una lámpara LED diseñada e impresa en 3D en Jesper3DMakes',
+      en: 'Render of an LED lamp designed and 3D-printed at Jesper3DMakes',
+    },
     images: ['/projects/jesper/jesper_lamp_extra1.jpg', '/projects/jesper/jesper_lamp_extra2.jpg', '/projects/jesper/jesper_lamp_extra3.jpg'],
     links: { instagram: 'https://www.instagram.com/jesper3d.makes/' },
   },

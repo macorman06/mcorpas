@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Marcos Corpas | Ingeniero Aeroespacial · Operaciones aéreas, optimización y software",
-    "description": "Ingeniero aeroespacial (Aeronavegación, URJC). Desarrollo software de planificación y asignación de aeronaves usado por aerolíneas, con Python, optimización matemática y AWS.",
+    "title": "Marcos Corpas | Ingeniero aeroespacial · Backend, optimización y DevOps & Cloud",
+    "description": "Graduado en Ingeniería Aeroespacial y especializado en desarrollo de software backend, optimización matemática y DevOps & Cloud.",
     "projectsTitle": "Proyectos | Marcos Corpas",
-    "projectsDescription": "TFG de rotaciones sostenibles de aeronaves (9,5) y proyectos personales: HERES, Atlas, Catán IA, Home Lab y Jesper3DMakes."
+    "projectsDescription": "TFG de rotaciones sostenibles de aeronaves (9,5) y proyectos personales: HERES, Atlas, Catán IA, Jesper3DMakes, Fuel Trip Optimizer y BiciMad."
   },
   "nav": {
     "about": "Sobre mí",
@@ -17,32 +17,26 @@
   },
   "hero": {
     "greeting": "Hola, soy Marcos.",
-    "title": "Ingeniero aeroespacial. Desarrollo el software que decide qué avión vuela cada ruta.",
-    "description": "Desde 2023 en Cisneria Engineering, en sistemas de asignación de aeronaves y planificación de operaciones que usan aerolíneas en producción.",
+    "description": "Graduado en Ingeniería Aeroespacial y especializado en desarrollo de software backend, optimización matemática y DevOps & Cloud.",
     "cv": "Descargar CV",
     "cvNote": "PDF en inglés",
     "viewProjects": "Ver proyectos",
     "contact": "Contacto",
-    "avatarAlt": "Retrato ilustrado de Marcos Corpas",
-    "headHint": "Mueve el cursor: te sigo con la mirada.",
-    "headHintTouch": "Toca a un lado: te sigo con la mirada.",
-    "headPaused": "Movimiento en pausa.",
-    "headPause": "Pausar el movimiento del retrato",
-    "headResume": "Reanudar el movimiento del retrato"
+    "avatarAlt": "Retrato ilustrado de Marcos Corpas, sonriendo, con pelo castaño y bigote, sobre fondo azul oscuro"
   },
   "about": {
     "kicker": "Sobre mí",
     "title": "Aviación, optimización y software, en ese orden.",
     "body": [
-      "Soy ingeniero aeroespacial por la URJC, en la rama de Aeronavegación. Llevo más de tres años en Cisneria Engineering trabajando en la lógica de planificación de un sistema de asignación de aeronaves que usan aerolíneas en producción, incluida la puesta en marcha con TAP Air Portugal.",
-      "Mi TFG, un modelo MILP para generar rotaciones de aviones con criterios de sostenibilidad, obtuvo un 9,5. Me apoyo en Python, datos y AWS, y quiero orientar mi carrera hacia la ingeniería aeroespacial y de defensa: integración de sistemas, simulación, UAV y navegación aérea."
+      "Soy ingeniero aeroespacial por la URJC (Aeronavegación, 2018–2026). Mi TFG, un modelo MILP resuelto con Gurobi para generar rotaciones de aviones con criterios de sostenibilidad, obtuvo un 9,5. Completé el Programa Avanzado en DevOps & Cloud de UNIR (8,99). Busco un equipo de backend, optimización u operaciones aeroespaciales y de navegación aérea."
     ],
-    "hobbies": "Fuera del trabajo: Fórmula 1, montaña, simuladores, impresión 3D y monitor de tiempo libre en Salesianos Parla."
+    "hobbies": "Fuera del trabajo: Fórmula 1, montaña, simuladores e impresión 3D."
   },
   "experience": {
     "kicker": "Trayectoria",
     "title": "Experiencia y formación",
     "workTitle": "Experiencia",
+    "otherTitle": "Otros",
     "educationTitle": "Formación",
     "jobs": [
       {
@@ -55,13 +49,15 @@
           "Servicios Python y APIs REST (Flask, PostgreSQL) con pruebas en Pytest: 85 % de cobertura en los microservicios.",
           "Operación diaria de la infraestructura AWS de dos clientes (ECS Fargate, RDS, S3, CloudWatch) e inventario de costes."
         ]
-      },
+      }
+    ],
+    "other": [
       {
         "role": "Diseñador de aerodinámica",
         "org": "Ü Motorsport – URJC (Formula Student)",
         "date": "09/2019 – 06/2021",
         "items": [
-          "Diseño y optimización del alerón trasero de un monoplaza con SolidWorks y CFD (Ansys Fluent)."
+          "Diseño de aerodinámica: alerón trasero con SolidWorks y CFD (Ansys Fluent)."
         ]
       },
       {
@@ -69,7 +65,7 @@
         "org": "Salesianos Parla",
         "date": "2018 – hoy",
         "items": [
-          "Acompañamiento de grupos de jóvenes. Para ellos he construido HERES, su plataforma de organización."
+          "Acompañamiento de grupos de jóvenes."
         ]
       }
     ],
@@ -77,14 +73,14 @@
       {
         "role": "Grado en Ingeniería Aeroespacial en Aeronavegación",
         "org": "Universidad Rey Juan Carlos",
-        "date": "2018 – 2026",
+        "date": "2018 – 01/2026",
         "note": "TFG: rotaciones sostenibles de aeronaves (MILP). Calificación 9,5."
       },
       {
-        "role": "Programa avanzado en DevOps y Cloud",
+        "role": "Programa Avanzado en DevOps & Cloud",
         "org": "UNIR",
-        "date": "2026",
-        "note": "Preparando AZ-900 y AWS Cloud Practitioner."
+        "date": "02/2026 – 10/2026",
+        "note": "Título propio de UNIR (450 h, 18 ECTS), nota 8,99. Incluye preparación de AZ-900 y AWS Cloud Practitioner; no acredita certificaciones de fabricante."
       }
     ],
     "languages": "Idiomas: español (nativo), inglés (B2+, uso profesional), francés (comprensión)."
@@ -114,11 +110,9 @@
   "projectsPage": {
     "kicker": "Proyectos",
     "title": "Lo que he construido",
-    "subtitle": "El TFG primero. Después, proyectos personales que uso de verdad.",
+    "subtitle": "El TFG primero. Después, proyectos personales con su estado real: en uso, prototipo o solo idea.",
     "engineering": "Ingeniería",
     "personal": "Proyectos personales",
-    "aiNote": "Varios proyectos personales los he programado con asistencia de IA. En cada ficha cuento qué hice yo: la idea, las decisiones, las pruebas y el uso real.",
-    "aiLabel": "Hecho con asistencia de IA",
     "role": "Mi papel",
     "stack": "Tecnologías",
     "pdf": "Leer la memoria (PDF)",
@@ -129,7 +123,7 @@
   "contact": {
     "kicker": "Contacto",
     "title": "Hablemos.",
-    "description": "Si buscas a alguien para un equipo de ingeniería aeroespacial, operaciones aéreas u optimización, escríbeme.",
+    "description": "Si buscas a alguien para un equipo de backend Python, optimización u operaciones aeroespaciales, escríbeme.",
     "email": "Email",
     "form": {
       "name": "Nombre",
@@ -140,8 +134,5 @@
       "sent": "Mensaje enviado. Te responderé pronto.",
       "error": "No se ha podido enviar. Escríbeme directamente al email."
     }
-  },
-  "footer": {
-    "rights": "Hecho con React y TypeScript."
   }
 }

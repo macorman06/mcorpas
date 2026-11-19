@@ -61,7 +61,7 @@ const ProjectDetail = ({ project, onClose }: Props) => {
           <X className="h-5 w-5" />
         </button>
 
-        {project.cover && <img src={project.cover} alt="" className="h-52 w-full object-cover sm:h-64" />}
+        {project.cover && <img src={project.cover} alt={project.coverAlt?.[lang] ?? ''} className="h-52 w-full object-cover sm:h-64" />}
 
         <div className="p-6 sm:p-9">
           <p className="text-sm tabular-nums text-[var(--mute)]">
@@ -86,14 +86,18 @@ const ProjectDetail = ({ project, onClose }: Props) => {
           <dl className="mt-8 grid gap-5 border-t border-[var(--line)] pt-6 sm:grid-cols-[8rem_1fr]">
             <dt className="text-sm font-semibold uppercase tracking-[0.12em] text-[var(--mute)]">{t('projectsPage.role')}</dt>
             <dd className="leading-relaxed">{project.role[lang]}</dd>
-            <dt className="text-sm font-semibold uppercase tracking-[0.12em] text-[var(--mute)]">{t('projectsPage.stack')}</dt>
-            <dd className="flex flex-wrap gap-2">
-              {project.stack.map((s) => (
-                <span key={s} className="border border-[var(--line)] px-2.5 py-1 text-sm">
-                  {s}
-                </span>
-              ))}
-            </dd>
+            {project.stack.length > 0 && (
+              <>
+                <dt className="text-sm font-semibold uppercase tracking-[0.12em] text-[var(--mute)]">{t('projectsPage.stack')}</dt>
+                <dd className="flex flex-wrap gap-2">
+                  {project.stack.map((s) => (
+                    <span key={s} className="border border-[var(--line)] px-2.5 py-1 text-sm">
+                      {s}
+                    </span>
+                  ))}
+                </dd>
+              </>
+            )}
           </dl>
 
           {project.images && project.images.length > 0 && (

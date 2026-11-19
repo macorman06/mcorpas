@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="t">
+  <title id="t">TFG: Generación de rotaciones sostenibles para aeronaves. URJC 2025/2026</title>
+  <rect width="1280" height="720" fill="#18191b"/>
+  <rect x="0" y="0" width="1280" height="8" fill="#f5c400"/>
+  <g font-family="Archivo, 'Source Sans 3', Arial, Helvetica, sans-serif" text-anchor="middle">
+    <text x="640" y="172" font-size="24" font-weight="700" letter-spacing="4" fill="#f5c400">TRABAJO FIN DE GRADO</text>
+    <text x="640" y="238" font-size="54" font-weight="800" fill="#f1f1ee">Generación de rotaciones</text>
+    <text x="640" y="300" font-size="54" font-weight="800" fill="#f1f1ee">sostenibles para aeronaves</text>
+    <text x="640" y="350" font-size="26" fill="#a2a4a8">URJC · Curso 2025/2026</text>
+    <line x1="520" y1="376" x2="760" y2="376" stroke="#34363a" stroke-width="2"/>
+    <text x="640" y="418" font-size="28" font-weight="700" fill="#f1f1ee">MILP + Gurobi</text>
+    <text x="640" y="456" font-size="26" fill="#f1f1ee">Hasta 667 vuelos y 125 aviones</text>
+    <text x="640" y="504" font-size="24" fill="#a2a4a8">Factor de rendimiento ponderado (fig. 7.1)</text>
+    <text x="640" y="544" font-size="28" font-weight="700" fill="#f5c400">S3 3,55  ·  S4 3,73</text>
+  </g>
+</svg>

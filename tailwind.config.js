@@ -6,7 +6,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['"Source Sans 3"', 'system-ui', 'sans-serif'],
-        display: ['Fraunces', 'Georgia', 'serif'],
+        display: ['"Archivo"', 'system-ui', 'sans-serif'],
         body: ['"Source Sans 3"', 'system-ui', 'sans-serif'],
       },
     },

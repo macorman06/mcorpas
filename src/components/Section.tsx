@@ -16,7 +16,7 @@ const Section = ({ id, kicker, title, intro, children }: Props) => (
           <p className="section-kicker md:sticky md:top-24">{kicker}</p>
         </div>
         <div className="min-w-0">
-          <h2 className="font-display text-3xl font-semibold tracking-tight text-[var(--ink)] [text-wrap:balance] md:text-4xl">
+          <h2 className="font-display text-3xl font-extrabold tracking-tight text-[var(--ink)] [text-wrap:balance] md:text-5xl">
             {title}
           </h2>
           {intro && <div className="mt-4 max-w-2xl text-lg leading-relaxed text-[var(--mute)]">{intro}</div>}

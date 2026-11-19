@@ -34,12 +34,16 @@ const Row = ({ entry }: { entry: Job }) => (
 const Experience = () => {
   const { t } = useTranslation();
   const jobs = t('experience.jobs', { returnObjects: true }) as Job[];
+  const other = t('experience.other', { returnObjects: true }) as Job[];
   const education = t('experience.education', { returnObjects: true }) as Job[];
 
   return (
     <Section id="experience" kicker={t('experience.kicker')} title={t('experience.title')}>
       <h3 className="mb-6 text-sm font-semibold uppercase tracking-[0.14em] text-[var(--mute)]">{t('experience.workTitle')}</h3>
       <ol>{Array.isArray(jobs) && jobs.map((j, i) => <Row key={i} entry={j} />)}</ol>
+
+      <h3 className="mb-6 mt-14 text-sm font-semibold uppercase tracking-[0.14em] text-[var(--mute)]">{t('experience.otherTitle')}</h3>
+      <ol>{Array.isArray(other) && other.map((j, i) => <Row key={i} entry={j} />)}</ol>
 
       <h3 className="mb-6 mt-14 text-sm font-semibold uppercase tracking-[0.14em] text-[var(--mute)]">{t('experience.educationTitle')}</h3>
       <ol>{Array.isArray(education) && education.map((j, i) => <Row key={i} entry={j} />)}</ol>

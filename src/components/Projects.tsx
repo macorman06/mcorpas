@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { ArrowUpRight, Sparkles } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import Section from './Section';
 import ProjectDetail from './ProjectsCardDetail';
 import { projects } from '../data/projects';
@@ -36,7 +36,7 @@ const Projects = () => {
             <div className="aspect-[16/10] overflow-hidden bg-[var(--surface)]">
               <img
                 src={p.cover}
-                alt=""
+                alt={p.coverAlt?.[lang] ?? ''}
                 loading="lazy"
                 className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
               />
@@ -58,8 +58,7 @@ const Projects = () => {
         </motion.button>
       ))}
 
-      <h3 className="mb-3 mt-20 text-sm font-semibold uppercase tracking-[0.14em] text-[var(--mute)]">{t('projectsPage.personal')}</h3>
-      <p className="mb-8 max-w-2xl text-sm leading-relaxed text-[var(--mute)]">{t('projectsPage.aiNote')}</p>
+      <h3 className="mb-8 mt-20 text-sm font-semibold uppercase tracking-[0.14em] text-[var(--mute)]">{t('projectsPage.personal')}</h3>
 
       <ul className="border-b border-[var(--line)]">
         {personal.map((p, i) => (
@@ -81,12 +80,6 @@ const Projects = () => {
               </span>
               <span className="leading-relaxed text-[var(--mute)]">
                 {p.summary[lang]}
-                {p.aiAssisted && (
-                  <span className="ml-2 inline-flex items-center gap-1 whitespace-nowrap align-middle text-xs text-[var(--accent)]">
-                    <Sparkles className="h-3 w-3" aria-hidden="true" />
-                    {t('projectsPage.aiLabel')}
-                  </span>
-                )}
               </span>
               <span className="whitespace-nowrap text-sm text-[var(--mute)]">
                 {p.year ? `${p.year} · ` : ''}
