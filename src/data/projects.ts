@@ -30,10 +30,6 @@ export const projects: Project[] = [
         en: 'Four case studies, solved in 19 to 357 seconds depending on configuration.',
       },
       {
-        es: 'Factor de rendimiento ponderado (menor es más eficiente): S3 3,55 y S4 3,73 (fig. 7.1 de la memoria).',
-        en: 'Weighted performance factor (lower is more efficient): S3 3.55 and S4 3.73 (fig. 7.1 of the thesis).',
-      },
-      {
         es: 'Grado en Ingeniería Aeroespacial en Aeronavegación, URJC, curso 2025/2026. Calificación: 9,5.',
         en: 'BSc Aerospace Engineering (Air Navigation), URJC, academic year 2025/2026. Grade: 9.5/10.',
       },
@@ -43,11 +39,6 @@ export const projects: Project[] = [
       en: 'Author: model formulation, Python implementation, case studies and thesis.',
     },
     stack: ['Python', 'Gurobi', 'MILP', 'LaTeX'],
-    cover: '/projects/tfg/tfg_cover.svg',
-    coverAlt: {
-      es: 'Portada del TFG: Generación de rotaciones sostenibles para aeronaves, URJC 2025/2026; modelo MILP con Gurobi, hasta 667 vuelos y 125 aviones; factor ponderado S3 3,55 y S4 3,73.',
-      en: 'Thesis cover: Generation of sustainable aircraft rotations, URJC 2025/2026; MILP model with Gurobi, up to 667 flights and 125 aircraft; weighted factor S3 3.55 and S4 3.73.',
-    },
     links: { pdf: '/projects/tfg/Generacion_rotaciones_sostenibles_aeronaves_Marcos_Corpas.pdf' },
   },
   {

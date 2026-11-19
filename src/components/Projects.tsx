@@ -30,7 +30,7 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.5, ease }}
-          className="group grid w-full gap-6 text-left md:grid-cols-[1.15fr_1fr] md:gap-10"
+          className={`group grid w-full gap-6 text-left md:gap-10 ${p.cover ? 'md:grid-cols-[1.15fr_1fr]' : ''}`}
         >
           {p.cover && (
             <div className="aspect-[16/10] overflow-hidden bg-[var(--surface)]">
